@@ -1,0 +1,5 @@
+server: 3316 (tags/12.1)
+framework: 4499 (tags/12.1)
+components: 1482 (tags/12.1)
+ - com_editors: 1581 (branches/development)
+ - com_activities: 1668 (tags/12.1)
