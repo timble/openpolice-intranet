@@ -1,18 +1,16 @@
-<style src="media://com_fora/css/topic-form.css" />
-
 <?= @helper('behavior.validator') ?>
 
 <form method="post" action="" id="article-form" class="-koowa-form">
-    <input type="hidden" name="fora_forum_id" value="<?= $topic->id ? $topic->fora_forum_id : $state->forum ?>" />
+    <input type="hidden" name="fora_forum_id" value="<?= $article->id ? $article->fora_forum_id : $state->forum ?>" />
     
     <div id="main" class="grid_8">
         <div class="panel title group">
-            <input class="inputbox required" type="text" name="title" id="title" size="40" maxlength="255" value="<?= $topic->title ?>" placeholder="<?= @text('Title') ?>" />
+            <input class="inputbox required" type="text" name="title" id="title" size="40" maxlength="255" value="<?= $article->title ?>" placeholder="<?= @text('Title') ?>" />
             <label for="slug"><?= @text('Slug') ?></label>
-            <input class="inputbox" type="text" name="slug" id="slug" size="40" maxlength="255" value="<?= $topic->slug ?>" placeholder="<?= @text('Slug') ?>" />
+            <input class="inputbox" type="text" name="slug" id="slug" size="40" maxlength="255" value="<?= $article->slug ?>" placeholder="<?= @text('Slug') ?>" />
         </div>
         
-        <?= @service('com://admin/editors.view.editor.html')->name('text')->data($topic->text)->display() ?>
+        <?= @service('com://admin/editors.view.editor.html')->name('text')->data($article->text)->display() ?>
     </div>
 
     <div id="panels" class="grid_4">
@@ -24,7 +22,7 @@
                         <label><?= @text('Published') ?></label>
                     </td>
                     <td>
-                        <?= @helper('select.booleanlist', array('name' => 'enabled', 'selected' => $topic->enabled)) ?>
+                        <?= @helper('select.booleanlist', array('name' => 'enabled', 'selected' => $article->enabled)) ?>
                     </td>
                 </tr>
                 <tr>
@@ -32,13 +30,13 @@
                         <label><?= @text('Commentable') ?></label>
                     </td>
                     <td>
-                        <?= @helper('select.booleanlist', array('name' => 'commentable', 'selected' => $topic->commentable)) ?>
+                        <?= @helper('select.booleanlist', array('name' => 'commentable', 'selected' => $article->commentable)) ?>
                     </td>
                 </tr>
             </table>
         </div>
         
-        <? if($topic->id) : ?>
+        <? if($article->id) : ?>
             <div class="panel">
                 <h3><?= @text('Details') ?></h3>
                 <table class="paramlist admintable">
@@ -47,7 +45,7 @@
                             <label><?= @text('Created by') ?></label>
                         </td>
                         <td>
-                            <?= $topic->created_by_name ?>
+                            <?= $article->created_by_name ?>
                         </td>
                     </tr>
                     <tr>
@@ -55,16 +53,16 @@
                             <label><?= @text('Created on') ?></label>
                         </td>
                         <td>
-                            <?= $topic->created_on == '0000-00-00 00:00:00' ? '' : @helper('date.format', array('date' => $topic->created_on, 'format' => @text('DATE_FORMAT_LC2'))) ?>
+                            <?= $article->created_on == '0000-00-00 00:00:00' ? '' : @helper('date.format', array('date' => $article->created_on, 'format' => @text('DATE_FORMAT_LC2'))) ?>
                         </td>
                     </tr>
-                    <? if($topic->modified_by) : ?>
+                    <? if($article->modified_by) : ?>
                         <tr>
                             <td class="paramlist_key">
                                 <label><?= @text('Modified by') ?></label>
                             </td>
                             <td>
-                                <?= $topic->modified_by_name ?>
+                                <?= $article->modified_by_name ?>
                             </td>
                         </tr>
                         <tr>
@@ -72,7 +70,7 @@
                                 <label><?= @text('Modified on') ?></label>
                             </td>
                             <td>
-                                <?= @helper('date.format', array('date' => $topic->modified_on, 'format' => @text('DATE_FORMAT_LC2'))) ?>
+                                <?= @helper('date.format', array('date' => $article->modified_on, 'format' => @text('DATE_FORMAT_LC2'))) ?>
                             </td>
                         </tr>
                     <? endif ?>
@@ -81,7 +79,7 @@
             
 	        <div class="panel categories group">
 	            <h3><?= @text('Forum') ?></h3>
-	            <?// @template('form_categories', array('categories' => $categories, 'topic' => $topic, 'forums' => $forums)) ?>
+	            <?// @template('form_categories', array('categories' => $categories, 'article' => $article, 'forums' => $forums)) ?>
 	        </div>
         <? endif ?>
     </div>

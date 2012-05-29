@@ -12,8 +12,7 @@ class ComNewsViewArticlesHtml extends ComNewsViewHtml
     
     public function display()
     {
-        $model = $this->getModel();
-               
+        $model = $this->getModel();        
                 
         return parent::display();
     }
