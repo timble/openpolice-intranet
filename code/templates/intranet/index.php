@@ -20,13 +20,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			</div>
 		</div>
 	</div>
-	<div id="header">
-		<div class="container">
-			<div class="row">
-				<div class="span12"><img src="templates/<?php echo $this->template ?>/images/header.jpg"></div>
-			</div>
-		</div>
-	</div>
+
 	<div id="frame" class="container">
 		<div class="row">
 			<div class="sidebar span3">

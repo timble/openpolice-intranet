@@ -1,57 +1,18 @@
-/* @group Functions */
-.pageheader(@color) {
-	#gradient > .horizontal(@color, #FFF);
-	background-size: 20px 100%;
-	background-repeat: no-repeat;
-	border-bottom-color: @color;
-	padding: 0 0 0 30px;
-	.border-radius(5px 0 0 5px);
-}
-
-.group() {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
-.group:after {
-	.group();
-}
-/* @end group */
-
 /* @group Bootstrap overrides */
 h1 {
-	font-size: 20px;
+	font-size: 24px;
 }
 /* @end group */
 
-.article:after {
-	.group();
+.navbar-inner {
+	.border-radius(0); /* Bootstrap override */
 }
 
-.article {
-	margin-bottom: 30px;
+.articles > .article {
 	padding-bottom: 30px;
-	h1 {
-		margin: 0 !important;
-	}
+	margin-bottom: 30px;
+	border-bottom: 1px solid @grayLighter;
 }
-
-.article.separator {
-	border-bottom: 1px solid #DDD;
-}
-
-
-
-.page-header.eei { .pageheader(@313); }
-.page-header.opsporingsberichten { .pageheader(@485); }
-.page-header.hycap { .pageheader(@282); }
-.page-header.fipa { .pageheader(@525); }
-.page-header.verkeersacties { .pageheader(@123); }
-.page-header.nieuws { .pageheader(@5425); }
-.page-header.evenementen { .pageheader(@451); }
 
 .sidebar {
 	background-color: @body;
@@ -114,10 +75,8 @@ h1 {
 					li:last-of-type a {
 						border-bottom: 1px solid #FFF;
 					}
-					
 				}
 			}
-			
 			li#current  {
 				> a {
 					#gradient > .vertical(lighten(@orange, 10%), @orange);
@@ -139,14 +98,6 @@ h1 {
 			li.parent.active > a {
 				border-bottom: 0px none;
 			}
-		}
-	}
-	.mod_login {
-		form {
-			padding: 10px 20px 0 20px;
-		}
-		input {
-			width: 90%;
 		}
 	}
 }

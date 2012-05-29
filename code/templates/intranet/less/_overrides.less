@@ -1,0 +1,19 @@
+/* @group Bootstrap overrides */
+h1 {
+	font-size: 24px;
+}
+/* @end group */
+
+.navbar-inner {
+	.border-radius(0); /* Bootstrap override */
+}
+
+.navbar .nav > li > a {
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 15px;
+}
+
+.navbar .nav > .active > a {
+	.box-shadow(inset 0px 0px 30px darken(@navbarBackground,10%));
+}
