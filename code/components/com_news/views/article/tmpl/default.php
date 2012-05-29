@@ -1,8 +1,6 @@
-<?= $article->title ?>
+<?= @template('default_article') ?>
 
-<div class="frame__header">
-    <h2><?= @text('Comments') ?></h2>
-</div>
+<h2><?= @text('Comments') ?></h2>
 
 <div class="content spacing">
 	<?= @service('com://site/news.controller.comment')

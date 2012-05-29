@@ -32,6 +32,7 @@ CREATE ALGORITHM = MERGE VIEW `jos_news_view_articles_comments_total` AS
 CREATE ALGORITHM = MERGE VIEW `jos_news_view_articles` AS
     SELECT
         `article`.*,
+        `category`.`title` AS `category_title`,
         `category`.`slug` AS `category_slug`,
         `creator`.`name` AS `created_by_name`,
         `creator`.`email` AS `created_by_email`,
