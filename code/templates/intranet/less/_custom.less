@@ -1,20 +1,14 @@
-.articles > .article {
-	padding-bottom: 30px;
-	margin-bottom: 30px;
-	border-bottom: 1px solid @grayLighter;
-}
-
-.sidebar {
-	background-color: @body;
-	border: 1px solid #DDD;
-	.box-sizing(border-box);
-	.border-radius(5px);
-	
-	.module {		
+.sidebar {	
+	.module.mod_dynamic {		
+		border: 1px solid #D5D5D5;
+		.border-radius(5px);
+		background-color: #FFF;
+		
 		h3 {
-			padding: 0 20px;
-			border-bottom: 1px solid #FFF;
-			#gradient > .vertical(darken(#E0E0E0, 5%), #E0E0E0);
+			padding: 8px 20px;
+			border-bottom: 1px solid #D5D5D5;
+			#gradient > .vertical(lighten(@body, 10%), @body);
+			.border-radius(5px 5px 0 0);
 		}
 		
 		p {
@@ -22,73 +16,36 @@
 		}
 		
 		/* 1st LEVEL */
-		ul {
+		> ul {
 			margin: 0;
 			padding: 0;
 			list-style: none;
 			font-weight: bold;
-			li {
-				span,
-				a {
-					display: block;
-					padding: 7px 20px 5px 20px;
-					border-bottom: 1px solid #FFF;
-					text-align: left;
-				}
-				span {
-					border-bottom: 1px solid #F0F0F0;
-				}
-				a:hover {
-					#gradient > .vertical(darken(@5455, 5%), @5455);
-				}		
-				/* 2th LEVEL */
-				ul { 
-					li { 
-						a {
-							padding-left: 40px;
-							border-bottom: 0px solid @body;
-						}
-						/* 3th LEVEL */
-						ul {
-							li {
-								a { 
-									padding-left: 60px;
-								}
-								/* limit to 3 levels */
-								ul {
-									display: none;
-								}
-							}
-								
-						}
-					}
-					li:last-of-type a {
-						border-bottom: 1px solid #FFF;
-					}
-				}
-			}
-			li#current  {
+			
+			> li {				
+				> span,
 				> a {
-					#gradient > .vertical(lighten(@orange, 10%), @orange);
-					color: #FFF;
-				}
-				a:hover {
-					#gradient > .vertical(lighten(@orange, 10%), @orange);
-				}
-				ul {
-					li a {
-						background-color: #EEE;
-						background-image: none;
-					}
-					li a:hover {
+					display: block;
+					padding: 4px 20px 4px 20px;
+					
+					&:hover {
 						#gradient > .vertical(darken(@5455, 5%), @5455);
 					}
 				}
 			}
-			li.parent.active > a {
-				border-bottom: 0px none;
+			
+			> li.active  {
+				> a {
+					border: 0 none;
+					border-bottom: 1px solid #D5D5D5;
+					#gradient > .vertical(lighten(@orange, 10%), @orange);
+					color: #FFF;
+					
+					&:hover {
+						#gradient > .vertical(lighten(@orange, 10%), @orange);
+					}
+				}
 			}
 		}
 	}
 }
-/* @end group */
