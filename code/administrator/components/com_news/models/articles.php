@@ -7,7 +7,9 @@ class ComNewsModelArticles extends ComDefaultModelDefault
         
         $this->_state
             ->insert('enabled', 'int')
-            ->insert('category', 'int');
+            ->insert('category', 'int')
+            ->insert('start_date', 'int')
+            ->insert('days_back'   , 'int', 14);
     }
     
     protected function _buildQueryWhere(KDatabaseQuery $query)
