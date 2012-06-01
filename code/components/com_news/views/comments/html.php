@@ -5,12 +5,17 @@ class ComNewsViewCommentsHtml extends ComNewsViewHtml
     {
         $model    = $this->getModel();
         $comments = $model->getList();
+        
+        $article = $this->getService('com://admin/news.model.articles')
+            ->id($model->get('row'))
+            ->getItem();
                 
         $attachments = $this->getService('com://admin/attachments.model.attachments')
             ->table('comments_comments')
             ->row($comments->getColumn('id'))
             ->getList();
             
+        $this->assign('article', $article);
         $this->assign('attachments', $attachments);
         
         $editor_settings = array(
