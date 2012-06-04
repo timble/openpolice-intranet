@@ -21,7 +21,20 @@
 		}
 	}
 	
-	> .toolbar {
+	.moduletable > .breadcrumb {
+		float: left;
+		margin: 5px 0 0 0;
+		padding: 0;
+		background: none;
+		border: 0 none;
+		.box-shadow(none);
+		
+		li {
+			text-shadow: none;
+		}
+	}
+	
+	.moduletable > .toolbar {
 		float: right;
 	}
 }
@@ -69,20 +82,12 @@
 		padding: 16px 80px;
 	}
 	
+	.article-attachments {
+		padding: 16px 80px;
+	}
+	
 	.article-toolbar {
 		margin: 0 0 16px 80px;
-	}
-}
-
-.filter-date {
-	padding: 0 20px;
-	
-	input {
-		width: auto;
-		
-		&#start_date {
-			width: 150px;
-		}
 	}
 }
 
