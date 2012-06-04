@@ -26,11 +26,15 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			<div class="sidebar span2">
 				<jdoc:include type="modules" name="left" style="xhtmls" />
 			</div>
-			<div class="content span7">
-				<jdoc:include type="modules" name="breadcrumbs" style="xhtml" />
+			<div class="content span9">
+				<div class="page-header">
+					<jdoc:include type="modules" name="breadcrumbs" style="xhtml" />
+					<jdoc:include type="modules" name="actions" style="xhtml" />
+				</div>
+				
 				<jdoc:include type="component" />
 			</div>
-			<div class="sidebar span3">
+			<div class="inspector span3">
 				<jdoc:include type="modules" name="right" style="xhtmls" />
 			</div>
 		</div>

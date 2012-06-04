@@ -14,17 +14,6 @@ window.addEvent('domready', function(){
 });
 </script>
 
-<div class="page-header">
-	<h1><i class="icon icon-inbox icon-white"></i><?= @text('News') ?></h1>
-	<? if($agent) : ?>
-	<div class="toolbar">
-	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
-	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
-	    </a>
-    </div>
-	<? endif ?>
-</div>
-
 <div class="articles">
 	<? foreach($articles as $article) : ?>
 		<div class="article">
@@ -37,3 +26,15 @@ window.addEvent('domready', function(){
 </div>
 
 <?= @template('default_filter') ?>
+
+<? if($agent) : ?>
+<module title="" position="actions">
+
+<div class="toolbar">
+    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
+        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
+    </a>
+</div>
+
+</module>
+<? endif ?>
