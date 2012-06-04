@@ -15,6 +15,9 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
         $model = $this->getModel();
         $article = $model->getItem();
         
+        $pathway = JFactory::getApplication()->getPathway();
+        $pathway->addItem($this->escape($article->title), $this->createRoute('view=article&id='.$article->id.'&slug='.$article->slug));
+        
         if ($article->id && $article->isAttachable()) {
             $this->assign('attachments', $article->getAttachments());
         }
