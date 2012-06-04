@@ -29,12 +29,10 @@ window.addEvent('domready', function(){
 
 <? if($agent) : ?>
 <module title="" position="actions">
-
-<div class="toolbar">
-    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
-        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
-    </a>
-</div>
-
+	<div class="toolbar">
+	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
+	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
+	    </a>
+	</div>
 </module>
 <? endif ?>

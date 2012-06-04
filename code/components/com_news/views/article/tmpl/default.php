@@ -25,3 +25,17 @@
 
 	</div>
 </div>
+
+<? if($agent) : ?>
+<module title="" position="actions">
+	<div class="toolbar">
+	    <a class="btn btn-primary btn-small" href="#">
+	        <i class="icon-minus icon-white"></i> <?= @text('Delete') ?>
+	    </a>
+	</div>
+</module>
+<? endif ?>
+
+<? if($agent) : ?>
+    <module title="You are a moderator" position="right"><?= @template('default_sidebar'); ?></module>
+<? endif ?>
