@@ -25,7 +25,3 @@
 
 	</div>
 </div>
-
-<module title="Filter" position="left">
-	<?= @template('com://site/news.view.categories.list', array('categories' => @service('com://site/news.model.categories')->getList()))?>
-</module>

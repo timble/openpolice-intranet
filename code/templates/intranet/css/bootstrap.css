@@ -3571,7 +3571,7 @@ a.badge:hover {
   margin: 7px 20px;
 }
 .sidebar .module.mod_dynamic > ul {
-  margin: 0;
+  margin: 0 0 8px 0;
   padding: 0;
   list-style: none;
   font-weight: bold;
@@ -3617,6 +3617,11 @@ a.badge:hover {
   background-image: linear-gradient(top, #e89345, #de791c);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e89345', endColorstr='#de791c', GradientType=0);
+}
+.sidebar .module.mod_dynamic .form-actions {
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
 }
 html {
   overflow-y: scroll;
@@ -3738,6 +3743,15 @@ body {
 }
 .article .article-toolbar {
   margin: 0 0 16px 80px;
+}
+.filter-date {
+  padding: 0 20px;
+}
+.filter-date input {
+  width: auto;
+}
+.filter-date input#start_date {
+  width: 150px;
 }
 .comments {
   background-color: #ffffff;
