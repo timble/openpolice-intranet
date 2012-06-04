@@ -19,7 +19,7 @@
 					<div class="control-label"><label><?=@text( 'Going' )?></label></div>
 					<div class="controls">
 						<div class="input-append">
-						<input type="text" size="3" name="days_back" value="<?=($state->days_back) ? $state->days_back : '' ?>" /><span class="add-on"><?=@text( 'days back' )?></span>
+						<input type="text" size="1" name="days_back" value="<?=($state->days_back) ? $state->days_back : '' ?>" /><span class="add-on"><?=@text( 'days back' )?></span>
 						</div>
 					</div>
 				</div>

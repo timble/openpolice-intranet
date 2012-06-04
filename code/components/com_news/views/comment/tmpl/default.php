@@ -3,7 +3,7 @@
     	<?= @helper('com://admin/comments.template.helper.grid.gravatar', array('email' => $comment->created_by_email, 'size' => '48')) ?>
     </div>
     	
-    <div style="float:left;width:568px">       
+    <div style="float:left;width:530px">       
         <? if($comment->created_by == $user->id || $agent) : ?>
            <form action="<?= @route('view=comment&id='.$comment->id) ?>" method="post" class="-koowa-form">
                <input type="hidden" name="action" value="save" />
