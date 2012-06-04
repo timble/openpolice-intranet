@@ -5,8 +5,7 @@ class ComForaDatabaseTableTopics extends KDatabaseTableDefault
     {
         $config->append(array(
             'behaviors' => array(
-            	'creatable', 'lockable', 'modifiable', 'notifiable', 'sluggable', 'votable',
-                'com://admin/attachments.database.behavior.attachable'
+            	'creatable', 'lockable', 'modifiable', 'notifiable', 'sluggable', 'votable', 'attachable'
             ),
             'filters' => array(
             	'text' => 'html', 'tidy'

@@ -14,6 +14,7 @@ class ComForaViewCommentsHtml extends ComForaViewHtml
             ->id($topic->fora_forum_id)
             ->getItem();
         
+        $this->assign('topic', $topic);
         $this->assign('forum', $forum);
         $this->assign('topic', $topic);
         
@@ -27,7 +28,7 @@ class ComForaViewCommentsHtml extends ComForaViewHtml
             }
         }
         
-        $attachments = $this->getService('com://admin/attachments.model.attachments')
+        $attachments = $this->getService('com://admin/fora.model.attachments')
             ->table('comments_comments')
             ->row($comments->getColumn('id'))
             ->getList();

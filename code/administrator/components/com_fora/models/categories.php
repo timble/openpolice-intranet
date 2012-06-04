@@ -7,7 +7,7 @@ class ComForaModelCategories extends ComDefaultModelDefault
 
         $this->_state
             ->insert('published', 'boolean')
-            ->insert('subscription', 'int');
+            ->insert('product', 'int');
     }
     
     protected function _buildQueryJoins(KDatabaseQuery $query)
@@ -16,12 +16,12 @@ class ComForaModelCategories extends ComDefaultModelDefault
         
         if(!$state->isUnique())
         {
-            if(!is_null($state->subscription) && !empty($state->subscription))
+            if(!is_null($state->product))
             {
-                $ids = !empty($state->subscription) ? implode(',', (array) $state->subscription) : 0;
+                $ids = !empty($state->product) ? implode(',', (array) $state->product) : 0;
                 
-                $query->join('RIGHT', 'fora_categories_subscriptions AS subscription',
-                	'subscription.fora_category_id = tbl.fora_category_id AND subscription.subscriptions_subscription_id IN ('.$ids.')');
+                $query->join('RIGHT', 'fora_categories_products AS product',
+                	'product.fora_category_id = tbl.fora_category_id AND product.subscriptions_product_id IN ('.$ids.')');
             }
         }
     }

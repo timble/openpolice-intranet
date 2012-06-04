@@ -7,23 +7,23 @@ class ComForaDatabaseRowCategory extends KDatabaseRowDefault
         
         if($result = parent::save())
         {
-            if(in_array('subscriptions_subscription_id', $modified))
+            if(in_array('subscriptions_product_id', $modified))
             {
-                foreach($this->subscriptions as $subscription)
+                foreach($this->products as $product)
                 {
-                    if(!in_array($subscription->id, $this->subscriptions_subscription_id)) {
-                        $subscription->delete();
+                    if(!in_array($product->id, $this->subscriptions_product_id)) {
+                        $product->delete();
                     } else {
-                        unset($this->subscriptions_subscription_id[$subscription->id]);
+                        unset($this->subscriptions_product_id[$product->id]);
                     }
                 }
                 
-                foreach($this->subscriptions_subscription_id as $subscription)
+                foreach($this->_data['subscriptions_product_id'] as $product)
                 {
-                    $this->subscriptions->getRow(array(
+                    $row = $this->products->getRow(array(
                         'data' => array(
                         	'fora_category_id' => $this->id,
-                            'subscriptions_subscription_id' => $subscription
+                            'subscriptions_product_id' => $product
                         )
                     ))->save();
                 }
@@ -35,9 +35,9 @@ class ComForaDatabaseRowCategory extends KDatabaseRowDefault
     
     public function __get($name)
     {
-        if($name == 'subscriptions' && !isset($this->_data['subscriptions']))
+        if($name == 'products' && !isset($this->_data['products']))
         {
-            $this->_data['subscriptions'] = $this->getService('com://admin/fora.database.table.categories_subscriptions')
+            $this->_data['products'] = $this->getService('com://admin/fora.database.table.categories_products')
                 ->select(array('fora_category_id' => (int) $this->id));
         }
         

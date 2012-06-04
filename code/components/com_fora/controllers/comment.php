@@ -6,10 +6,10 @@ class ComForaControllerComment extends ComCommentsControllerComment
         parent::__construct($config);
         
         $this->addBehavior('com://admin/attachments.controller.behavior.attachable')
-        	->addBehavior('com://site/fora.controller.behavior.loggable');
+        	->addBehavior('com://admin/fora.controller.behavior.loggable');
         
         $this->getModel()->getTable()
-            ->addBehavior('com://admin/attachments.database.behavior.attachable')
+            ->addBehavior('com://admin/fora.database.behavior.attachable')
             ->addBehavior('com://admin/fora.database.behavior.commentable')
             ->addBehavior('com://admin/fora.database.behavior.notifiable');
     }

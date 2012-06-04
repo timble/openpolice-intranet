@@ -23,10 +23,10 @@
                 </tr>
                 <tr>
                     <td class="paramlist_key">
-                        <label><?= @text('Allowed Subscription Groups') ?></label>
+                        <label><?= @text('Allowed Product Groups') ?></label>
                     </td>
                     <td>
-                        <?= @helper('com://admin/subscriptions.template.helper.listbox.subscriptions', array('selected' => $category->subscriptions)) ?>
+                        <?= @helper('com://admin/subscriptions.template.helper.listbox.products', array('selected' => $category->products)) ?>
                     </td>
                 </tr>
             </table>

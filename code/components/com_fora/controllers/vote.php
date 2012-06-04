@@ -5,7 +5,7 @@ class ComForaControllerVote extends ComDefaultControllerDefault
 	{
 		parent::__construct($config);
 	
-		$this->addBehavior('com://site/fora.controller.behavior.loggable');
+		$this->addBehavior('com://admin/fora.controller.behavior.loggable');
 	}
 	
     protected function _initialize(KConfigInterface $config)

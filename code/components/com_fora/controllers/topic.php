@@ -6,7 +6,7 @@ class ComForaControllerTopic extends ComDefaultControllerDefault
         parent::__construct($config);
         
         $this->addBehavior('com://admin/attachments.controller.behavior.attachable')
-        	->addBehavior('com://site/fora.controller.behavior.loggable');
+        	->addBehavior('com://admin/fora.controller.behavior.loggable');
         
 		$this->registerCallback('after.save', array($this, 'afterSave'));
     }

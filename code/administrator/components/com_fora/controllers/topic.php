@@ -6,7 +6,7 @@ class ComForaControllerTopic extends ComDefaultControllerDefault
         $config->append(array(
             'behaviors' => array(
             				'com://admin/attachments.controller.behavior.attachable',
-            				'com://admin/activities.controller.behavior.loggable'
+            				'com://admin/fora.controller.behavior.loggable'
             			)
         ));
         

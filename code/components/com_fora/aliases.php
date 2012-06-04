@@ -12,6 +12,5 @@ KService::setAlias('com://site/fora.model.topics', 'com://admin/fora.model.topic
 KService::setAlias('com://site/fora.model.votes', 'com://admin/fora.model.votes');
 
 KService::setAlias('com://site/fora.model.activities', 'com://admin/fora.model.activities');
-//KService::setAlias('com://site/activities.controller.activities', 'com://admin/activities.controller.activities');
 
 KService::setAlias('com://site/fora.template.helper.listbox', 'com://admin/fora.template.helper.listbox');

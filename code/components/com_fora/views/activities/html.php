@@ -8,7 +8,6 @@ class ComForaViewActivitiesHtml extends ComForaViewHtml
 
         $this->assign('categories', $categories);
         
-                
         return parent::display();
     }
 }

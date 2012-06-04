@@ -7,16 +7,17 @@ class ComForaControllerCategory extends ComDefaultControllerDefault
         
         if($user->gid == 18)
         { 
-            $subscribers = $this->getService('com://admin/subscriptions.model.subscribers')
+            $subscriptions = $this->getService('com://admin/subscriptions.model.subscriptions')
                 ->user_id($user->id)
+                ->status('active')
                 ->getList();
             
             $this->getModel()->set(array(
                 'published'    => true,
-                'subscription' => $subscribers->getColumn('subscriptions_subscription_id')
+                'product' => $subscriptions->getColumn('subscriptions_product_id')
             ));
         }
-        
+
         return parent::_actionBrowse($context);
     }
 }

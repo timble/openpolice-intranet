@@ -41,34 +41,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="frame">
-			<div class="frame__header">
-			    <h2><?= @text('Comments') ?></h2>
-			</div>
-			<? if($topic->total_comments) : ?>
-			<div class="content spacing">
-				<?= @service('com://site/fora.controller.comment', array('request' => array('type' => $topic->type)))
-				    ->view('comments')
-				    ->table('fora_topics')
-				    ->row($topic->id)
-				    ->display();
-				?>
-			</div>
-			<? endif ?>
-			<div class="content comments">
-				<? if($topic->commentable) : ?>
-				<?= @service('com://site/fora.controller.comment')
-				    ->view('comment')
-				    ->layout('form')
-				    ->table('fora_topics')
-				    ->row($topic->id)
-				    ->display();
-				?>
-				<? else : ?>
-				<p class="spacing"><?= @text('Topic is closed for comments') ?></p>
-				<? endif; ?>
-			</div>
-		</div>
+
+		<?= @template('com://site/fora.view.comments.default') ?>
 </div>
 
 <? if($agent) : ?>

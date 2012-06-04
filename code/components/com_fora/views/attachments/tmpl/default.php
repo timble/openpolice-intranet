@@ -7,7 +7,7 @@
     <ul class="attachments">
     <? foreach($list as $item) : ?>
         <li>
-            <? if (in_array(strtolower(pathinfo($item->name, PATHINFO_EXTENSION)), ComFilesDatabaseRowFile::$image_extensions)) : ?>
+            <? if($item->file->isImage()) : ?>
                 <a href="<?= @route('view=attachment&format=file&id='.$item->id) ?>" class="modal" rel="{handler: 'image'}"><?= @escape($item->name) ?></a>
             <? else : ?>
                 <a href="<?= @route('view=attachment&format=file&id='.$item->id) ?>"><?= @escape($item->name) ?></a>
