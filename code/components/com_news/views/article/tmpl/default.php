@@ -28,10 +28,9 @@
 
 <? if($agent) : ?>
 <module title="" position="actions">
-	<div class="toolbar">
-	    <a class="btn btn-primary btn-small" href="#">
-	        <i class="icon-minus icon-white"></i> <?= @text('Delete') ?>
-	    </a>
+	<div class="toolbar btn-group">
+	    <a class="btn  btn-small" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
+	    <a class="btn btn-danger btn-small" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
 	</div>
 </module>
 <? endif ?>

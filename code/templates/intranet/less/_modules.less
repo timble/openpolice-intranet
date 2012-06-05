@@ -91,6 +91,30 @@
 	}
 }
 
+.article-form {	
+	form {
+		margin: 0;
+		
+		input[name="title"] {
+			width: 100%;
+			.box-sizing(border-box);
+			font-size: @baseFontSize * 2;
+			height: @baseLineHeight * 2.75;
+			line-height: @baseLineHeight * 2.75;
+		}
+		
+		.editor-container {
+			border: 1px solid #D5D5D5;
+			border-bottom: 0 none;
+		}
+	}
+	
+	.form-actions {
+		margin: 0;
+		.border-radius(0 0 5px 5px);
+	}
+}
+
 
 .comments {
 	background-color: @white;

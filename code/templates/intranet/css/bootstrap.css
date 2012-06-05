@@ -3769,6 +3769,29 @@ body {
 .article .article-toolbar {
   margin: 0 0 16px 80px;
 }
+.article-form form {
+  margin: 0;
+}
+.article-form form input[name="title"] {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 26px;
+  height: 49.5px;
+  line-height: 49.5px;
+}
+.article-form form .editor-container {
+  border: 1px solid #D5D5D5;
+  border-bottom: 0 none;
+}
+.article-form .form-actions {
+  margin: 0;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
 .comments {
   background-color: #ffffff;
   -webkit-border-radius: 0 0 5px 5px;
@@ -3845,4 +3868,92 @@ body {
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
+}
+/* Forms validation message */
+.validation-advice {
+  clear: both;
+  font-size: 11px;
+  color: #7e5501;
+  border-radius: 5px;
+  /*border-top-left-radius: 2.5px 5px;*/
+
+  float: left;
+  position: relative;
+  margin-top: 15px;
+  overflow: visible!important;
+  top: -10px;
+  left: 1px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 6px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-shadow: white 0 1px 1px;
+  background-color: #fff3c5;
+  background-image: -webkit-linear-gradient(top, #fff3c5, #ffe78f);
+  background-image: -moz-linear-gradient(top, #fff3c5, #ffe78f);
+  background-image: linear-gradient(top, #fff3c5, #ffe78f);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff3c5), to(#ffe78f));
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 7px, rgba(255, 213, 46, 0.6) 0 0 1px, #ffffff 0 0 1px inset, #ffffff 0 0 1px inset, #ffffff 0 0 1px inset, rgba(255, 255, 255, 0.6) 0 1px 0 inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 7px, rgba(255, 213, 46, 0.6) 0 0 1px, #ffffff 0 0 1px inset, rgba(255, 255, 255, 0.6) 0 1px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 7px, rgba(255, 213, 46, 0.6) 0 0 1px, #ffffff 0 0 1px inset, rgba(255, 255, 255, 0.6) 0 1px 0 inset;
+}
+.validation-advice::before,
+.validation-advice::after {
+  content: '▾';
+  font-family: Arial;
+  color: #fff3c5;
+  -webkit-transform: rotate(180deg);
+  display: block;
+  position: absolute;
+}
+.validation-advice::before {
+  text-shadow: white 0 1px 0;
+  top: -22px;
+  z-index: 1;
+  font-size: 36px;
+  left: 10px;
+}
+.validation-advice::after {
+  content: '▾';
+  color: rgba(102, 82, 0, 0.4);
+  text-shadow: rgba(0, 0, 0, 0.1) 0 2px 7px;
+  top: -24px;
+  font-size: 38px;
+  left: 9px;
+}
+.validation-failed,
+.required,
+input[class*=validate],
+select[class*=validate] {
+  float: left;
+}
+td .validation-advice {
+  margin-top: 5px;
+  top: 0px;
+  float: left;
+}
+/* @group Bootstrap overrides */
+h1 {
+  font-size: 24px;
+}
+/* @end group */
+.navbar-inner {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  /* Bootstrap override */
+
+}
+.navbar .nav > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 15px;
+}
+.navbar .nav > .active > a {
+  -webkit-box-shadow: inset 0px 0px 30px #080808;
+  -moz-box-shadow: inset 0px 0px 30px #080808;
+  box-shadow: inset 0px 0px 30px #080808;
 }
