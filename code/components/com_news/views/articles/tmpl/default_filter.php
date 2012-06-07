@@ -1,7 +1,7 @@
 <module title="Filter" position="right">
 	<?= @template('com://site/news.view.categories.list', array('categories' => @service('com://site/news.model.categories')->getList()))?>
 	<div class="filter-date">
-		<form action="" method="get" class="-koowa-form">
+		<form action="" method="get" class="-koowa-form" id="activities-filter">
 			<fieldset>
 				<legend><?= @text('Date') ?></legend>	
 				<div class="control-group">
