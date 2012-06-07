@@ -16,7 +16,7 @@
         <? else : ?>
             <?= $comment->text ?>
         <? endif ?>
-        <?= @template('com://admin/attachments.view.attachments.list', array('row' => $comment->id, 'table' => 'comments_comments')); ?>
+        <?= @template('com://site/news.view.attachments.list', array('row' => $comment->id, 'table' => 'comments_comments')); ?>
         <div class="comment-footer">
             <?= @text('Posted') ?> <?= @helper('date.humanize', array('date' => $comment->created_on)) ?> <?= @text('by') ?> <strong><?= @escape($comment->created_by_name) ?></strong>
             <? if ($agent) : ?>
