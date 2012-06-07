@@ -3869,6 +3869,9 @@ body {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
+.mod_access_select form {
+  margin-bottom: 0;
+}
 /* Forms validation message */
 .validation-advice {
   clear: both;
