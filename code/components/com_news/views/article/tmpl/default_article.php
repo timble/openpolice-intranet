@@ -15,3 +15,8 @@
 <div class="article-attachments">
 	<?= @template('com://site/news.view.attachments.default') ?>
 </div>
+
+<div class="article-toolbar btn-group">
+    <a class="btn  btn-mini" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
+    <a class="btn btn-danger btn-mini" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
+</div>
