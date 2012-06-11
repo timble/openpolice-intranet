@@ -19,7 +19,7 @@
 					'format' => '%d-%m-%Y',
 					'attribs' => array('style' => 'width: 70px')
 				)); ?>				
-		<input class="btn btn-primary btn-mini" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
+		<input class="btn btn-small" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
 		<a href="<?= @route('view=articles') ?>">
 		   Reset
 		</a>
