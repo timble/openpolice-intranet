@@ -13,7 +13,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="">
 				<a class="brand" href="index.php">Intranet Arro Veurne</a>
 				<jdoc:include type="modules" name="topmenu" style="notitle" />
 				<jdoc:include type="modules" name="user4" style="search" />
@@ -22,22 +22,27 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		</div>
 	</div>
 
-	<div id="frame" class="container">
+	<div id="frame" class="">
 		<div class="row">
-			<div class="sidebar span2">
+			<div class="sidebar span1">
 				<jdoc:include type="modules" name="left" style="xhtmls" />
+				test
 			</div>
-			<div class="content span9">
-				<div class="page-header">
-					<jdoc:include type="modules" name="breadcrumbs" style="xhtml" />
-					<jdoc:include type="modules" name="actions" style="xhtml" />
+			<div class="content span11">
+				<div class="module-scopebar">
+					<jdoc:include type="modules" name="scopebar" style="xhtml" />
 				</div>
 				
-				<jdoc:include type="component" />
+				<div class="row">
+					<div class="span8">
+						<jdoc:include type="component" />
+					</div>
+					<div class="inspector span3">
+						<jdoc:include type="modules" name="right" style="xhtmls" />
+					</div>
+				</div>
 			</div>
-			<div class="inspector span3">
-				<jdoc:include type="modules" name="right" style="xhtmls" />
-			</div>
+			
 		</div>
 	</div>
 	<jdoc:include type="modules" name="debug" />

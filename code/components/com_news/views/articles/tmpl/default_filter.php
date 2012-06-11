@@ -1,36 +1,24 @@
-<module title="Filter" position="right">
-	<?= @template('com://site/news.view.categories.list', array('categories' => @service('com://site/news.model.categories')->getList()))?>
-	<div class="filter-date">
-		<form action="" method="get" class="-koowa-form" id="activities-filter">
-			<fieldset>
-				<legend><?= @text('Date') ?></legend>	
-				<div class="control-group">
-					<div class="control-label"><label><?= @text('Show articles from') ?></label></div>
-					<div class="controls">
-						<?= @helper('behavior.calendar',
-								array(
-									'date' => $state->start_date,
-									'name' => 'start_date',
-									'format' => '%Y-%m-%d'
-								)); ?>
-					</div>
-				</div>
-				<div class="control-group">
-					<div class="control-label"><label><?=@text( 'Going' )?></label></div>
-					<div class="controls">
-						<div class="input-append">
-						<input type="text" size="1" name="days_back" value="<?=($state->days_back) ? $state->days_back : '' ?>" /><span class="add-on"><?=@text( 'days back' )?></span>
-						</div>
-					</div>
-				</div>
-				
-			</fieldset>
-		</form>
+<module title="" position="scopebar">
+	<div style="float: left;">
+		<?= @template('com://site/news.view.categories.list', array('categories' => @service('com://site/news.model.categories')->getList()))?>
 	</div>
-	<div class="form-actions" style="margin: 0;">
+	<form style="float: right;" action="" method="get" class="-koowa-form form-inline">			
+		<label><?= @text('From') ?></label>
+		<?= @helper('behavior.calendar',
+				array(
+					'date' => $state->start_date,
+					'name' => 'start_date',
+					'format' => '%d-%m-%Y',
+					'attribs' => array('style' => 'width: 70px')
+				)); ?>
+		<label><?=@text( 'till' )?></label>				
+		<div class="input-append">
+			<input type="text" style="width: 20px;" name="days_back" value="<?=($state->days_back) ? $state->days_back : '' ?>" /><span class="add-on"><?=@text( 'days back' )?></span>
+		</div>
+		
 		<input class="btn btn-primary" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
 		<a href="<?= @route('view=articles') ?>">
 		   Reset
 		</a>
-	</div>
+	</form>
 </module>

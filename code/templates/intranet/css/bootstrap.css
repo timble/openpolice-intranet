@@ -3872,6 +3872,17 @@ body {
 .mod_access_select form {
   margin-bottom: 0;
 }
+.module-scopebar {
+  *zoom: 1;
+}
+.module-scopebar:before,
+.module-scopebar:after {
+  display: table;
+  content: "";
+}
+.module-scopebar:after {
+  clear: both;
+}
 /* Forms validation message */
 .validation-advice {
   clear: both;
