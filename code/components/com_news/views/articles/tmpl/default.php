@@ -40,3 +40,12 @@ window.addEvent('domready', function(){
 <module title="" position="header">
 	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
 </module>
+
+<module title="" position="sidebar">
+	<h3>Eventementen</h3>
+	<ul class="module-events">
+		<li>Actie 1<br /><small>Tomorrow</small></li>
+		<li>Actie 2<br /><small>21-06</small></li>
+		<li>Actie 3<br /><small>28-06</small></li>
+	</ul>
+</module>

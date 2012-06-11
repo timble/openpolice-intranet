@@ -3677,6 +3677,12 @@ body {
 .main .main-component {
   padding: 20px;
 }
+.main .main-sidebar {
+  padding: 20px 20px 0 0;
+}
+.main .main-sidebar h3 {
+  margin-bottom: 6px;
+}
 .page-header {
   *zoom: 1;
   padding: 8px 16px;
@@ -3745,15 +3751,15 @@ body {
   color: #999;
   font-size: 12px;
   border-bottom: 1px solid #d7d7d7;
-  background-color: #f3f3f3;
-  background-image: -moz-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: -ms-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e9e9e9));
-  background-image: -webkit-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: -o-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: linear-gradient(top, #fafafa, #e9e9e9);
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #fafafa, #f3f3f3);
+  background-image: -ms-linear-gradient(top, #fafafa, #f3f3f3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#f3f3f3));
+  background-image: -webkit-linear-gradient(top, #fafafa, #f3f3f3);
+  background-image: -o-linear-gradient(top, #fafafa, #f3f3f3);
+  background-image: linear-gradient(top, #fafafa, #f3f3f3);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#e9e9e9', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#f3f3f3', GradientType=0);
   -webkit-border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
@@ -3923,6 +3929,18 @@ body {
 .nav-apps a:hover.item2,
 .nav-apps a.active.item2 {
   background-image: url("../img/icons/32/id_card.png");
+}
+.module-events {
+  list-style: none;
+  margin: 0;
+}
+.module-events li {
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.module-events li small {
+  color: #999999;
 }
 /* Forms validation message */
 .validation-advice {

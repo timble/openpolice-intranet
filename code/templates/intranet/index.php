@@ -32,9 +32,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 					<div class="main-component span9">
 						<jdoc:include type="component" />
 					</div>
-					<div class="inspector span3">
-						<jdoc:include type="modules" name="right" style="xhtmls" />
-						sss
+					<div class="main-sidebar span3">
+						<jdoc:include type="modules" name="sidebar" style="xhtmls" />
 					</div>
 				</div>
 			</div>
