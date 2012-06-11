@@ -11,38 +11,33 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.css" type="text/css" />
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="">
-				<a class="brand" href="index.php">Intranet Arro Veurne</a>
-				<jdoc:include type="modules" name="topmenu" style="notitle" />
-				<jdoc:include type="modules" name="user4" style="search" />
+
+	<div id="frame">
+		<div class="row">
+			<div id="header" class="span11 offset1">
 				<jdoc:include type="modules" name="access" style="xhtml" />
 			</div>
 		</div>
-	</div>
-
-	<div id="frame" class="">
+		
 		<div class="row">
-			<div class="sidebar span1">
-				<jdoc:include type="modules" name="left" style="xhtmls" />
-				test
+			<div class="span1">
+				<jdoc:include type="modules" name="apps" style="xhtmls" />
 			</div>
-			<div class="content span11">
-				<div class="module-scopebar">
+			<div class="main span11">
+				<div class="main-scopebar">
 					<jdoc:include type="modules" name="scopebar" style="xhtml" />
 				</div>
 				
-				<div class="row">
-					<div class="span8">
+				<div class="row-fluid">
+					<div class="main-component span9">
 						<jdoc:include type="component" />
 					</div>
 					<div class="inspector span3">
 						<jdoc:include type="modules" name="right" style="xhtmls" />
+						sss
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 	<jdoc:include type="modules" name="debug" />

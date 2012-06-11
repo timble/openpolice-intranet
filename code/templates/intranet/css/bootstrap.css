@@ -3637,23 +3637,42 @@ html {
 }
 body {
   background: url(../img/body-bg.png) repeat 0 0;
+  margin-left: 20px;
 }
 #header {
-  margin-top: 40px;
-  padding: 10px 0;
-  height: 80px;
+  *zoom: 1;
+  padding: 14px 0;
 }
-#header img {
+#header:before,
+#header:after {
+  display: table;
+  content: "";
+}
+#header:after {
+  clear: both;
+}
+.main {
+  background-color: white;
+  border: 1px solid #d7d7d7;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px;
 }
-#frame {
-  padding: 20px 0;
-  margin-top: 40px;
+.main .main-scopebar {
+  *zoom: 1;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 14px 20px 14px 20px;
+}
+.main .main-scopebar:before,
+.main .main-scopebar:after {
+  display: table;
+  content: "";
+}
+.main .main-scopebar:after {
+  clear: both;
+}
+.main .main-component {
+  padding: 20px;
 }
 .page-header {
   *zoom: 1;
@@ -3712,7 +3731,7 @@ body {
 }
 .article {
   background-color: #ffffff;
-  border: 1px solid #D5D5D5;
+  border: 1px solid #d7d7d7;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -3722,7 +3741,7 @@ body {
   padding: 16px 20px 10px 16px;
   color: #999;
   font-size: 12px;
-  border-bottom: 1px solid #D5D5D5;
+  border-bottom: 1px solid #d7d7d7;
   background-color: #f3f3f3;
   background-image: -moz-linear-gradient(top, #fafafa, #e9e9e9);
   background-image: -ms-linear-gradient(top, #fafafa, #e9e9e9);
@@ -3757,8 +3776,8 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #e2e2e2;
-  background-color: #fbfbfb;
+  border: 1px solid #e4e4e4;
+  background-color: #fdfdfd;
 }
 .article .article-text {
   padding: 16px 80px;
@@ -3783,7 +3802,7 @@ body {
   line-height: 49.5px;
 }
 .article-form form .editor-container {
-  border: 1px solid #D5D5D5;
+  border: 1px solid #d7d7d7;
   border-bottom: 0 none;
 }
 .article-form .form-actions {
@@ -3800,8 +3819,8 @@ body {
 }
 .comments > .title {
   padding: 4px 16px;
-  border-top: 1px solid #D5D5D5;
-  border-bottom: 1px solid #D5D5D5;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
   background-color: #f3f3f3;
   background-image: -moz-linear-gradient(top, #fafafa, #e9e9e9);
   background-image: -ms-linear-gradient(top, #fafafa, #e9e9e9);
@@ -3816,7 +3835,7 @@ body {
   *zoom: 1;
   margin: 0 16px;
   padding: 16px 64px 16px 0;
-  border-bottom: 1px dotted #D5D5D5;
+  border-bottom: 1px dotted #d7d7d7;
 }
 .comments .comment-default:before,
 .comments .comment-default:after {
@@ -3832,7 +3851,7 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #e4e4e4;
 }
 .comments .comment-default .comment-avatar img {
   -webkit-border-radius: 5px;
@@ -3846,7 +3865,7 @@ body {
   margin-bottom: 0;
 }
 .comments .comment-form {
-  border: 1px solid #D5D5D5;
+  border: 1px solid #d7d7d7;
   margin: 16px;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -3872,16 +3891,35 @@ body {
 .mod_access_select form {
   margin-bottom: 0;
 }
-.module-scopebar {
-  *zoom: 1;
+.nav-apps {
+  margin-top: 10px;
 }
-.module-scopebar:before,
-.module-scopebar:after {
-  display: table;
-  content: "";
+.nav-apps a {
+  padding-top: 36px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: #999999;
+  font-size: 11px;
+  text-align: center;
 }
-.module-scopebar:after {
-  clear: both;
+.nav-apps a.item2 {
+  background-image: url("../img/icons/32/home-gray.png");
+}
+.nav-apps a.item3 {
+  background-image: url("../img/icons/32/id_card-gray.png");
+}
+.nav-apps a:hover,
+.nav-apps a.active {
+  color: #555555;
+}
+.nav-apps a:hover.item2,
+.nav-apps a.active.item2 {
+  background-image: url("../img/icons/32/home.png");
+}
+.nav-apps a:hover.item3,
+.nav-apps a.active.item3 {
+  background-image: url("../img/icons/32/id_card.png");
 }
 /* Forms validation message */
 .validation-advice {
@@ -3954,6 +3992,9 @@ h1 {
   font-size: 24px;
 }
 /* @end group */
+form {
+  margin-bottom: 0;
+}
 .navbar-inner {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

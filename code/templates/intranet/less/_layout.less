@@ -3,21 +3,30 @@ html {
 }
 
 body {
-	background: url(../img/body-bg.png) repeat 0 0
+	background: url(../img/body-bg.png) repeat 0 0;
+	margin-left: 20px;
+}
+#header {
+	.clearfix();
+	
+	padding: 14px 0;
 }
 
-#header {
-	margin-top: 40px;
-	padding: 10px 0;
-
-	height: 80px;
-	img {
-		.border-radius(5px);
-		.box-shadow(hsla(0, 0%, 0%, 0.5) 0px 0px 6px);
+.main {
+	background-color: white;
+	border: 1px solid @borderColor;
+	
+	.border-radius(5px);
+	
+	.main-scopebar {
+		.clearfix();
+		border-bottom: 1px solid @borderColor;
+		
+		padding: 14px 20px 14px 20px;
+	}
+	
+	.main-component {
+		padding: 20px;
 	}
 }
 
-#frame {
-	padding: 20px 0;
-	margin-top: 40px;
-}
