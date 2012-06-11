@@ -1,6 +1,11 @@
 <div class="article">
 	<?= @template('default_article') ?>
 	
+	<div class="article-toolbar btn-group">
+	    <a class="btn  btn-mini" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
+	    <a class="btn btn-danger btn-mini" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
+	</div>
+	
 	<div class="comments">
 		<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?></h3>
 		
