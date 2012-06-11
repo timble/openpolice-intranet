@@ -11,12 +11,15 @@
 					'format' => '%d-%m-%Y',
 					'attribs' => array('style' => 'width: 70px')
 				)); ?>
-		<label><?=@text( 'till' )?></label>				
-		<div class="input-append">
-			<input type="text" style="width: 20px;" name="days_back" value="<?=($state->days_back) ? $state->days_back : '' ?>" /><span class="add-on"><?=@text( 'days back' )?></span>
-		</div>
-		
-		<input class="btn btn-primary" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
+		<label><?=@text( 'till' )?></label>
+		<?= @helper('behavior.calendar',
+				array(
+					'date' => $state->end_date,
+					'name' => 'end_date',
+					'format' => '%d-%m-%Y',
+					'attribs' => array('style' => 'width: 70px')
+				)); ?>				
+		<input class="btn btn-primary btn-mini" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
 		<a href="<?= @route('view=articles') ?>">
 		   Reset
 		</a>
