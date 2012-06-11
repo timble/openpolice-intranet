@@ -3903,22 +3903,22 @@ body {
   font-size: 11px;
   text-align: center;
 }
-.nav-apps a.item2 {
+.nav-apps a.item1 {
   background-image: url("../img/icons/32/home-gray.png");
 }
-.nav-apps a.item3 {
+.nav-apps a.item2 {
   background-image: url("../img/icons/32/id_card-gray.png");
 }
 .nav-apps a:hover,
 .nav-apps a.active {
   color: #555555;
 }
-.nav-apps a:hover.item2,
-.nav-apps a.active.item2 {
+.nav-apps a:hover.item1,
+.nav-apps a.active.item1 {
   background-image: url("../img/icons/32/home.png");
 }
-.nav-apps a:hover.item3,
-.nav-apps a.active.item3 {
+.nav-apps a:hover.item2,
+.nav-apps a.active.item2 {
   background-image: url("../img/icons/32/id_card.png");
 }
 /* Forms validation message */
