@@ -20,7 +20,7 @@
 					'attribs' => array('style' => 'width: 70px')
 				)); ?>				
 		<input class="btn btn-small" type="submit" value="<?= @text('Go') ?>" /> <?=@text( 'or' )?>
-		<a href="<?= @route('view=articles') ?>">
+		<a href="<?= @route('&start_date=&end_date=') ?>">
 		   Reset
 		</a>
 	</form>
