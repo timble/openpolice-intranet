@@ -36,3 +36,7 @@ window.addEvent('domready', function(){
 	</div>
 </module>
 <? endif ?>
+
+<module title="" position="header">
+	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
+</module>
