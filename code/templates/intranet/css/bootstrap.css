@@ -3651,6 +3651,9 @@ body {
 #header:after {
   clear: both;
 }
+#header .moduletable {
+  margin-top: 10px;
+}
 .main {
   background-color: white;
   border: 1px solid #d7d7d7;

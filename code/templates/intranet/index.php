@@ -11,11 +11,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.css" type="text/css" />
 </head>
 <body>
-
 	<div id="frame">
-		<div class="row">
-			<div id="header" class="span11 offset1">
-				<jdoc:include type="modules" name="access" style="xhtml" />
+		<div id="header" class="row">
+			<div class="span12">
+				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo-en.png" alt="" border="0" style="float: left;margin: 0 40px 0 15px;">
+				<jdoc:include type="modules" name="header" style="xhtml" />
 			</div>
 		</div>
 		
