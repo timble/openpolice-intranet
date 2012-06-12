@@ -8,6 +8,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <head>	
 	<jdoc:include type="head" />
 	
+	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.css" type="text/css" />
 </head>
 <body>
