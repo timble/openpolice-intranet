@@ -3801,9 +3801,18 @@ body {
 .article .article-toolbar {
   margin: 0 0 16px 80px;
 }
+.event {
+  background-color: #ffffff;
+  border: 1px solid #d7d7d7;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.event-form form,
 .article-form form {
   margin: 0;
 }
+.event-form form input[name="title"],
 .article-form form input[name="title"] {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -3814,10 +3823,12 @@ body {
   height: 49.5px;
   line-height: 49.5px;
 }
+.event-form form .editor-container,
 .article-form form .editor-container {
   border: 1px solid #d7d7d7;
   border-bottom: 0 none;
 }
+.event-form .form-actions,
 .article-form .form-actions {
   margin: 0;
   -webkit-border-radius: 0 0 5px 5px;
@@ -3922,6 +3933,9 @@ body {
 .nav-apps a.item2 {
   background-image: url("../img/icons/32/id_card-gray.png");
 }
+.nav-apps a.item3 {
+  background-image: url("../img/icons/32/calendar_empty-gray.png");
+}
 .nav-apps a:hover,
 .nav-apps a.active {
   color: #555555;
@@ -3933,6 +3947,10 @@ body {
 .nav-apps a:hover.item2,
 .nav-apps a.active.item2 {
   background-image: url("../img/icons/32/id_card.png");
+}
+.nav-apps a:hover.item3,
+.nav-apps a.active.item3 {
+  background-image: url("../img/icons/32/calendar_empty.png");
 }
 .module-events {
   list-style: none;
