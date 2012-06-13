@@ -76,11 +76,6 @@
                     <? endif ?>
                 </table>
             </div>
-            
-	        <div class="panel categories group">
-	            <h3><?= @text('Forum') ?></h3>
-	            <?// @template('form_categories', array('categories' => $categories, 'article' => $article, 'forums' => $forums)) ?>
-	        </div>
         <? endif ?>
     </div>
 </form>
