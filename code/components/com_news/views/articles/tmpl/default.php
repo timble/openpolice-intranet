@@ -1,19 +1,3 @@
-<?= @helper('behavior.mootools') ?>
-
-<script inline>
-window.addEvent('domready', function(){
-	/* Reset the filter values to blank */
-	document.id('activities-filter').addEvent('reset', function(e){
-		e.target.getElements('input').each(function(el){
-			if(['days_back','start_date', 'user'].contains(el.name)){
-				el.value = '';
-			}
-		});
-		e.target.submit();
-	});
-});
-</script>
-
 <div class="articles">
 	<? if($agent) : ?>
 	<div class="articles-toolbar">
