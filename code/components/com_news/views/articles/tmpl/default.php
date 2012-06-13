@@ -1,7 +1,11 @@
 <div class="articles">
 	<? if($agent) : ?>
 	<div class="articles-toolbar">
+	    <? if($state->category) : ?>
 	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
+	    <? else : ?>
+	    <a class="btn btn-primary btn-small disabled" href="#">
+	    <? endif ?>
 	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
 	    </a>
 	</div>
