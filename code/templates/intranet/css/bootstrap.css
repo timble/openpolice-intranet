@@ -3683,6 +3683,9 @@ body {
 .main .main-sidebar h3 {
   margin-bottom: 6px;
 }
+.main-sidebar .module {
+  margin-bottom: 20px;
+}
 .page-header {
   *zoom: 1;
   padding: 8px 16px;
