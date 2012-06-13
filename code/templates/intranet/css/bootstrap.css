@@ -3735,6 +3735,10 @@ body {
 .page-header .moduletable > .toolbar {
   float: right;
 }
+.articles .articles-toolbar {
+  text-align: right;
+  margin-bottom: 10px;
+}
 .articles > .article {
   margin-bottom: 24px;
 }
