@@ -11,6 +11,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/print.css" type="text/css" media="print" />
 </head>
 <body>
 	<div id="frame">
@@ -22,7 +23,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		</div>
 		
 		<div class="row">
-			<div class="span1">
+			<div class="frame-sidebar span1">
 				<jdoc:include type="modules" name="apps" style="xhtmls" />
 			</div>
 			<div class="main span11">
