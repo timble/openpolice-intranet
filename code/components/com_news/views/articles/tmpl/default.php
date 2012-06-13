@@ -15,6 +15,13 @@ window.addEvent('domready', function(){
 </script>
 
 <div class="articles">
+	<? if($agent) : ?>
+	<div class="articles-toolbar">
+	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
+	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
+	    </a>
+	</div>
+	<? endif ?>
 	<? foreach($articles as $article) : ?>
 		<div class="article">
 			<?= @template('com://site/news.view.article.default_article', array('article' => $article)) ?>
@@ -26,16 +33,6 @@ window.addEvent('domready', function(){
 </div>
 
 <?= @template('default_filter') ?>
-
-<? if($agent) : ?>
-<module title="" position="actions">
-	<div class="toolbar">
-	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
-	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
-	    </a>
-	</div>
-</module>
-<? endif ?>
 
 <module title="" position="header">
 	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
