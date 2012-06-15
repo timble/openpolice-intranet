@@ -19,6 +19,13 @@ class ComNewsControllerArticle extends ComDefaultControllerDefault
             )
         ));
         
+        if(KRequest::method() != 'GET')
+        {
+        	$config->request->append(array(
+        		'id' => KRequest::get('post.id', 'int')
+        	));
+        }
+        
         parent::_initialize($config);
     }
     
