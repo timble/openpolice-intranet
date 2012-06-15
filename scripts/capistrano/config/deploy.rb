@@ -1,13 +1,13 @@
 # Application settings.
 set :application, "belgian-police-intranet"
-server "", :app, :web, :db, :primary => true
+server "192.168.21.5", :app, :web, :db, :primary => true
 
 # Server user settings.
-set :user, ""
+set :user, "root"
 set :use_sudo, false
 
 # Deployment settings.
-set :deploy_to, ""
+set :deploy_to, "/var/www/test/capistrano"
 set :deploy_via, :copy
 set :copy_cache, true
 set :copy_exclude, [".git/*", ".gitignore"]
