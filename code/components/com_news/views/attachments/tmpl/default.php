@@ -7,7 +7,7 @@
     <? foreach($list as $item) : ?>
     	<? if($item->file->isImage()) : ?>
     	<a href="<?= @route('view=attachment&format=file&id='.$item->id) ?>" class="modal" rel="{handler: 'image'}">
-    	   <img src="/sites/default/attachments/<?= @escape($item->path) ?>" />
+    	   <img src="<?= $item->thumbnail->thumbnail ?>" />
     	</a>
     	<? endif ?>
     <? endforeach ?>
