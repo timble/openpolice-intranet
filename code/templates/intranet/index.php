@@ -41,6 +41,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="span11 offset1 mod_syndicate">
+				<jdoc:include type="modules" name="syndicate" style="raw" />
+			</div>
+		</div>
 	</div>
 	<jdoc:include type="modules" name="debug" />
 </body>
