@@ -9,7 +9,9 @@
 	<? endforeach ?>
 </div>
 
-<?= @template('default_filter') ?>
+<module title="" position="scopebar">
+	<?= @template('default_scopebar') ?>
+</module>
 
 <module title="" position="header">
 	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
