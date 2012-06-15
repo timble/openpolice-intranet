@@ -22,7 +22,8 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
             $this->assign('attachments', $article->getAttachments());
         }
         
-        switch ($this->getLayout()) {
+        switch ($this->getLayout())
+        {
             case 'form':
                 if(JFactory::getUser()->gid == 18)
                 {
@@ -36,6 +37,17 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
                 $this->assign('editor_settings', $editor_settings);
                 
                 break;
+            case 'default':
+            default:
+            	$user = JFactory::getUser();
+            	
+            	if($article->commentable)
+            	{
+            		$subscription = $this->getService('com://admin/news.database.table.subscriptions')
+            							->select(array('news_article_id' => $article->id, 'user_id' => $user->id), KDatabase::FETCH_ROW);
+            		$this->assign('subscribed', !$subscription->isNew());
+            	}
+            	break;
         }
         
         return parent::display();

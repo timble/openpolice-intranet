@@ -1,47 +1,44 @@
 <script src="media://lib_koowa/js/koowa.js" />
+<script src="media://com_news/js/subscribe.js" />
+<script src="media://com_news/js/delete.js" />
 
 <script type="text/javascript">
 window.addEvent('domready', function()
 {
-	$('delete').addEvent('click', function(e)
-	{
-		e.stop();
+    new News.Subscribe({
+        holder: 'article-toolbar',
+        url: '<?= html_entity_decode(@route('view=subscription&news_article_id='.$article->id.'&user_id='.JFactory::getUser()->id)) ?>',
+        data: {
+            action: '<?= $subscribed ? 'delete' : 'add' ?>',
+            news_article_id: '<?= $article->id ?>',
+            user_id: '<?= JFactory::getUser()->id ?>',
+            _token: '<?= JUtility::getToken() ?>'
+        }
+    });
 
-		if(!confirm('<?= addslashes(@text('Are you sure you want to delete this article?')) ?>')) {
-			return;
-		}
-
-		this.addClass('disabled');
-		$('edit').addClass('disabled');
-		
-		var request = new Request({
-			method: 'post',
-			url: '<?= @route('view=article') ?>',
-			data: {
-				id: '<?= $article->id ?>',
-				_token: '<?= JUtility::getToken() ?>',
-				action: 'delete'
-			},
-			onSuccess: function(){
-				window.location.href = '<?= KRequest::referrer() ?>';
-			},
-			onFailure: function(){
-				this.removeClass('disabled');
-				$('edit').removeClass('disabled');
-				alert('<?= addslashes(@text('Failed to delete. Please try again.')) ?>');
-			}.bind(this)
-		}).send();
-	});
+    new News.Delete({
+        holder: 'article-toolbar',
+        url: '<?= html_entity_decode(@route('view=article')) ?>',
+        forward: '<?= html_entity_decode(KRequest::referrer()) ?>',
+        data: {
+			id: '<?= $article->id ?>',
+			_token: '<?= JUtility::getToken() ?>',
+			action: 'delete'			
+        }
+    });
 });
 </script>
 
 <div class="article">
 	<?= @template('default_article') ?>
 	
-	<? if ($agent) : ?>
-	<div class="article-toolbar btn-group">
-	    <a class="btn  btn-mini" id="edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
-	    <a class="btn btn-danger btn-mini" id="delete" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
+	<? if(JFactory::getUser()->id): ?>
+	<div class="article-toolbar btn-group" id="article-toolbar">
+		<a class="btn btn-mini subscribe"><i class="icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i> <?= @text($subscribed ? 'Unsubscribe' : 'Subscribe') ?></a>
+		<? if($agent): ?>	
+	    	<a class="btn btn-mini edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
+	    	<a class="btn btn-danger btn-mini delete" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
+	    <? endif; ?>
 	</div>
 	<? endif ?>
 		

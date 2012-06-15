@@ -1,8 +1,11 @@
+<? @helper('behavior.mootools') ?>
+
 <div style="float: left;">
 	<div class="btn-group">
-	    <a class="btn<?= $state->category == null ? ' active' : '' ?>" href="<?= @route('&category=') ?>"><?= @text('All') ?></a>
+	    <a class="btn<?= $state->subscribed ? ' active' : '' ?>" href="<?= @route('&subscribed=1&category=') ?>"><i class="icon-star"></i> <?= @text('My Articles') ?></a>
+	    <a class="btn<?= $state->category == null && !$state->subscribed ? ' active' : '' ?>" href="<?= @route('&subscribed=&category=') ?>"><?= @text('All') ?></a>
 	    <? foreach(@service('com://site/news.model.categories')->sort('title')->getList() as $category): ?>
-	        <a class="btn<?= $state->category == $category->id ? ' active' : '' ?>" href="<?= @route('&category='.$category->id) ?>"><?= $category->title ?></a>
+	        <a class="btn<?= $state->category == $category->id ? ' active' : '' ?>" href="<?= @route('&subscribed=&category='.$category->id) ?>"><?= $category->title ?></a>
 	    <? endforeach ?>
 	</div>
 </div>

@@ -9,7 +9,21 @@ class ComNewsModelArticles extends ComDefaultModelDefault
             ->insert('enabled', 'int')
             ->insert('category', 'int')
             ->insert('start_date', 'date')
-            ->insert('end_date', 'date');
+            ->insert('end_date', 'date')
+        	->insert('subscribed', 'boolean');
+    }
+    
+    protected function _buildQueryJoins(KDatabaseQuery $query)
+    {
+    	parent::_buildQueryJoins($query);
+    	
+    	if(!$this->_state->isUnique())
+    	{
+    		if($this->_state->subscribed)
+    		{    			
+    			$query->join('RIGHT', 'news_subscriptions AS subscription', 'subscription.news_article_id = tbl.news_article_id');
+    		}
+    	}
     }
     
     protected function _buildQueryWhere(KDatabaseQuery $query)
@@ -18,6 +32,13 @@ class ComNewsModelArticles extends ComDefaultModelDefault
 
         if(!$state->isUnique())
         {
+        	if($state->subscribed)
+        	{
+        		$user = JFactory::getUser();
+        		
+        		$query->where('subscription.user_id', '=', $user->id);
+        	}
+        	
             if($state->enabled) {
                 $query->where('tbl.enabled', '=', (int) $state->enabled);
             }
