@@ -16,7 +16,7 @@ set :keep_releases, 3
 # Repository settings.
 set :repository, "git@git.assembla.com:timble-belgian-police-intranet.git"
 set :scm, :git
-set :scm_username, ""
+set :scm_username, "deploy@timble.net"
 
 namespace :deploy do
     desc "Finalize the update."
