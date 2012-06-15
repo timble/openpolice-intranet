@@ -21,5 +21,6 @@ defined('KOOWA') or die('Restricted access'); ?>
 	<? endif; ?>
 </div>
 <? endif; ?>
+<? endforeach; ?>
 
 <?= @helper('com://site/news.template.helper.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
