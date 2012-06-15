@@ -15,10 +15,6 @@
 	<?= @template('default_scopebar') ?>
 </module>
 
-<module title="" position="header">
-	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
-</module>
-
 <? if($agent) : ?>
 <module title="<?= @text('') ?>" position="sidebar">
 <div class="articles-toolbar">
