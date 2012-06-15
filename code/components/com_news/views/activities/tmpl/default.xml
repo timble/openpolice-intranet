@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Activity Stream">
+		<message>
+			<![CDATA[Display the activity stream]]>
+		</message>
+	</layout>
+	<state>
+		<name>Activity Stream</name>
+		<description>Display the activity stream</description>
+	</state>
+</metadata>
