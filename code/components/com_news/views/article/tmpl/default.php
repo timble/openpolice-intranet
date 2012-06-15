@@ -39,6 +39,13 @@ window.addEvent('domready', function()
 <div class="article">
 	<?= @template('default_article') ?>
 	
+	<? if ($agent) : ?>
+	<div class="article-toolbar btn-group">
+	    <a class="btn  btn-mini" id="edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
+	    <a class="btn btn-danger btn-mini" id="delete" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
+	</div>
+	<? endif ?>
+		
 	<div class="comments">
 		<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?></h3>
 		
@@ -63,15 +70,6 @@ window.addEvent('domready', function()
 
 	</div>
 </div>
-
-<? if($agent) : ?>
-<module title="" position="actions">
-	<div class="toolbar btn-group">
-	    <a class="btn btn-small" href="<?= @route('layout=form&id='.$article->id) ?>" id="edit"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
-	    <a class="btn btn-danger btn-small" id="delete" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
-	</div>
-</module>
-<? endif ?>
 
 <? if($agent) : ?>
     <module title="You are a moderator" position="right"><?= @template('default_sidebar'); ?></module>

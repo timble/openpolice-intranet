@@ -39,15 +39,21 @@
 	}
 }
 
-.articles > .article {
-
-	margin-bottom: 24px;
+.articles {
+	.articles-toolbar {
+		text-align: right;
+		margin-bottom: 10px;
+	}
+	
+	> .article {
+		margin-bottom: 24px;
+	}	
 }
 
 .article {
 	background-color: @white;
 	
-	border: 1px solid #D5D5D5;
+	border: 1px solid @borderColor;
 	.border-radius(5px);
 	
 	.article-header {		
@@ -57,8 +63,8 @@
 		color: #999;
 		font-size: 12px;
 		
-		border-bottom: 1px solid #D5D5D5;
-		#gradient > .vertical(#FAFAFA, #E9E9E9);
+		border-bottom: 1px solid @borderColor;
+		#gradient > .vertical(#FAFAFA, #F3F3F3);
 		.border-radius(5px 5px 0 0);
 		
 		.article-title { color: #555; }
@@ -73,8 +79,8 @@
 			text-align: center;
 			
 			.border-radius(5px);
-			border: 1px solid lighten(#D5D5D5, 5%);
-			background-color: lighten(#D5D5D5, 15%);
+			border: 1px solid lighten(@borderColor, 5%);
+			background-color: lighten(@borderColor, 15%);
 		}
 	}
 	
@@ -91,6 +97,14 @@
 	}
 }
 
+.event {
+	background-color: @white;
+	
+	border: 1px solid @borderColor;
+	.border-radius(5px);
+}
+
+.event-form,
 .article-form {	
 	form {
 		margin: 0;
@@ -104,7 +118,7 @@
 		}
 		
 		.editor-container {
-			border: 1px solid #D5D5D5;
+			border: 1px solid @borderColor;
 			border-bottom: 0 none;
 		}
 	}
@@ -124,8 +138,8 @@
 		padding: 4px 16px;
 		
 		
-		border-top: 1px solid #D5D5D5;
-		border-bottom: 1px solid #D5D5D5;
+		border-top: 1px solid @borderColor;
+		border-bottom: 1px solid @borderColor;
 		#gradient > .vertical(#FAFAFA, #E9E9E9);
 	}
 	
@@ -135,14 +149,14 @@
 		margin: 0 16px;
 		padding: 16px 64px 16px 0;
 		
-		border-bottom: 1px dotted #D5D5D5;
+		border-bottom: 1px dotted @borderColor;
 		
 		.comment-avatar {
 			width: 46px;
 			margin: 0 16px 0 0;
 			
 			.border-radius(5px);
-			border: 1px solid lighten(#D5D5D5, 5%);
+			border: 1px solid lighten(@borderColor, 5%);
 			
 			img {
 				.border-radius(5px);
@@ -159,7 +173,7 @@
 	}
 	
 	.comment-form {
-		border: 1px solid #D5D5D5;
+		border: 1px solid @borderColor;
 		margin: 16px;
 		.border-radius(0 0 5px 5px);
 		
@@ -182,6 +196,57 @@
 		.form-actions {
 			margin-bottom: 0;
 			.border-radius(0 0 5px 5px);
+		}
+	}
+}
+
+.mod_access_select {
+	form {
+		margin-bottom: 0;
+	}
+}
+
+.nav-apps {
+	margin-top: 10px;
+	
+	a {		
+		padding-top: 36px;
+		margin-bottom: 20px;
+		background-repeat: no-repeat;
+		background-position: top center;
+		
+		color: @grayLight;
+		
+		font-size: 11px;
+		text-align: center;
+		
+		&.item1 { background-image: url("../img/icons/32/home-gray.png"); }
+		&.item2 { background-image: url("../img/icons/32/id_card-gray.png"); }
+		&.item3 { background-image: url("../img/icons/32/calendar_empty-gray.png"); }
+	}
+	
+	a:hover,
+	a.active {		
+		color: @gray;
+		
+		&.item1 { background-image: url("../img/icons/32/home.png"); }
+		&.item2 { background-image: url("../img/icons/32/id_card.png"); }
+		&.item3 { background-image: url("../img/icons/32/calendar_empty.png"); }
+	}
+}
+
+.module-events {
+	list-style: none;
+	
+	margin: 0;
+	
+	li {
+		padding-bottom: 6px;
+		margin-bottom: 6px;
+		border-bottom: 1px solid lighten(@borderColor, 10%);	
+		
+		small {
+			color: @grayLight;
 		}
 	}
 }

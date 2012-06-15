@@ -9,7 +9,7 @@ class ComNewsModelArticles extends ComDefaultModelDefault
             ->insert('enabled', 'int')
             ->insert('category', 'int')
             ->insert('start_date', 'date')
-            ->insert('days_back'   , 'int', 14);
+            ->insert('end_date', 'date');
     }
     
     protected function _buildQueryWhere(KDatabaseQuery $query)
@@ -26,14 +26,24 @@ class ComNewsModelArticles extends ComDefaultModelDefault
                 $query->where('tbl.news_category_id', '=', $state->category);
             }
             
+            if($state->search)
+            {
+                $query
+                    ->where('(', null, null, 'AND')
+                    ->where('tbl.title', 'LIKE', '%'.$state->search.'%', '')
+                    ->where('tbl.text', 'LIKE', '%'.$state->search.'%', 'OR')
+                    ->where(')', null, null, '');
+            }
+            
             if (($this->_state->start_date && $this->_state->start_date != '0000-00-00'))
     		{
     			$start_date = $this->getService('koowa:date', array('date' => $this->_state->start_date));
-    			$days_back  = clone $start_date;
+    			$end_date = $this->getService('koowa:date', array('date' => $this->_state->end_date));
     			$start      = $start_date->addDays(1)->addSeconds(-1)->getDate();
+    			$end      	= $end_date->addDays(1)->addSeconds(-1)->getDate();
     
-    			$query->where('tbl.created_on', '<', $start);
-    			$query->where('tbl.created_on', '>', $days_back->addDays(-(int)$this->_state->days_back)->getDate());
+    			$query->where('tbl.created_on', '>', $start);
+    			$query->where('tbl.created_on', '<', $end);
     		}
         }
         

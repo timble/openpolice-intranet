@@ -1,19 +1,3 @@
-<?= @helper('behavior.mootools') ?>
-
-<script inline>
-window.addEvent('domready', function(){
-	/* Reset the filter values to blank */
-	document.id('activities-filter').addEvent('reset', function(e){
-		e.target.getElements('input').each(function(el){
-			if(['days_back','start_date', 'user'].contains(el.name)){
-				el.value = '';
-			}
-		});
-		e.target.submit();
-	});
-});
-</script>
-
 <div class="articles">
 	<? foreach($articles as $article) : ?>
 		<div class="article">
@@ -27,12 +11,24 @@ window.addEvent('domready', function(){
 
 <?= @template('default_filter') ?>
 
+<module title="" position="header">
+	<?= @template('com://site/news.view.grid.search', array('state' => $state)) ?>
+</module>
+
 <? if($agent) : ?>
-<module title="" position="actions">
-	<div class="toolbar">
-	    <a class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
-	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
-	    </a>
-	</div>
+<module title="<?= @text('') ?>" position="sidebar">
+<div class="articles-toolbar">
+    <? if($state->category) : ?>
+    <a style="width: 90%;" class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">
+    <? else : ?>
+    <a style="width: 90%;" class="btn btn-primary btn-small disabled" href="#">
+    <? endif ?>
+        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
+    </a>
+</div>
 </module>
 <? endif ?>
+
+<module title="<?= @text('Calendar') ?>" position="sidebar">	
+	<?= @service('mod://site/calendar.html')->display(); ?>
+</module>

@@ -4,7 +4,7 @@
 		<?= @helper('date.format', array('date' => $article->created_on, 'format' => '%d %b')) ?>
 	</div>
 	<h3 class="article-title"><a href="<?= @route('view=article&id='.$article->id.'&slug='.$article->slug.'&category='.$state->category) ?>"><?= $article->title ?></a></h3>
-	<?= @text('Created by') ?> <?= @escape($article->created_by_name) ?> <?= $article->last_commented_on ? '• '.@text('Latest comment about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?> <?= $article->total_comments ? '• '.$article->total_comments.' '.@text('Comments') : '' ?>
+	<?= @text('Created by') ?> <a href="mailto:<?= $article->created_by_email ?>"><?= @escape($article->created_by_name) ?></a> <?= $article->last_commented_on ? '• '.@text('Latest comment about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?> <?= $article->total_comments ? '• '.$article->total_comments.' '.@text('Comments') : '' ?>
 	<span class="label" style="float: right;"><?= $article->category_title ?></span>
 </div>
 
