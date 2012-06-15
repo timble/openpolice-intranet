@@ -12,9 +12,8 @@
 			<td>
 				<?= $event->title ?>
 				<? if($agent) : ?>
-				<div class="btn-group" style="float: right;">
-					<a class="btn  btn-mini" href="<?= @route('view=event&layout=form&id='.$event->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
-					<a class="btn  btn-mini btn-danger" href="#"><i class="icon-remove icon-white"></i> <?= @text('Delete') ?></a>
+				<div style="float: right;">
+					<a class="btn  btn-mini" href="<?= @route('view=event&layout=form&id='.$event->id) ?>"><i class="icon-pencil"></i></a>
 				</div>
 				<? endif ?>
 			</td>
