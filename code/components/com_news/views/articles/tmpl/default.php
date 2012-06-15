@@ -38,5 +38,5 @@
 </module>
 
 <module title="" position="syndicate">	
-	<a target="_blank" href="<?= KRequest::url() ?>?format=rss" class="rss-icon">RSS</a>
+	<a target="_blank" href="<?= @route('&format=rss') ?>" class="rss-icon">RSS</a>
 </module>
