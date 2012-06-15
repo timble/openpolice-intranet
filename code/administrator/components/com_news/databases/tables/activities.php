@@ -5,7 +5,7 @@ class ComNewsDatabaseTableActivities extends KDatabaseTableDefault
     {
         $config->append(array(
             'name' => 'news_view_activities',
-            'base' => 'activities_activities'
+            'base' => 'news_activities'
         ));
 
         parent::_initialize($config);

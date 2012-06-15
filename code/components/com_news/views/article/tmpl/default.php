@@ -3,7 +3,6 @@
 <script type="text/javascript">
 window.addEvent('domready', function()
 {
-
 	$('delete').addEvent('click', function(e)
 	{
 		e.stop();

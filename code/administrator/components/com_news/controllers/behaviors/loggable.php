@@ -1,39 +1,13 @@
 <?php
-class ComNewsControllerBehaviorLoggable extends KControllerBehaviorAbstract
+class ComNewsControllerBehaviorLoggable extends ComActivitiesControllerBehaviorLoggable
 {
-    /**
-     * List of actions to log
-     *
-     * @var array
-     */
-    protected $_actions;
-
-    /**
-     * The name of the column to use as the title column in the log entry
-     *
-     * @var string
-     */
-    protected $_title_column;
-
-    public function __construct(KConfig $config)
-    {
-        parent::__construct($config);
-
-        $this->_actions      = KConfig::unbox($config->actions);
-        $this->_title_column = KConfig::unbox($config->title_column);
-    }
-
-    protected function _initialize(KConfig $config)
-    {
-        $config->append(array(
-            'priority'     => KCommand::PRIORITY_LOWEST,
-            'actions'      => array('after.add', 'after.edit', 'after.delete'),
-            'title_column' => array('title', 'name'),
-        ));
-
-        parent::_initialize($config);
-    }
-
+	protected function _initialize(KConfig $config)
+	{
+		parent::_initialize($config);
+	
+		$config->actions = array('after.add', 'after.edit');
+	}
+	
     public function execute($name, KCommandContext $context)
     {
         if(in_array($name, $this->_actions))
@@ -78,7 +52,7 @@ class ComNewsControllerBehaviorLoggable extends KControllerBehaviorAbstract
                         switch($name)
                         {
                         	case 'comment':
-                        		$article = $this->getService('com://site/news.model.articles')->id($row->row)->getItem();
+                        		$article = $this->getService('com://admin/news.model.articles')->id($row->row)->getItem();
                         		$comment_id = $row->id;
                         		$log['title'] = $article->title;
                         		break;
@@ -96,15 +70,10 @@ class ComNewsControllerBehaviorLoggable extends KControllerBehaviorAbstract
                         $activity->save();
 
                         $data = array('activities_activity_id' => $activity->id, 'news_article_id' => $article->id, 'comments_comment_id' => $comment_id);
-                        $this->getService('com://site/news.database.row.activity')->setData($data)->save();
+                        $this->getService('com://admin/news.database.row.activity')->setData($data)->save();
                     }
                 }
             }
         }
-    }
-
-    public function getHandle()
-    {
-        return KMixinAbstract::getHandle();
     }
 }
