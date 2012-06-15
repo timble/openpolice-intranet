@@ -5,7 +5,7 @@ class ComNewsDatabaseTableArticles extends KDatabaseTableDefault
     {
         $config->append(array(
             'behaviors' => array(
-            	'creatable', 'lockable', 'modifiable', 'sluggable', 'attachable'
+            	'creatable', 'lockable', 'modifiable', 'sluggable', 'attachable', 'identifiable'
             ),
             'filters' => array(
             	'text' => 'html', 'tidy'
