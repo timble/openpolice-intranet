@@ -7,6 +7,8 @@
 			</div>
 		</div>
 	<? endforeach ?>
+	
+	<?= @helper('paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 </div>
 
 <module title="" position="scopebar">

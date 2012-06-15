@@ -71,5 +71,5 @@
 		</div>
 		
 	</div>
-	<?= @helper('com://site/tickets.template.helper.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+	<?= @helper('paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 </div>
