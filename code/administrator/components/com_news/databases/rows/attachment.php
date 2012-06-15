@@ -12,6 +12,19 @@ class ComNewsDatabaseRowAttachment extends ComAttachmentsDatabaseRowAttachment
 	    					->getItem();
 	    }
 	    
+	    if($name == 'thumbnail' && is_null($this->thumbnail))
+	    {
+	    	$file = $this->file;
+	    	
+	    	if($file && $file->isImage())
+	    	{
+	    		$this->thumbnail = $this->getService('com://admin/files.controller.thumbnail')
+	    				->container($this->container)
+	    				->filename($this->path)
+	    				->read();
+	    	}
+	    }
+	    
 	    return parent::__get($name);
 	}
 }
