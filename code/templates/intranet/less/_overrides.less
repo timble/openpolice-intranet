@@ -21,3 +21,11 @@ form {
 .navbar .nav > .active > a {
 	.box-shadow(inset 0px 0px 30px darken(@navbarBackground,10%));
 }
+
+.row-fluid {
+	.thumbnails {
+		[class*="span"]:first-child {
+			margin-left: @fluidGridGutterWidth;
+		}
+	}
+}

@@ -3800,7 +3800,7 @@ body {
   padding: 16px 80px;
 }
 .article .article-attachments {
-  padding: 16px 80px;
+  padding: 16px 0px;
 }
 .article .article-toolbar {
   margin: 0 0 16px 80px;
@@ -4072,4 +4072,7 @@ form {
   -webkit-box-shadow: inset 0px 0px 30px #080808;
   -moz-box-shadow: inset 0px 0px 30px #080808;
   box-shadow: inset 0px 0px 30px #080808;
+}
+.row-fluid .thumbnails [class*="span"]:first-child {
+  margin-left: 2.127659574%;
 }
