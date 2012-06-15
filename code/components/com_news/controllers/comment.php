@@ -5,7 +5,8 @@ class ComNewsControllerComment extends ComCommentsControllerComment
     {
         parent::__construct($config);
         
-        $this->addBehavior('com://admin/attachments.controller.behavior.attachable');
+        $this->addBehavior('com://admin/attachments.controller.behavior.attachable')
+        	->addBehavior('com://site/news.controller.behavior.loggable');
         
         $this->getModel()->getTable()
             ->addBehavior('com://admin/attachments.database.behavior.attachable')

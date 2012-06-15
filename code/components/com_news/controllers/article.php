@@ -5,7 +5,8 @@ class ComNewsControllerArticle extends ComDefaultControllerDefault
     {
         parent::__construct($config);
         
-        $this->addBehavior('com://admin/attachments.controller.behavior.attachable');
+        $this->addBehavior('com://admin/attachments.controller.behavior.attachable')
+        	->addBehavior('com://site/news.controller.behavior.loggable');
         
     	$this->registerCallback('after.save', array($this, 'afterSave'));
     }
