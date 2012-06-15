@@ -40,7 +40,11 @@
 	            ?>
 		    </div>
 		    <div class="form-actions">
-			    <input class="btn btn-primary" type="submit" value="<?= @text('Save') ?>" /> <?= @text('or') ?> <a href="#" class="cancel">Cancel</a>
+			    <span class="btn-group">
+			    	<input class="btn btn-primary" type="submit" value="<?= @text('Save') ?>" />
+			    	<a class="btn btn-danger" href="#"><?= @text('Delete') ?></a>
+			    </span>
+			    <span style="line-height: 28px;"><?= @text('or') ?> <a href="#" class="cancel">Cancel</a></span>
 		    </div>
 		</form>
 	</div>

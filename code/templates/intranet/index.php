@@ -27,9 +27,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				<jdoc:include type="modules" name="apps" style="xhtmls" />
 			</div>
 			<div class="main span11">
+				<?php if($this->countModules('scopebar')) : ?>
 				<div class="main-scopebar">
 					<jdoc:include type="modules" name="scopebar" style="xhtml" />
 				</div>
+				<? endif ?>
 				
 				<div class="row-fluid">
 					<div class="main-component span9">
