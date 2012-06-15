@@ -72,5 +72,5 @@ window.addEvent('domready', function()
 </div>
 
 <? if($agent) : ?>
-    <module title="You are a moderator" position="right"><?= @template('default_sidebar'); ?></module>
+    <module title="You are a moderator" position="sidebar"><?= @template('default_sidebar'); ?></module>
 <? endif ?>
