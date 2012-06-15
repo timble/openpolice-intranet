@@ -1,5 +1,7 @@
 <div class="events">	
 	<?= @template('default_agenda') ?>
+	
+	<?= @helper('com://site/news.template.helper.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 </div>
 
 <? if($agent) : ?>
