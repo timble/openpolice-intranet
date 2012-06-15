@@ -36,3 +36,7 @@
 <module title="<?= @text('Calendar') ?>" position="sidebar">	
 	<?= @service('mod://site/calendar.html')->display(); ?>
 </module>
+
+<module title="" position="syndicate">	
+	<a target="_blank" href="<?= KRequest::url() ?>?format=rss" class="rss-icon">RSS</a>
+</module>
