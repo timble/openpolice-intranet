@@ -52,7 +52,7 @@
 			        	
 			        	<? if($activity->news_category_id): ?>
 			        		<div class="route">
-			    				&raquo; <a href="<?= @route('view=category&id='.$activity->news_category_id.'&slug='.$activity->category_slug) ?>"><?= $activity->category_title ?></a>
+			    				<a href="<?= @route('view=category&id='.$activity->news_category_id.'&slug='.$activity->category_slug) ?>"><?= $activity->category_title ?></a>
 			    			</div>
 			        	<? endif; ?>			       		
 			        </td>

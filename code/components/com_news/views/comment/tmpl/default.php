@@ -1,3 +1,4 @@
+<a name="comment-<?= $comment->id ?>"></a>
 <div id="comment-<?= $comment->id ?>" class="comment-default">
     <div class="comment-avatar" style="float:left">
     	<?= @helper('com://admin/comments.template.helper.grid.gravatar', array('email' => $comment->created_by_email, 'size' => '48')) ?>
