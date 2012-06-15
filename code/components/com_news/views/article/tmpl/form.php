@@ -25,22 +25,13 @@
 		    <input type="hidden" name="news_category_id" value="<?= $state->category ?>" />
             
             <div style="padding: 20px;">
-
 			   	<input type="text" name="title" class="required" value="<?= @escape($article->title) ?>" placeholder="<?= @text('Title') ?>" />
-	
-			    <div class="control-group">
-			        <? if ($agent) : ?>
-			       <div class="input-prepend input-append">
-			                       <span class="add-on"><?= @text('Slug') ?></span><input type="text" name="slug" value="<?= $article->slug ?>" placeholder="<?= @text('title') ?>" />
-			                     </div>
-			       
-			        <? endif ?>
-			    </div>
-                        <?
-                            $controller = @service('com://admin/editors.controller.editor');
-                            $controller->getView()->setEditorSettings($editor_settings);
-                            echo $controller->name('text')->data($article->text)->toggle(false)->codemirror(false)->display();
-                        ?>
+                
+                <?
+                    $controller = @service('com://admin/editors.controller.editor');
+                    $controller->getView()->setEditorSettings($editor_settings);
+                    echo $controller->name('text')->data($article->text)->toggle(false)->codemirror(false)->display();
+                ?>
 
 			    <div class="clearfix attachments">
                     <? if ($article->id) : ?>

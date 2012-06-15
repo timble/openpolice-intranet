@@ -3939,6 +3939,9 @@ body {
 .nav-apps a.item3 {
   background-image: url("../img/icons/32/calendar_empty-gray.png");
 }
+.nav-apps a.item4 {
+  background-image: url("../img/icons/32/clock-gray.png");
+}
 .nav-apps a:hover,
 .nav-apps a.active {
   color: #555555;
@@ -3954,6 +3957,10 @@ body {
 .nav-apps a:hover.item3,
 .nav-apps a.active.item3 {
   background-image: url("../img/icons/32/calendar_empty.png");
+}
+.nav-apps a:hover.item4,
+.nav-apps a.active.item4 {
+  background-image: url("../img/icons/32/clock.png");
 }
 .module-events {
   list-style: none;
