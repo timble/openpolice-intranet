@@ -3800,7 +3800,7 @@ body {
   padding: 16px 80px;
 }
 .article .article-attachments {
-  padding: 16px 80px;
+  padding: 16px 0px;
 }
 .article .article-toolbar {
   margin: 0 0 16px 80px;
@@ -3918,6 +3918,9 @@ body {
 }
 .mod_access_select form {
   margin-bottom: 0;
+}
+.mod_syndicate {
+  margin-top: 4px;
 }
 .mod_syndicate a {
   background: url(../img/icon_rss.png) no-repeat 0 0;
@@ -4069,4 +4072,7 @@ form {
   -webkit-box-shadow: inset 0px 0px 30px #080808;
   -moz-box-shadow: inset 0px 0px 30px #080808;
   box-shadow: inset 0px 0px 30px #080808;
+}
+.row-fluid .thumbnails [class*="span"]:first-child {
+  margin-left: 2.127659574%;
 }
