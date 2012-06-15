@@ -1,7 +1,7 @@
 <div style="float: left;">
 	<div class="btn-group">
 	    <a class="btn<?= $state->category == null ? ' active' : '' ?>" href="<?= @route('&category=') ?>"><?= @text('All') ?></a>
-	    <? foreach(@service('com://site/news.model.categories')->set('ordering', 'name')->getList() as $category): ?>
+	    <? foreach(@service('com://site/news.model.categories')->sort('title')->getList() as $category): ?>
 	        <a class="btn<?= $state->category == $category->id ? ' active' : '' ?>" href="<?= @route('&category='.$category->id) ?>"><?= $category->title ?></a>
 	    <? endforeach ?>
 	</div>
