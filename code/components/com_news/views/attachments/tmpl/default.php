@@ -1,4 +1,5 @@
 <?= @helper('behavior.mootools') ?>
+<?= @helper('behavior.modal') ?>
 
 <? $list = (isset($row) && isset($table)) ? $attachments->find(array('row' => $row, 'table' => $table)) : $attachments ?>
 
@@ -7,7 +8,7 @@
     <? foreach($list as $item) : ?>
     	<? if($item->file->isImage()) : ?>
     	<li style="width: 125px;">
-	    	<a class="thumbnail" href="<?= @route('view=attachment&format=file&id='.$item->id) ?>" class="modal" rel="{handler: 'image'}">
+	    	<a class="modal thumbnail" href="<?= @route('view=attachment&format=file&id='.$item->id) ?>" rel="{handler: 'image'}">
 	    	   <img src="<?= $item->thumbnail->thumbnail ?>" />
 	    	</a>
     	</li>
