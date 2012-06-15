@@ -1,11 +1,15 @@
 <?= @helper('behavior.mootools') ?>
 
+<module title="" position="scopebar">
+	<?= @template('default_scopebar'); ?>
+</module>
+
 <div class="frame">
 	<div class="frame__header group">
 		<h1 style="float: left"><?= @text('Activity stream') ?></h1>
 	</div>
 	<div class="content activities">
-		<?= @template('default_scopebar'); ?>
+		
 		<div class="spacing">
 		<table class="table" width="100%">
 			<thead>
