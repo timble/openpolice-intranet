@@ -52,7 +52,7 @@ class KViewHtml extends KViewTemplate
 		    //Auto-assign the state to the view
 		    $this->assign('state', $model->getState());
 		
-		    //Auto-assign the data from the model		    
+		    //Auto-assign the data from the model		
 		    if($this->_auto_assign)
 		    {
 			    //Get the view name

@@ -45,6 +45,7 @@ class ComNewsTemplateHelperActivity extends KTemplateHelperAbstract
 		return $message;
 	}
 	
+	
 	public function summary($config = array())
 	{
 		$config = new KConfig($config);
@@ -54,27 +55,27 @@ class ComNewsTemplateHelperActivity extends KTemplateHelperAbstract
 				'wordlength_min' => 3,
 				'wordlength_max' => 25
 		));
-		
+	
 		$config->text = trim(strip_tags($config->text));
 		$text = '';
 		$len = 0;
-		
+	
 		foreach(explode(' ', $config->text) as $word)
 		{
 			$part = (($text != '') ? ' ' : '') . $word;
-			
+	
 			if(strlen($word) > $config->wordlength_max && $len + strlen($part) > $config->length) {
 				$part = (($text != '') ? ' ' : '') . substr($word, 0, ($config->length - $len));
 			}
-			
+	
 			$text .= $part;
 			$len += strlen($part);
-			
+	
 			if(strlen($word) > $config->wordlength_min && strlen($text) >= $config->length) {
 				break;
 			}
 		}
-		
+	
 		return  $text . (($len < strlen($config->text)) ? ' ...' : '');
 	}
 }

@@ -19,6 +19,14 @@
  */
 class ComSearchViewResultsHtml extends ComDefaultViewHtml
 {
+	public function __construct(KConfig $config)
+	{
+		// @TODO remove when upgrading, this should not be necessary
+		$config->auto_assign = true;
+		
+		parent::__construct($config);
+	}
+	
 	/**
 	 * Return the views output
 	 * 
