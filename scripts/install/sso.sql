@@ -18,3 +18,4 @@ INSERT INTO `jos_core_acl_groups_aro_map` (`group_id`, `section_value`, `aro_id`
 UPDATE `jos_users` SET `name`='Wilfried Pasmans' WHERE `username` = 'P0000000002';
 UPDATE `jos_users` SET `name`='Eddy Naessens' WHERE `username` = 'P0000000001';
 
+UPDATE `jos_menu` SET `published`=0 WHERE `link` = 'index.php?option=com_users&view=login';

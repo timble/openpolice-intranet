@@ -12,6 +12,20 @@ function checkForValidUrl(tabId, changeInfo, tab)
 	}
 };
 
+// Reloads all tabs
+function reload()
+{
+	chrome.tabs.getAllInWindow(null, function(tabs)
+	{
+		for(var i=0;i<tabs.length;i++)
+		{
+			if(tabs[i].url.indexOf('police') > -1) {
+				chrome.tabs.reload(tabs[i].id);
+			}
+	    }
+	});
+};
+
 // Listener, inserts the P identifier into the HTTP headers when enabled
 function forgeHeader(details)
 {
@@ -33,8 +47,12 @@ function forgeHeader(details)
 function requestController(request, sender, sendResponse) {
 	if(request.task == 'update')
 	{
+		var isNew = (HeaderMan.isEnabled != request.mode || HeaderMan.person != request.person);
+		
 		HeaderMan.isEnabled = request.mode;
 		HeaderMan.person = request.person;
+		
+		if(isNew) reload();
 	}
 	
 	sendResponse({'mode': HeaderMan.isEnabled, 'person': HeaderMan.person});
