@@ -4029,6 +4029,114 @@ body {
 .search-results-default .result .highlight-inverse[href] {
   background-color: #1a1a1a;
 }
+.search-results-default .result .highlight-endeavour {
+  background-color: #004fa3;
+}
+.search-results-default .result .highlight-endeavour[href] {
+  background-color: #003670;
+}
+.search-results-default .result .highlight-zest {
+  background-color: #de791c;
+}
+.search-results-default .result .highlight-zest[href] {
+  background-color: #b16016;
+}
+.search-results-default .result .highlight-shadow-green {
+  background-color: #9cc5c9;
+}
+.search-results-default .result .highlight-shadow-green[href] {
+  background-color: #7bb2b7;
+}
+.search-results-default .result .highlight-earls-green {
+  background-color: #cab23d;
+}
+.search-results-default .result .highlight-earls-green[href] {
+  background-color: #a7922d;
+}
+.search-results-default .result .highlight-bright-sun {
+  background-color: #ffca46;
+}
+.search-results-default .result .highlight-bright-sun[href] {
+  background-color: #ffbb13;
+}
+.search-results-default .result .highlight-sea-buckthorn {
+  background-color: #f8973d;
+}
+.search-results-default .result .highlight-sea-buckthorn[href] {
+  background-color: #f67d0c;
+}
+.search-results-default .result .highlight-paprika {
+  background-color: #900133;
+}
+.search-results-default .result .highlight-paprika[href] {
+  background-color: #5d0121;
+}
+.search-results-default .result .highlight-green-vogue {
+  background-color: #021b55;
+}
+.search-results-default .result .highlight-green-vogue[href] {
+  background-color: #010b23;
+}
+.search-results-default .result .highlight-pacific-blue {
+  background-color: #00acba;
+}
+.search-results-default .result .highlight-pacific-blue[href] {
+  background-color: #007d87;
+}
+.search-results-default .result .highlight-orient {
+  background-color: #006379;
+}
+.search-results-default .result .highlight-orient[href] {
+  background-color: #003946;
+}
+.search-results-default .result .highlight-tallow {
+  background-color: #a1a17f;
+}
+.search-results-default .result .highlight-tallow[href] {
+  background-color: #898964;
+}
+.search-results-default .result .highlight-white-rock {
+  background-color: #e7e4cd;
+}
+.search-results-default .result .highlight-white-rock[href] {
+  background-color: #d6d1ab;
+}
+.search-results-default .result .highlight-astra {
+  background-color: #fbf1bd;
+}
+.search-results-default .result .highlight-astra[href] {
+  background-color: #f8e78d;
+}
+.search-results-default .result .highlight-pomegranate {
+  background-color: #ee2f2e;
+}
+.search-results-default .result .highlight-pomegranate[href] {
+  background-color: #d71312;
+}
+.search-results-default .result .highlight-bossanova {
+  background-color: #5d326a;
+}
+.search-results-default .result .highlight-bossanova[href] {
+  background-color: #3f2247;
+}
+.search-results-default .result .highlight-rose-bud {
+  background-color: #f8aaa8;
+}
+.search-results-default .result .highlight-rose-bud[href] {
+  background-color: #f47c79;
+}
+.search-results-default .result .highlight-gothic {
+  background-color: #6e96a7;
+}
+.search-results-default .result .highlight-gothic[href] {
+  background-color: #557c8d;
+}
+.search-results-default .result .highlight-nebula {
+  background-color: #d6e2df;
+}
+.search-results-default .result .highlight-nebula[href] {
+  background-color: #b8cdc8;
+}
 /* Forms validation message */
 .validation-advice {
   clear: both;
@@ -4122,4 +4230,148 @@ form {
 }
 .row-fluid .thumbnails [class*="span"]:first-child {
   margin-left: 2.127659574%;
+}
+.label-endeavour,
+.badge-endeavour {
+  background-color: #004fa3;
+}
+.label-endeavour[href],
+.badge-endeavour[href] {
+  background-color: #003670;
+}
+.label-zest,
+.badge-zest {
+  background-color: #de791c;
+}
+.label-zest[href],
+.badge-zest[href] {
+  background-color: #b16016;
+}
+.label-shadow-green,
+.badge-shadow-green {
+  background-color: #9cc5c9;
+}
+.label-shadow-green[href],
+.badge-shadow-green[href] {
+  background-color: #7bb2b7;
+}
+.label-earls-green,
+.badge-earls-green {
+  background-color: #cab23d;
+}
+.label-earls-green[href],
+.badge-earls-green[href] {
+  background-color: #a7922d;
+}
+.label-bright-sun,
+.badge-bright-sun {
+  background-color: #ffca46;
+}
+.label-bright-sun[href],
+.badge-bright-sun[href] {
+  background-color: #ffbb13;
+}
+.label-sea-buckthorn,
+.badge-sea-buckthorn {
+  background-color: #f8973d;
+}
+.label-sea-buckthorn[href],
+.badge-sea-buckthorn[href] {
+  background-color: #f67d0c;
+}
+.label-paprika,
+.badge-paprika {
+  background-color: #900133;
+}
+.label-paprika[href],
+.badge-paprika[href] {
+  background-color: #5d0121;
+}
+.label-green-vogue,
+.badge-green-vogue {
+  background-color: #021b55;
+}
+.label-green-vogue[href],
+.badge-green-vogue[href] {
+  background-color: #010b23;
+}
+.label-pacific-blue,
+.badge-pacific-blue {
+  background-color: #00acba;
+}
+.label-pacific-blue[href],
+.badge-pacific-blue[href] {
+  background-color: #007d87;
+}
+.label-orient,
+.badge-orient {
+  background-color: #006379;
+}
+.label-orient[href],
+.badge-orient[href] {
+  background-color: #003946;
+}
+.label-tallow,
+.badge-tallow {
+  background-color: #a1a17f;
+}
+.label-tallow[href],
+.badge-tallow[href] {
+  background-color: #898964;
+}
+.label-white-rock,
+.badge-white-rock {
+  background-color: #e7e4cd;
+}
+.label-white-rock[href],
+.badge-white-rock[href] {
+  background-color: #d6d1ab;
+}
+.label-astra,
+.badge-astra {
+  background-color: #fbf1bd;
+}
+.label-astra[href],
+.badge-astra[href] {
+  background-color: #f8e78d;
+}
+.label-pomegranate,
+.badge-pomegranate {
+  background-color: #ee2f2e;
+}
+.label-pomegranate[href],
+.badge-pomegranate[href] {
+  background-color: #d71312;
+}
+.label-bossanova,
+.badge-bossanova {
+  background-color: #5d326a;
+}
+.label-bossanova[href],
+.badge-bossanova[href] {
+  background-color: #3f2247;
+}
+.label-rose-bud,
+.badge-rose-bud {
+  background-color: #f8aaa8;
+}
+.label-rose-bud[href],
+.badge-rose-bud[href] {
+  background-color: #f47c79;
+}
+.label-gothic,
+.badge-gothic {
+  background-color: #6e96a7;
+}
+.label-gothic[href],
+.badge-gothic[href] {
+  background-color: #557c8d;
+}
+.label-nebula,
+.badge-nebula {
+  background-color: #d6e2df;
+}
+.label-nebula[href],
+.badge-nebula[href] {
+  background-color: #b8cdc8;
 }
