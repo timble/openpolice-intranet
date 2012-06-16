@@ -3980,6 +3980,55 @@ body {
 .module-events li small {
   color: #999999;
 }
+.search-results-default .result {
+  border-bottom: 1px solid #d7d7d7;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.search-results-default .result .highlight {
+  font-size: 10.998px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #999999;
+  padding: 1px 4px 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.search-results-default .result .highlight-important {
+  background-color: #b94a48;
+}
+.search-results-default .result .highlight-important[href] {
+  background-color: #953b39;
+}
+.search-results-default .result .highlight-warning {
+  background-color: #de791c;
+}
+.search-results-default .result .highlight-warning[href] {
+  background-color: #b16016;
+}
+.search-results-default .result .highlight-success {
+  background-color: #468847;
+}
+.search-results-default .result .highlight-success[href] {
+  background-color: #356635;
+}
+.search-results-default .result .highlight-info {
+  background-color: #3a87ad;
+}
+.search-results-default .result .highlight-info[href] {
+  background-color: #2d6987;
+}
+.search-results-default .result .highlight-inverse {
+  background-color: #333333;
+}
+.search-results-default .result .highlight-inverse[href] {
+  background-color: #1a1a1a;
+}
 /* Forms validation message */
 .validation-advice {
   clear: both;

@@ -17,3 +17,5 @@ defined('KOOWA') or die('Restricted access'); ?>
 	</div>
 	<input type="hidden" name="Itemid" value="<?php echo $itemid; ?>" />
 </form>
+
+<?= @service('com://site/search.model.results')->get('term') ?>
