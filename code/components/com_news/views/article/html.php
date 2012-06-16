@@ -22,6 +22,8 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
             $this->assign('attachments', $article->getAttachments());
         }
         
+        $document = JFactory::getDocument();
+        
         switch ($this->getLayout())
         {
             case 'form':
@@ -36,6 +38,8 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
                 } else $editor_settings = array();
                 $this->assign('editor_settings', $editor_settings);
                 
+                $document->setTitle($article->id ? JText::_('Edit') . ' ' . $article->title : JText::_('New Article'));
+                
                 break;
             case 'default':
             default:
@@ -47,6 +51,18 @@ class ComNewsViewArticleHtml extends ComNewsViewHtml
             							->select(array('news_article_id' => $article->id, 'user_id' => $user->id), KDatabase::FETCH_ROW);
             		$this->assign('subscribed', !$subscription->isNew());
             	}
+            	
+            	$parts = array();
+            	
+            	$category = $this->getService('com://site/news.model.categories')
+				            	->id($article->news_category_id)
+				            	->getItem();
+            	if($category->id) 
+            		$parts[] = $category->title;
+            	
+            	$parts[] = $article->title;
+            		
+            	$document->setTitle(implode(': ', $parts));
             	break;
         }
         
