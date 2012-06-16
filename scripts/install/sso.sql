@@ -14,3 +14,7 @@ INSERT INTO `jos_core_acl_aro` (`id`, `section_value`, `value`, `order_value`, `
 INSERT INTO `jos_core_acl_groups_aro_map` (`group_id`, `section_value`, `aro_id`) VALUES
 (18, '', 13231),
 (25, '', 13230);
+
+UPDATE `jos_users` SET `name`='Wilfried Pasmans' WHERE `username` = 'P0000000002';
+UPDATE `jos_users` SET `name`='Eddy Naessens' WHERE `username` = 'P0000000001';
+
