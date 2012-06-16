@@ -3925,23 +3925,24 @@ body {
 .nav-apps a {
   padding-top: 36px;
   margin-bottom: 20px;
-  background-repeat: no-repeat;
-  background-position: top center;
   color: #999999;
   font-size: 11px;
   text-align: center;
 }
 .nav-apps a.item1 {
-  background-image: url("../img/icons/32/home-gray.png");
+  background: url("../img/icons/32/home-gray.png") no-repeat top center;
 }
 .nav-apps a.item2 {
-  background-image: url("../img/icons/32/id_card-gray.png");
+  background: url("../img/icons/32/id_card-gray.png") no-repeat top center;
 }
 .nav-apps a.item3 {
-  background-image: url("../img/icons/32/calendar_empty-gray.png");
+  background: url("../img/icons/32/calendar_empty-gray.png") no-repeat top center;
 }
 .nav-apps a.item4 {
-  background-image: url("../img/icons/32/clock-gray.png");
+  background: url("../img/icons/32/clock-gray.png") no-repeat top center;
+}
+.nav-apps a.item5 {
+  background: url("../img/icons/32/id_card-gray.png") no-repeat top center;
 }
 .nav-apps a:hover,
 .nav-apps a.active {
@@ -3949,19 +3950,23 @@ body {
 }
 .nav-apps a:hover.item1,
 .nav-apps a.active.item1 {
-  background-image: url("../img/icons/32/home.png");
+  background: url("../img/icons/32/home.png") no-repeat top center;
 }
 .nav-apps a:hover.item2,
 .nav-apps a.active.item2 {
-  background-image: url("../img/icons/32/id_card.png");
+  background: url("../img/icons/32/id_card.png") no-repeat top center;
 }
 .nav-apps a:hover.item3,
 .nav-apps a.active.item3 {
-  background-image: url("../img/icons/32/calendar_empty.png");
+  background: url("../img/icons/32/calendar_empty.png") no-repeat top center;
 }
 .nav-apps a:hover.item4,
 .nav-apps a.active.item4 {
-  background-image: url("../img/icons/32/clock.png");
+  background: url("../img/icons/32/clock.png") no-repeat top center;
+}
+.nav-apps a:hover.item5,
+.nav-apps a.active.item5 {
+  background: url("../img/icons/32/id_card.png") no-repeat top center;
 }
 .module-events {
   list-style: none;
