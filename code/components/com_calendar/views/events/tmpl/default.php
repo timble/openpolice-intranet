@@ -4,6 +4,10 @@
 	<?= @helper('com://site/news.template.helper.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 </div>
 
+<module title="" position="scopebar">
+	<?= @template('default_scopebar') ?>
+</module>
+
 <? if($agent) : ?>
 <module title="<?= @text('') ?>" position="sidebar">
 	<div class="articles-toolbar">
