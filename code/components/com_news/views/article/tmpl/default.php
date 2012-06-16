@@ -16,6 +16,7 @@ window.addEvent('domready', function()
         }
     });
 
+    <? if($agent): ?>
     new News.Delete({
         holder: 'article-toolbar',
         url: '<?= html_entity_decode(@route('view=article')) ?>',
@@ -26,6 +27,7 @@ window.addEvent('domready', function()
 			action: 'delete'			
         }
     });
+    <? endif; ?>
 });
 </script>
 
