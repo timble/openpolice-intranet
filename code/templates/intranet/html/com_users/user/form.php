@@ -10,13 +10,7 @@
  */
 defined('KOOWA') or die( 'Restricted access' ); ?>
 
-<script>
-    Window.onDomReady(function(){
-        document.formvalidator.setHandler('passverify', function (value) { return ($('password').value == value); } );
-    });
-</script>
-
-<form action="<?= @route('id='.$user->id) ?>" method="post" name="userform" autocomplete="off" class="form-validate form-horizontal well">
+<form action="<?= @route('id='.$user->id) ?>" method="post" name="userform" autocomplete="off" class="form-validate form-horizontal">
     <input type="hidden" name="action" value="save" />
 
     <legend><?= @escape($parameters->get('page_title')) ?></legend>
@@ -25,7 +19,7 @@ defined('KOOWA') or die( 'Restricted access' ); ?>
             <?= @text('Your Name') ?>:
         </label>
         <div class="controls">
-            <input class="inputbox required" type="text" id="name" name="name" value="<?= @escape($user->name) ?>" size="40" disabled />
+            <input class="inputbox required" type="text" id="name" name="name" value="<?= @escape($user->name) ?>" size="40" />
         </div>
     </div>
     <div class="control-group">
@@ -33,35 +27,11 @@ defined('KOOWA') or die( 'Restricted access' ); ?>
             <?= @text('email') ?>:
         </label>
         <div class="controls">
-            <input class="inputbox required validate-email" type="text" id="email" name="email" value="<?= @escape($user->email) ?>" size="40" disabled />
+            <input class="inputbox required validate-email" type="text" id="email" name="email" value="<?= @escape($user->email) ?>" size="40" />
         </div>
     </div>
-    <? if($user->password) : ?>
-    <div class="control-group">
-        <label class="control-label" for="password">
-            <?= @text('Password') ?>:
-        </label>
-        <div class="controls">
-            <input class="inputbox validate-password" type="password" id="password" name="password" value="" size="40" />
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="password2">
-            <?= @text('Verify Password') ?>:
-        </label>
-        <div class="controls">
-            <input class="inputbox validate-passverify" type="password" id="password_verify" name="password_verify" size="40" />
-        </div>
-    </div>
-    <? endif ?>
-    
-    <?
-        $params = clone $user->params;
-        $params->loadSetupFile(JPATH_THEMES.'/'.JFactory::getApplication()->getTemplate().'/html/com_users/user/user.xml');
-        echo $params->render()
-    ?>
     
     <div class="form-actions">
-    	<button class="btn primary validate" type="submit" onclick="submitbutton( this.form );return false;"><?= @text('Save') ?></button>
+    	<button class="btn btn-primary validate" type="submit" onclick="submitbutton( this.form );return false;"><?= @text('Save') ?></button>
     </div>
 </form>
