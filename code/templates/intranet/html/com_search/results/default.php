@@ -11,9 +11,11 @@
 
 defined('KOOWA') or die('Restricted access'); ?>
 
+<div class="search-results-default">
 <?= @template('com://site/search.view.results.default_form');?>
 
 <?if (count($results)) :?>
     <?= @template('com://site/search.view.results.default_results');?>
 <? endif;?>
+</div>
 

@@ -20,12 +20,10 @@ else
 ?>
 
 <?php if($user->gid > 18) : ?>
-<div class="pull-right mod_access_select">
-	<form action="" method="get" class="-koowa-form">	
-		Switch to : <input type="submit" class="btn btn-small" value="<?php echo $usertype; ?>">
-		<input type="hidden" name="access_gid" value="<?php echo $gid; ?>">
-		<input type="hidden" name="access_aid" value="<?php echo $aid; ?>">
-		<input type="hidden" name="access_usertype" value="<?php echo $usertype; ?>">
-	</form>
-</div>
+<form action="" method="get" class="-koowa-form pull-right">	
+	<input type="submit" class="btn btn-small" value="Switch to <?php echo $usertype; ?>">
+	<input type="hidden" name="access_gid" value="<?php echo $gid; ?>">
+	<input type="hidden" name="access_aid" value="<?php echo $aid; ?>">
+	<input type="hidden" name="access_usertype" value="<?php echo $usertype; ?>">
+</form>
 <?php endif; ?>

@@ -13,7 +13,9 @@ defined('KOOWA') or die('Restricted access'); ?>
 
 <form action="<?= JRoute::_('index.php?option=com_search'); ?>" method="get">
 	<div class="search input-append">
-		<input name="term" id="mod_search_term" maxlength="<?= $maxlength ?>" type="text" placeholder="Search" /><input type="submit" value="Search" class="btn"/>
+		<input name="term" id="mod_search_term" maxlength="<?= $maxlength ?>" type="text" placeholder="Search" /><input type="submit" value="Search" class="btn btn-primary"/>
 	</div>
 	<input type="hidden" name="Itemid" value="<?php echo $itemid; ?>" />
 </form>
+
+<?= @service('com://site/search.model.results')->get('term') ?>

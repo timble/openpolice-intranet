@@ -16,9 +16,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <body>
 	<div id="frame">
 		<div id="header" class="row">
-			<div class="span12">
+			<div class="span3">
 				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo-en.png" alt="" border="0" style="float: left;margin: 0 40px 0 15px;">
-				<jdoc:include type="modules" name="header" style="xhtml" />
+			</div>
+			<div class="span6 header-search">
+				<jdoc:include type="modules" name="search" style="raw" />
+			</div>
+			<div class="span3 header-access">
+				<jdoc:include type="modules" name="access" style="raw" />
 			</div>
 		</div>
 		
