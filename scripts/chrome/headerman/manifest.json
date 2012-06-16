@@ -1,0 +1,17 @@
+{
+  "name": "HeaderMan",
+  "description": "Control the authentication header used for single sign-on on Police Intranet project",
+  "icons" : {
+    "128" : "icons/128.png"
+  },
+  "version": "0.1",
+  "background": { "scripts": ["js/headerman.js"] },
+  "page_action": {
+    "default_icon": "icons/police.png",
+    "default_title": "Manage the authentication header", 
+    "default_popup": "popup.html"
+  },
+  "permissions" : [
+    "tabs", "webRequestBlocking", "webRequest", "http://*/*"
+  ]
+}

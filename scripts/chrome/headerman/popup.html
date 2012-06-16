@@ -1,0 +1,70 @@
+<html>
+<head>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script>
+	function update()
+	{
+		var chk = document.getElementById('mode');
+		
+		chrome.extension.sendRequest({task: 'update', mode: chk.checked & chk.value == 'active' ? true : false, person: getPersonValue()}, function(response) {console.log(response);});
+	};
+	
+	function getPersonValue()
+	{
+		for (var i=0;i<document.headerman.user.length;i++)
+		{
+			if(document.headerman.user[i].checked) {
+				return document.headerman.user[i].value;
+			}
+		}
+		
+		return null;
+	};
+	
+	function setPersonValue(val)
+	{
+		for (var i=0;i<document.headerman.user.length;i++)
+		{
+			if(document.headerman.user[i].value == val) {
+				document.headerman.user[i].checked = 1;
+			}
+		}
+	};
+	
+	function init()
+	{
+		chrome.extension.sendRequest({task: "init"}, function(response) {
+			document.getElementById('mode').checked = response.mode ? true : false;
+			
+			setPersonValue(response.person);
+		});
+	};
+	</script>
+</head>
+
+<body style="min-width: 300px" onload="init();">
+
+<form name="headerman">
+
+<input type="checkbox" name="mode" id="mode" value="active" onclick="return update();" /> <label for="mode" onclick="return update();">Enable</label>
+
+<fieldset>
+	<legend>User Details</legend>
+	
+	<ul>
+		<li>
+			<input type="radio" name="user" value="P0000000001" id="admin" onclick="return update();" />
+			<label for="admin" onclick="return update();">Administrator</label>
+		</li>
+		<li>
+			<input type="radio" name="user" value="P0000000002" id="demo" onclick="return update();" />
+			<label for="demo" onclick="return update();">Demo User</label>
+		</li>
+	</ul>
+	
+</fieldset>
+
+</form>
+
+</body>
+</html>
