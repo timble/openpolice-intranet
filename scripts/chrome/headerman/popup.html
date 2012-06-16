@@ -46,27 +46,35 @@
 
 <form name="headerman">
 
-<input type="checkbox" name="mode" id="mode" value="active" onclick="return update();" /> <label for="mode" onclick="return update();">Enable</label>
+<input type="checkbox" name="mode" id="mode" value="active" class="checkbox" onclick="return update();" /> <label for="mode" onclick="return update();">Enable</label>
 
-<fieldset>
-	<legend>Select a User</legend>
+<div id="options-wrapper" class="rounded">
+
+<div id="options" class="rounded">
 	
+	<div class="header">
+		<h3>Select a User</h3>
+	</div>
+	
+	<div class="content">
 	<ul>
 		<li>
-			<input type="radio" name="user" value="P0000000001" id="admin" onclick="return update();" />
+			<input type="radio" name="user" value="P0000000001" id="admin" class="radio" onclick="return update();" />
 			<label for="admin" onclick="return update();">Eddy Naessens</label>
 		</li>
 		<li>
-			<input type="radio" name="user" value="P0000000002" id="demo" onclick="return update();" />
+			<input type="radio" name="user" value="P0000000002" id="demo"class="radio" onclick="return update();" />
 			<label for="demo" onclick="return update();">Wilfried Pasmans</label>
 		</li>
 		<li>
-			<input type="radio" name="user" value="R0000000015" id="external" onclick="return update();" />
+			<input type="radio" name="user" value="R0000000015" id="external" class="radio" onclick="return update();" />
 			<label for="external" onclick="return update();">Hannah Maes</label>			
 		</li>
 	</ul>
-	
-</fieldset>
+	</div>
+</div>
+
+</div>
 
 </form>
 
