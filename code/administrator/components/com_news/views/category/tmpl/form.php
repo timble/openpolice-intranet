@@ -21,6 +21,14 @@
                         <?= @helper('select.booleanlist', array('name' => 'published', 'selected' => $category->enabled)) ?>
                     </td>
                 </tr>
+                <tr>
+                    <td class="paramlist_key">
+                        <label><?= @text('Color') ?></label>
+                    </td>
+                    <td>
+                        <?= @helper('listbox.color', array('name' => 'params[color]', 'selected' => $category->params->color)) ?>
+                    </td>
+                </tr>
             </table>
         </div>
     
