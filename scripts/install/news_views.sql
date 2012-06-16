@@ -34,6 +34,7 @@ CREATE ALGORITHM = MERGE VIEW `jos_news_view_articles` AS
         `article`.*,
         `category`.`title` AS `category_title`,
         `category`.`slug` AS `category_slug`,
+        `category`.`params` AS `category_params`,
         `creator`.`name` AS `created_by_name`,
         `creator`.`email` AS `created_by_email`,
         `modifier`.`name` AS `modified_by_name`,
