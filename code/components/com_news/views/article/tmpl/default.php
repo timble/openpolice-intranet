@@ -53,7 +53,9 @@ window.addEvent('domready', function()
 		    ->display();
 		?>
 		<? else : ?>
-		<p class="spacing"><?= @text('Topic is closed for comments') ?></p>
+		<div class="alert alert-info" style="margin: 20px;">
+			<?= @text('Closed for comments') ?>
+		</div>
 		<? endif; ?>
 	</div>
 </div>

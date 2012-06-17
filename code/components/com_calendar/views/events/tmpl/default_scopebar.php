@@ -4,7 +4,7 @@
 		<div class="btn-group">
 		    <span class="btn active"><?= @text('All') ?></span>
 		</div>
-		<div style="float: right;" class="input-prepend input-append">
+		<div style="float: right;" class="input-prepend input-append date-group">
 			<?= @helper('behavior.calendar',
 			array(
 				'date' => $state->start_date,
