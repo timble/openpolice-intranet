@@ -17,7 +17,7 @@
 		<div class="btn-group">
 			<a class="btn<?= $state->subscribed ? ' active' : '' ?>" href="<?= @route($state->subscribed ? '&subscribed=' : '&subscribed=1') ?>"><i class="icon-star"></i></a>
 		</div>
-		<div style="float: right;" class="input-prepend input-append">
+		<div class="date-group input-prepend input-append pull-right">
 		<?= @helper('behavior.calendar',
 				array(
 					'date' => $state->start_date,

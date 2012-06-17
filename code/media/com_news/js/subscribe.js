@@ -32,10 +32,12 @@ News.Subscribe = new Class({
 				
 				if (data.action == 'add') {
 					data.action = 'delete';
-					button.set('html', '<i class="icon-star"></i> Unsubscribe');
+					button.addClass('active');
+					button.set('html', '<i class="icon-star icon-white"></i>');
 				} else {
 					data.action = 'add';
-					button.set('html', '<i class="icon-star-empty"></i> Subscribe');
+					button.removeClass('active');
+					button.set('html', '<i class="icon-star-empty icon-white"></i>');
 				}
 			}.bind(this),
 			onFailure: function() {

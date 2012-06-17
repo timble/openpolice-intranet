@@ -5,7 +5,7 @@
 	    	<div class="controls"><?= @helper('listbox.booleanlist', array('name' => 'commentable', 'selected' => $article->commentable)) ?></div>
 	    </div>
     	<div class="actions">
-    		<input class="btn" type="submit" value="<?= @text('Save') ?>" /> 
+    		<input class="btn btn-small" type="submit" value="<?= @text('Save') ?>" /> 
     	</div>
     </fieldset>
 </form>

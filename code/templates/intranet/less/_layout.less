@@ -35,7 +35,51 @@ body {
 		.clearfix();
 		border-bottom: 1px solid @borderColor;
 		
-		padding: 5px 20px 0px 20px;
+		padding: 0 20px;
+		line-height: 55px;
+		height: 55px;
+		
+		h1 {
+			font-size: 21px;
+			font-weight: normal;
+			color: #222;
+			
+			float: left;
+			
+			small {
+				font-size: 14px;
+			}
+		}
+		
+		.btn-toolbar {
+			.clearfix();
+			
+			.btn-group {
+				padding-top: 4px;
+			}
+			
+			.date-group {
+				line-height: 32px;
+				padding-top: 2px;
+			}
+		}
+		
+		.date {
+			line-height: 14px;
+			height: 28px;
+			
+			float: left;
+			width: 46px;
+			margin-right: 14px;
+			padding: 4px 0;
+			
+			font-size: 11px;
+			text-align: center;
+			
+			.border-radius(5px);
+			border: 1px solid lighten(@borderColor, 5%);
+			background-color: lighten(@borderColor, 15%);
+		}
 	}
 	
 	.main-component {

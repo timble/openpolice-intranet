@@ -34,18 +34,8 @@ window.addEvent('domready', function()
 <div class="article">
 	<?= @template('default_article') ?>
 	
-	<? if(JFactory::getUser()->id): ?>
-	<div class="article-toolbar btn-group" id="article-toolbar">
-		<a class="btn btn-mini subscribe"><i class="icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i> <?= @text($subscribed ? 'Unsubscribe' : 'Subscribe') ?></a>
-		<? if($agent): ?>	
-	    	<a class="btn btn-mini edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i> <?= @text('Edit') ?></a>
-	    	<a class="btn btn-danger btn-mini delete" href="#"><i class="icon-minus icon-white"></i> <?= @text('Delete') ?></a>
-	    <? endif; ?>
-	</div>
-	<? endif ?>
-		
 	<div class="comments">
-		<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?></h3>
+		<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?> <small><?= $article->last_commented_on ? @text('latest about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?></small></h3>
 		
 		<?= @service('com://site/news.controller.comment')
 		    ->view('comments')
@@ -65,9 +55,29 @@ window.addEvent('domready', function()
 		<? else : ?>
 		<p class="spacing"><?= @text('Topic is closed for comments') ?></p>
 		<? endif; ?>
-
 	</div>
 </div>
+
+<module title="" position="scopebar">
+	<? if(JFactory::getUser()->id): ?>
+	<div class="btn-toolbar" id="article-toolbar">
+		<div class="date">
+			<?= @helper('date.format', array('date' => $article->created_on, 'format' => '%H:%M')) ?><br />
+			<?= @helper('date.format', array('date' => $article->created_on, 'format' => '%d %b')) ?>
+		</div>
+		<h1><?= $article->title ?> <small><?= @text('by') ?> <a href="mailto:<?= $article->created_by_email ?>"><?= @escape($article->created_by_name) ?></a> in <span class="label label-<?= json_decode($article->category_params)->color ?>"><?= $article->category_title ?></span></small></h1>
+		<div class="btn-group pull-right" style="margin-left: 8px;">
+			<a class="btn btn-small btn-warning subscribe<?= $subscribed ? ' active' : '' ?>"><i class="icon-white icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i></a>
+		</div>
+		<div class="btn-group pull-right">
+			<? if($agent): ?>	
+		    	<a class="btn btn-small edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i></a>
+		    	<a class="btn btn-small delete" href="#"><i class="icon-trash"></i></a>
+		    <? endif; ?>
+		</div>
+	</div>
+	<? endif ?>
+</module>
 
 <? if($agent) : ?>
     <module title="You are a moderator" position="sidebar"><?= @template('default_sidebar'); ?></module>
