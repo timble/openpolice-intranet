@@ -4,9 +4,12 @@
 	<script>
 	function update()
 	{
-		var chk = document.getElementById('mode');
-		
-		chrome.extension.sendRequest({task: 'update', mode: chk.checked & chk.value == 'active' ? true : false, person: getPersonValue()}, function(response) {console.log(response);});
+		chrome.extension.sendRequest({
+				task: 'update', 
+				person: getPersonValue()
+			}, 
+			function(response) {}
+		);
 	};
 	
 	function getPersonValue()
@@ -34,8 +37,6 @@
 	function init()
 	{
 		chrome.extension.sendRequest({task: "init"}, function(response) {
-			document.getElementById('mode').checked = response.mode ? true : false;
-			
 			setPersonValue(response.person);
 		});
 	};
@@ -45,8 +46,6 @@
 <body style="min-width: 300px" onload="init();">
 
 <form name="headerman">
-
-<input type="checkbox" name="mode" id="mode" value="active" class="checkbox" onclick="return update();" /> <label for="mode" onclick="return update();">Enable</label>
 
 <div id="options-wrapper" class="rounded">
 
