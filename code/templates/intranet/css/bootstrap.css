@@ -3671,7 +3671,9 @@ body {
 .main .main-scopebar {
   *zoom: 1;
   border-bottom: 1px solid #d7d7d7;
-  padding: 5px 20px 0px 20px;
+  padding: 0 20px;
+  line-height: 55px;
+  height: 55px;
 }
 .main .main-scopebar:before,
 .main .main-scopebar:after {
@@ -3680,6 +3682,48 @@ body {
 }
 .main .main-scopebar:after {
   clear: both;
+}
+.main .main-scopebar h1 {
+  font-size: 21px;
+  font-weight: normal;
+  color: #222;
+  float: left;
+}
+.main .main-scopebar h1 small {
+  font-size: 14px;
+}
+.main .main-scopebar .btn-toolbar {
+  *zoom: 1;
+}
+.main .main-scopebar .btn-toolbar:before,
+.main .main-scopebar .btn-toolbar:after {
+  display: table;
+  content: "";
+}
+.main .main-scopebar .btn-toolbar:after {
+  clear: both;
+}
+.main .main-scopebar .btn-toolbar .btn-group {
+  padding-top: 4px;
+}
+.main .main-scopebar .btn-toolbar .date-group {
+  line-height: 32px;
+  padding-top: 2px;
+}
+.main .main-scopebar .date {
+  line-height: 14px;
+  height: 28px;
+  float: left;
+  width: 46px;
+  margin-right: 14px;
+  padding: 4px 0;
+  font-size: 11px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  background-color: #fdfdfd;
 }
 .main .main-component {
   padding: 20px;
@@ -3732,21 +3776,20 @@ body {
 .page-header .moduletable > .toolbar {
   float: right;
 }
-.articles .articles-toolbar {
-  text-align: right;
-  margin-bottom: 10px;
-}
 .articles > .article {
   margin-bottom: 24px;
 }
-.article {
+.articles .article-toolbar {
+  padding: 0 80px 20px 80px;
+}
+.articles .article {
   background-color: #ffffff;
   border: 1px solid #d7d7d7;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.article .article-header {
+.articles .article .article-header {
   *zoom: 1;
   padding: 16px 20px 10px 16px;
   color: #999;
@@ -3757,18 +3800,18 @@ body {
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-.article .article-header:before,
-.article .article-header:after {
+.articles .article .article-header:before,
+.articles .article .article-header:after {
   display: table;
   content: "";
 }
-.article .article-header:after {
+.articles .article .article-header:after {
   clear: both;
 }
-.article .article-header .article-title {
+.articles .article .article-header .article-title {
   color: #555;
 }
-.article .article-header .date {
+.articles .article .article-header .date {
   float: left;
   width: 46px;
   margin-right: 16px;
@@ -3781,14 +3824,14 @@ body {
   border: 1px solid #e4e4e4;
   background-color: #fdfdfd;
 }
-.article .article-text {
+.articles .article .article-text {
   padding: 16px 80px;
 }
-.article .article-attachments {
+.articles .article .article-attachments {
   padding: 16px 60px;
 }
-.article .article-toolbar {
-  margin: 0 0 16px 80px;
+.article .article-text {
+  padding: 0 20px 16px 20px;
 }
 .event {
   background-color: #ffffff;
@@ -3831,10 +3874,12 @@ body {
   border-radius: 0 0 5px 5px;
 }
 .comments > .title {
-  padding: 4px 16px;
-  border-top: 1px solid #d7d7d7;
-  border-bottom: 1px solid #d7d7d7;
+  padding: 4px 20px;
+  border: 1px solid #d7d7d7;
   background-color: #F8F8F8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .comments .comment-default {
   *zoom: 1;

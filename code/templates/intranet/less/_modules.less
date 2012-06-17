@@ -26,18 +26,17 @@
 	}
 }
 
-.articles {
-	.articles-toolbar {
-		text-align: right;
-		margin-bottom: 10px;
-	}
-	
+.articles {	
 	> .article {
 		margin-bottom: 24px;
-	}	
+	}
+	
+	.article-toolbar {
+		padding: 0 80px 20px 80px;
+	}
 }
 
-.article {
+.articles .article {
 	background-color: @white;
 	
 	border: 1px solid @borderColor;
@@ -78,9 +77,11 @@
 	.article-attachments {
 		padding: 16px 60px;
 	}
-	
-	.article-toolbar {
-		margin: 0 0 16px 80px;
+}
+
+.article {
+	.article-text {
+		padding: 0 20px 16px 20px;
 	}
 }
 
@@ -122,12 +123,12 @@
 	.border-radius(0 0 5px 5px);
 	
 	> .title {
-		padding: 4px 16px;
+		padding: 4px 20px;	
 		
-		
-		border-top: 1px solid @borderColor;
-		border-bottom: 1px solid @borderColor;
+		border: 1px solid @borderColor;
 		background-color: #F8F8F8;
+		
+		.border-radius(5px);
 	}
 	
 	.comment-default {
