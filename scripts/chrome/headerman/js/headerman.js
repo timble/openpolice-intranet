@@ -1,7 +1,6 @@
 // Global variables
 if(!HeaderMan) var HeaderMan = {};
 
-HeaderMan.isEnabled = true;
 HeaderMan.person = 'P0000000001';
 
 // Called when the url of a tab changes.
@@ -29,10 +28,6 @@ function reload()
 // Listener, inserts the P identifier into the HTTP headers when enabled
 function forgeHeader(details)
 {
-	if(!HeaderMan.isEnabled) {
-		return;
-	}
-	
 	if(details.url.indexOf('police') > -1)
 	{
 		var header = {name: 'P-SSO-IDENTIFIER', value: HeaderMan.person};
@@ -47,15 +42,14 @@ function forgeHeader(details)
 function requestController(request, sender, sendResponse) {
 	if(request.task == 'update')
 	{
-		var isNew = (HeaderMan.isEnabled != request.mode || HeaderMan.person != request.person);
+		var isNew = (HeaderMan.person != request.person);
 		
-		HeaderMan.isEnabled = request.mode;
 		HeaderMan.person = request.person;
 		
 		if(isNew) reload();
 	}
 	
-	sendResponse({'mode': HeaderMan.isEnabled, 'person': HeaderMan.person});
+	sendResponse({'person': HeaderMan.person});
 };
 
 // Register all listeners :
