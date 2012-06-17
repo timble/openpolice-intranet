@@ -9,7 +9,9 @@ class ComCalendarDatabaseTableEvents extends KDatabaseTableDefault
             ),
             'filters' => array(
             	'text' => 'html', 'tidy'
-            )
+            ),
+            'name' => 'calendar_view_events',
+            'base' => 'calendar_events'
         ));
         
         parent::_initialize($config);

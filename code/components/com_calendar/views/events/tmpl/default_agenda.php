@@ -10,12 +10,7 @@
 			<td><?= @helper('date.format', array('date' => $event->start_date, 'format' => '%d %b')) ?></td>
 			<td><?= @helper('date.format', array('date' => $event->start_date, 'format' => '%H:%M')) ?></td>
 			<td>
-				<?= $event->title ?>
-				<? if($agent) : ?>
-				<div style="float: right;">
-					<a class="btn  btn-mini" href="<?= @route('view=event&layout=form&id='.$event->id) ?>"><i class="icon-pencil"></i></a>
-				</div>
-				<? endif ?>
+				<a href="<?= @route('view=event&id='.$event->id) ?>"><?= $event->title ?></a>
 			</td>
 		</tr>
 		<? endforeach ?>

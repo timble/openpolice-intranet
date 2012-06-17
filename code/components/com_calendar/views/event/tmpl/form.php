@@ -24,7 +24,7 @@
 			   	<input type="text" name="title" class="required" value="<?= @escape($event->title) ?>" placeholder="<?= @text('Title') ?>" />
 			   	
 			   	<div class="input-prepend input-append">
-			   	<span class="add-on"><?=@text( 'From' )?></span><?= @helper('com://site/news.template.helper.behavior.calendar',
+			   	<span class="add-on"><?=@text( 'Date' )?></span><?= @helper('com://site/news.template.helper.behavior.calendar',
 			   			array(
 			   				'date' => $event->start_date,
 			   				'name' => 'start_date',
