@@ -263,3 +263,27 @@
 		}
 	}
 }
+
+.calendar-month {
+	table {
+		tr {
+			td {
+				padding: 0;
+				div {
+					background-color: @nebula;
+					margin-bottom: 4px;
+					padding: 2px 4px;
+					
+					&.first {
+						.border-radius(4px 0 0 4px);
+					}
+					
+					&.last {
+						margin-right: 4px;
+						.border-radius(0 4px 4px 0);
+					}
+				}
+			}
+		}
+	}
+}

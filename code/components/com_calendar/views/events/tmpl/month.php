@@ -47,19 +47,22 @@ function getDaysInWeek ($weekNumber, $year) {
 <? while($week <= $lastweek) : ?>
 <? $y = '1' ?>
 
-<div class="row-fluid">
+<div class="row-fluid calendar-month">
 	<table class="table">
 		<tr>
 			<? $dayTimes = getDaysInWeek($week, 2012); ?>
+			<? $lastDayOfWeek = strftime('%d', end($dayTimes)); ?>
 			<? foreach ($dayTimes as $dayTime) : ?>
 				<? $y++ ?>
 				<td style="width: 14.28%;">
-				<?= strftime('%d', $dayTime); ?><br />
-				<? $list = $days->find(array('day' => strftime('%d', $dayTime))) ?>
-				
-				<? foreach($list as $event) : ?>
-					<?= $event->title ?>
-				<? endforeach; ?>
+					<?= strftime('%d', $dayTime); ?><br />
+					
+					<? foreach($days->find(array('day' => strftime('%d', $dayTime))) as $event) : ?>
+						<? $class = date('d', strtotime($event->end_date)) == strftime('%d', $dayTime) ? 'last' : '' ?>
+						<? $class .= date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) ? 'first' : '' ?>
+					
+						<div class="<?= $class ?>"><?= $event->title ?></div>
+					<? endforeach; ?>
 				</td>
 			<? endforeach; ?>
 		</tr>

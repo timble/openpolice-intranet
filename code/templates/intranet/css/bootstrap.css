@@ -4173,6 +4173,25 @@ body {
 .search-results-default .result .highlight-nebula[href] {
   background-color: #b8cdc8;
 }
+.calendar-month table tr td {
+  padding: 0;
+}
+.calendar-month table tr td div {
+  background-color: #d6e2df;
+  margin-bottom: 4px;
+  padding: 2px 4px;
+}
+.calendar-month table tr td div.first {
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.calendar-month table tr td div.last {
+  margin-right: 4px;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
 /* Forms validation message */
 .validation-advice {
   clear: both;
