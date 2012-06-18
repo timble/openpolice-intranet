@@ -3973,6 +3973,9 @@ body {
 .nav-apps a.item5 {
   background: url("../img/icons/32/id_card-gray.png") no-repeat top center;
 }
+.nav-apps a.item6 {
+  background: url("../img/icons/32/download-gray.png") no-repeat top center;
+}
 .nav-apps a:hover,
 .nav-apps a.active {
   color: #555555;
@@ -3996,6 +3999,10 @@ body {
 .nav-apps a:hover.item5,
 .nav-apps a.active.item5 {
   background: url("../img/icons/32/id_card.png") no-repeat top center;
+}
+.nav-apps a:hover.item6,
+.nav-apps a.active.item6 {
+  background: url("../img/icons/32/download.png") no-repeat top center;
 }
 .module-events {
   list-style: none;
