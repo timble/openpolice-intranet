@@ -52,6 +52,10 @@
 	                $controller->getView()->setEditorSettings($editor_settings);
 	                echo $controller->name('description')->data($event->description)->toggle(false)->codemirror(false)->display();
 	            ?>
+	            
+			    <div class="clearfix attachments">
+                    <?= @template('com://admin/attachments.view.attachments.upload') ?>
+			    </div>
 		    </div>
 		    <div class="form-actions">
 			    <span class="btn-group">

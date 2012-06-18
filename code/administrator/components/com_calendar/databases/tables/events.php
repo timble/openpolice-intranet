@@ -5,7 +5,7 @@ class ComCalendarDatabaseTableEvents extends KDatabaseTableDefault
     {
         $config->append(array(
             'behaviors' => array(
-            	'creatable', 'lockable', 'modifiable', 'sluggable'
+            	'creatable', 'lockable', 'modifiable', 'sluggable', 'attachable'
             ),
             'filters' => array(
             	'text' => 'html', 'tidy'
