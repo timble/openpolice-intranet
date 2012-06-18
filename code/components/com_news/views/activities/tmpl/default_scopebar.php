@@ -7,7 +7,7 @@
 		</a>
 	</div>
 	<div class="btn-group">
-		<a class="btn<?= $state->subscribed ? ' active' : '' ?>" href="<?= @route($state->subscribed ? '&subscribed=' : '&subscribed=1') ?>"><i class="icon-<?= $state->subscribed ? 'star' : 'star-empty' ?>"></i></a>
+		<a class="btn<?= $state->subscribed ? ' active' : '' ?>" href="<?= @route($state->subscribed ? '&subscribed=' : '&subscribed=1') ?>"><i class="icon-star"></i></a>
 	</div>
 	<div class="btn-group">
 		<span class="btn">Calendar</span>
