@@ -1,4 +1,4 @@
-DROP VIEW IF EXISTS
+DROP TABLE IF EXISTS
     `jos_calendar_events`,
     `jos_calendar_days`;
 
