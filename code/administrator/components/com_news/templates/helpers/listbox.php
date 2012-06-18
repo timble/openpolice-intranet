@@ -2,18 +2,41 @@
 
 class ComNewsTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 {
-	public function category( $config = array())
-	{
-		$config = new KConfig($config);
-		$config->append(array(
-			'identifier'  => 'com://admin/news.model.categories',
-			'name' 		=> 'category',
-			'value'		=> 'id',
-			'text'		=> 'title'
-		));
+	public function categories(array $config = array())
+    {
+        $config = new KConfig($config);
+        $config->append(array(
+            'name'         => 'category',
+            'filter'       => array(),
+            'unselectable' => array(),
+            'root'         => false,
+            'deselect'     => true,
+            'prompt'       => '- Select -'
+        ));
 
-		return parent::_listbox($config);
-	}
+        if(!($config->unselectable instanceof KConfig)) {
+            $config->unselectable = (array) $config->unselectable;
+        }
+
+        $categories = $this->getService('com://admin/news.model.categories')
+            ->getList();
+
+        if($config->deselect) {
+            $options[] = $this->option(array('text' => $config->prompt, 'value' => ''));
+        }
+
+        foreach($categories as $category)
+        {
+            $options[] = $this->option(array(
+                'text'    => $category->title,
+                'value'   => $category->id
+            ));
+        }
+
+        $config->options = $options;
+
+        return $this->optionlist($config);
+    }
 	
 	public function booleanlist( $config = array())
 	{
