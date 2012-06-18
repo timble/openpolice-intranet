@@ -1,5 +1,6 @@
 DROP VIEW IF EXISTS
-    `jos_calendar_view_events`;
+    `jos_calendar_view_events`,
+    `jos_calendar_view_days`;
 
 CREATE ALGORITHM = MERGE VIEW `jos_calendar_view_events` AS
     SELECT
