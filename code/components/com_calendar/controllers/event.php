@@ -10,7 +10,7 @@ class ComCalendarControllerEvent extends ComDefaultControllerDefault
     {
         $config->append(array(
             'request' => array(
-                'sort'      => 'start_date',
+                'sort'      => 'title',
             	'direction' => 'asc'
             )
         ));

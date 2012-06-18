@@ -23,14 +23,28 @@
 
 			   	<input type="text" name="title" class="required" value="<?= @escape($event->title) ?>" placeholder="<?= @text('Title') ?>" />
 			   	
-			   	<div class="input-prepend input-append">
-			   	<span class="add-on"><?=@text( 'Date' )?></span><?= @helper('com://site/news.template.helper.behavior.calendar',
-			   			array(
-			   				'date' => $event->start_date,
-			   				'name' => 'start_date',
-			   				'format' => '%Y-%m-%d %H:%M',
-			   				'attribs' => array('style' => 'width: 120px')
-			   			)); ?>
+			   	<div class="controls">
+				   	<div class="input-prepend input-append">
+				   	<span class="add-on"><?=@text( 'Start' )?></span><?= @helper('com://site/news.template.helper.behavior.calendar',
+				   			array(
+				   				'date' => $event->start_date,
+				   				'name' => 'start_date',
+				   				'format' => '%Y-%m-%d %H:%M:%S',
+				   				'attribs' => array('style' => 'width: 120px')
+				   			)); ?>
+				   	</div>
+			   	</div>
+			   	
+			   	<div class="controls">
+			   		<div class="input-prepend input-append">
+			   		<span class="add-on"><?=@text( 'End' )?></span><?= @helper('com://site/news.template.helper.behavior.calendar',
+			   				array(
+			   					'date' => $event->end_date,
+			   					'name' => 'end_date',
+			   					'format' => '%Y-%m-%d %H:%M:%S',
+			   					'attribs' => array('style' => 'width: 120px')
+			   				)); ?>
+			   		</div>
 			   	</div>
 			
 	            <?
