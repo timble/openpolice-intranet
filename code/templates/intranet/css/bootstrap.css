@@ -4173,24 +4173,43 @@ body {
 .search-results-default .result .highlight-nebula[href] {
   background-color: #b8cdc8;
 }
-.calendar-month table tr td {
-  padding: 0;
+.calendar-month table {
+  border-left: 1px solid #DDDDDD;
+  margin-bottom: 0;
 }
-.calendar-month table tr td div {
+.calendar-month table thead tr th {
+  padding: 0 0 0 6px;
+  color: #555555;
+}
+.calendar-month table tr td {
+  border-right: 1px solid #DDDDDD;
+  padding: 0;
+  height: 80px;
+}
+.calendar-month table tr td .calendar-event {
   background-color: #d6e2df;
   margin-bottom: 4px;
   padding: 2px 4px;
+  height: 18px;
 }
-.calendar-month table tr td div.first {
+.calendar-month table tr td .calendar-event.first {
+  margin-left: 2px;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-.calendar-month table tr td div.last {
-  margin-right: 4px;
+.calendar-month table tr td .calendar-event.last {
+  margin-right: 2px;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
+}
+.calendar-month table tr td .calendar-day {
+  color: #999999;
+  padding: 2px 6px;
+}
+.calendar-month:last-child {
+  border-bottom: 1px solid #DDDDDD;
 }
 /* Forms validation message */
 .validation-advice {

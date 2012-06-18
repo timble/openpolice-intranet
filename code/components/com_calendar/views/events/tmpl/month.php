@@ -28,48 +28,56 @@ function getDaysInWeek ($weekNumber, $year) {
 }
 
  ?>
- 
-<table class="table">
-	<thead>
-	<tr>
-		<th style="width: 14.28%;"><?= @text('Mon') ?></th>
-		<th style="width: 14.28%;"><?= @text('Tue') ?></th>
-		<th style="width: 14.28%;"><?= @text('Wed') ?></th>
-		<th style="width: 14.28%;"><?= @text('Thu') ?></th>
-		<th style="width: 14.28%;"><?= @text('Fri') ?></th>
-		<th style="width: 14.28%;"><?= @text('Sat') ?></th>
-		<th style="width: 14.28%;"><?= @text('Sun') ?></th>
-	</tr>
-	</thead>
-</table>
- 
-<? $week = $firstweek ?>
-<? while($week <= $lastweek) : ?>
-<? $y = '1' ?>
-
-<div class="row-fluid calendar-month">
+<div class="calendar-month"> 
 	<table class="table">
+		<thead>
 		<tr>
-			<? $dayTimes = getDaysInWeek($week, 2012); ?>
-			<? $lastDayOfWeek = strftime('%d', end($dayTimes)); ?>
-			<? foreach ($dayTimes as $dayTime) : ?>
-				<? $y++ ?>
-				<td style="width: 14.28%;">
-					<?= strftime('%d', $dayTime); ?><br />
-					
-					<? foreach($days->find(array('day' => strftime('%d', $dayTime))) as $event) : ?>
-						<? $class = date('d', strtotime($event->end_date)) == strftime('%d', $dayTime) ? 'last' : '' ?>
-						<? $class .= date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) ? 'first' : '' ?>
-					
-						<div class="<?= $class ?>"><?= $event->title ?></div>
-					<? endforeach; ?>
-				</td>
-			<? endforeach; ?>
+			<th style="width: 14.28%;"><?= @text('Mon') ?></th>
+			<th style="width: 14.28%;"><?= @text('Tue') ?></th>
+			<th style="width: 14.28%;"><?= @text('Wed') ?></th>
+			<th style="width: 14.28%;"><?= @text('Thu') ?></th>
+			<th style="width: 14.28%;"><?= @text('Fri') ?></th>
+			<th style="width: 14.28%;"><?= @text('Sat') ?></th>
+			<th style="width: 14.28%;"><?= @text('Sun') ?></th>
 		</tr>
+		</thead>
 	</table>
+	 
+	<? $week = $firstweek ?>
+	<? while($week <= $lastweek) : ?>
+	<? $y = '1' ?>
+	
+	<div class="row-fluid">
+		<table class="table">
+			<tr>
+				<? $dayTimes = getDaysInWeek($week, 2012); ?>
+				<? $lastDayOfWeek = strftime('%d', end($dayTimes)); ?>
+				<? $firstDayOfWeek = strftime('%d', $dayTimes[0]); ?>
+				<? foreach ($dayTimes as $dayTime) : ?>
+					<? $y++ ?>
+					<td style="width: 14.28%;">
+						<div class="calendar-day"><?= strftime('%d', $dayTime); ?></div>
+						
+						<? foreach($days->find(array('day' => strftime('%d', $dayTime))) as $event) : ?>
+							<? $class = date('d', strtotime($event->end_date)) == strftime('%d', $dayTime) ? ' last' : '' ?>
+							<? $class .= date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) ? ' first' : '' ?>
+							
+							<? if(date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) OR strftime('%d', $dayTime) == $firstDayOfWeek) : ?>
+							<div class="calendar-event<?= $class ?>">
+								<?= $event->title ?>
+							</div>
+							<? else : ?>
+							<div class="calendar-event<?= $class ?>"></div>
+							<? endif; ?>
+						<? endforeach; ?>
+					</td>
+				<? endforeach; ?>
+			</tr>
+		</table>
+	</div>
+	<? $week++ ?>
+	<? endwhile; ?>
 </div>
-<? $week++ ?>
-<? endwhile; ?>
 
 <module title="" position="scopebar">
 	<?= @template('default_scopebar') ?>

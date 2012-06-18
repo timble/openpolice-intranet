@@ -266,24 +266,50 @@
 
 .calendar-month {
 	table {
+		border-left: 1px solid #DDDDDD;
+		
+		margin-bottom: 0;
+		
+		thead {
+			tr {
+				th {
+					padding: 0 0 0 6px;
+					color: @gray;
+				}
+			}
+		}
+		
 		tr {
 			td {
+				border-right: 1px solid #DDDDDD;
+				
 				padding: 0;
-				div {
+				height: 80px;
+				.calendar-event {
 					background-color: @nebula;
 					margin-bottom: 4px;
 					padding: 2px 4px;
+					height: 18px;
 					
 					&.first {
+						margin-left: 2px;
 						.border-radius(4px 0 0 4px);
 					}
 					
 					&.last {
-						margin-right: 4px;
+						margin-right: 2px;
 						.border-radius(0 4px 4px 0);
 					}
 				}
+				.calendar-day {
+					color: @grayLight;
+					padding: 2px 6px;
+				}
 			}
 		}
+	}
+	
+	&:last-child {
+		border-bottom: 1px solid #DDDDDD;
 	}
 }
