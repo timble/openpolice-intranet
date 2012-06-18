@@ -4,6 +4,14 @@
 		<div class="btn-group">
 		    <span class="btn active"><?= @text('All') ?></span>
 		</div>
+		<div class="btn-group">
+		    <a class="btn <?= JRequest::getVar('layout', 'default') == 'default' ? 'active' : '' ?>" href="<?= @route('view=events&layout=default') ?>">
+		        <?= @text('Agenda') ?>
+		    </a>
+		    <a class="btn <?= JRequest::getVar('layout', 'default') == 'month' ? 'active' : '' ?>" href="<?= @route('view=events&layout=month') ?>">
+		        <?= @text('Month') ?>
+		    </a>
+		</div>
 		<div style="float: right;" class="input-prepend input-append date-group">
 			<?= @helper('behavior.calendar',
 			array(
