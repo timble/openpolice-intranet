@@ -1,7 +1,7 @@
 <a name="comment-<?= $comment->id ?>"></a>
 <div id="comment-<?= $comment->id ?>" class="comment-default">
-    <div class="comment-avatar" style="float:left">
-    	<?= @helper('com://admin/comments.template.helper.grid.gravatar', array('email' => $comment->created_by_email, 'size' => '48')) ?>
+    <div class="comment-avatar" style="float:left">  	 
+    	 <img src="<?= $this->getService('com://admin/users.model.users')->id($comment->created_by)->getItem()->avatar ?>" />
     </div>
     	
     <div style="float:left;width:430px">       

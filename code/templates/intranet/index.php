@@ -37,12 +37,18 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				</div>
 				
 				<div class="row-fluid">
+					<?php if(JRequest::getVar('layout', 'cmd') == 'form') : ?>
+					<div class="main-component">
+						<jdoc:include type="component" />
+					</div>
+					<? else : ?>
 					<div class="main-component span9">
 						<jdoc:include type="component" />
 					</div>
 					<div class="main-sidebar span3">
 						<jdoc:include type="modules" name="sidebar" style="xhtmls" />
 					</div>
+					<? endif; ?>
 				</div>
 			</div>
 		</div>

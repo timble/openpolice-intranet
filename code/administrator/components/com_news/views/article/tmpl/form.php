@@ -33,6 +33,14 @@
                         <?= @helper('select.booleanlist', array('name' => 'commentable', 'selected' => $article->commentable)) ?>
                     </td>
                 </tr>
+                <tr>
+                	<td class="key">
+                		<label for="slug"><?= @text( 'Location' ); ?>:</label>
+                	</td>
+                	<td>
+                		<?= @helper('listbox.categories', array('name' => 'news_category_id', 'selected' => $article->news_category_id)) ?>
+                	</td>
+                </tr>
             </table>
         </div>
         
