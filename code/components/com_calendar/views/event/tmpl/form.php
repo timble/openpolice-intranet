@@ -11,6 +11,8 @@
             holder.getElement('input[name=action]').set('value', 'cancel');
             holder.getElement('form.-koowa-form').submit();
         });
+
+        new Attachments.Upload({holder: 'calendar-event-form'});
     }));
 </script>
 
