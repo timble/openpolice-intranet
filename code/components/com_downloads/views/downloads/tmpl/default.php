@@ -1,8 +1,9 @@
-
-<h1>Downloads</h1>
+<module title="" position="scopebar">
+	<?= @template('default_scopebar') ?>
+</module>
 
 <? if(count($files)): ?>
-	<table width="100%" cellspacing="0" class="filelist">
+	<table width="100%" cellspacing="0" class="table">
 		<thead>
 			<tr>
 				<th width="60%"><?= @text('Name'); ?></th>
@@ -14,8 +15,7 @@
 			<? if(isset($toplevel)): ?>
 				<tr>
 					<td colspan="3">
-					<img src="media://com_files/images/folder-16.png" /> 
-					<a href="<?= @route('folder='.$toplevel) ?>">..</a>
+						<a href="<?= @route('folder='.$toplevel) ?>"><i class="icon-folder-open"></i> ..</a>
 					</td>
 				</tr>
 			<? endif; ?>
@@ -24,9 +24,8 @@
 				<? foreach($folders as $folder): ?>
 				<tr>
 					<td colspan="3">
-						<img src="media://com_files/images/folder-16.png" /> 
 						<a href="<?= @route('folder='.base64_encode($cwd.'/'.$folder->name)) ?>">
-							<?= $folder->name ?>
+							<i class="icon-folder-close"></i> <?= $folder->name ?>
 						</a>
 					</td>
 				</tr>
