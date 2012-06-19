@@ -4,12 +4,12 @@
 
 <script>
     window.addEvent('domready', (function(){
-        var holder = document.id('calendar-event-form');
-        holder.getElement('a.cancel').addEvent('click', function(event) {
+        var toolbar = document.id('event-form-toolbar');
+        toolbar.getElement('a.cancel').addEvent('click', function(event) {
             event.stop();
             
-            holder.getElement('input[name=action]').set('value', 'cancel');
-            holder.getElement('form.-koowa-form').submit();
+            document.id('calendar-event-form').getElement('input[name=action]').set('value', 'cancel');
+            document.id('calendar-event-form').submit();
         });
 
         new Attachments.Upload({holder: 'calendar-event-form'});
