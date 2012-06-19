@@ -31,37 +31,7 @@ window.addEvent('domready', function()
 });
 </script>
 
-<div class="article">
-	<?= @template('default_article') ?>
-	
-	<div class="comments">
-		<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?> <small><?= $article->last_commented_on ? @text('latest about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?></small></h3>
-		
-		<?= @service('com://site/news.controller.comment')
-		    ->view('comments')
-		    ->table('news_articles')
-		    ->row($article->id)
-		    ->display();
-		?>
-		
-		<? if($article->commentable) : ?>
-		<?= @service('com://site/news.controller.comment')
-		    ->view('comment')
-		    ->layout('form')
-		    ->table('news_articles')
-		    ->row($article->id)
-		    ->display();
-		?>
-		<? else : ?>
-		<div class="alert alert-info" style="margin: 20px;">
-			<?= @text('Closed for comments') ?>
-		</div>
-		<? endif; ?>
-	</div>
-</div>
-
-<module title="" position="scopebar">
-	<? if(JFactory::getUser()->id): ?>
+<div class="component-header">
 	<div class="btn-toolbar" id="article-toolbar">
 		<div class="date">
 			<?= @helper('date.format', array('date' => $article->created_on, 'format' => '%H:%M')) ?><br />
@@ -78,9 +48,44 @@ window.addEvent('domready', function()
 		    <? endif; ?>
 		</div>
 	</div>
-	<? endif ?>
-</module>
+</div>
 
-<? if($agent) : ?>
-    <module title="You are a moderator" position="sidebar"><?= @template('default_sidebar'); ?></module>
-<? endif ?>
+<div style="padding: 20px;">
+	<div class="row-fluid">
+		<div class="span9">
+			<div class="article">
+				<?= @template('default_article') ?>
+				
+				<div class="comments">
+					<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?> <small><?= $article->last_commented_on ? @text('latest about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?></small></h3>
+					
+					<?= @service('com://site/news.controller.comment')
+					    ->view('comments')
+					    ->table('news_articles')
+					    ->row($article->id)
+					    ->display();
+					?>
+					
+					<? if($article->commentable) : ?>
+					<?= @service('com://site/news.controller.comment')
+					    ->view('comment')
+					    ->layout('form')
+					    ->table('news_articles')
+					    ->row($article->id)
+					    ->display();
+					?>
+					<? else : ?>
+					<div class="alert alert-info" style="margin: 20px;">
+						<?= @text('Closed for comments') ?>
+					</div>
+					<? endif; ?>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<? if($agent) : ?>
+			    <?= @template('default_sidebar'); ?>
+			<? endif ?>
+		</div>
+	</div>
+</div>

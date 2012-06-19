@@ -3737,6 +3737,63 @@ body {
 .main-sidebar .module {
   margin-bottom: 20px;
 }
+.component-header {
+  *zoom: 1;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 0 20px;
+  line-height: 55px;
+  height: 55px;
+}
+.component-header:before,
+.component-header:after {
+  display: table;
+  content: "";
+}
+.component-header:after {
+  clear: both;
+}
+.component-header h1 {
+  font-size: 21px;
+  font-weight: normal;
+  color: #222;
+  float: left;
+}
+.component-header h1 small {
+  font-size: 14px;
+}
+.component-header .btn-toolbar {
+  *zoom: 1;
+}
+.component-header .btn-toolbar:before,
+.component-header .btn-toolbar:after {
+  display: table;
+  content: "";
+}
+.component-header .btn-toolbar:after {
+  clear: both;
+}
+.component-header .btn-toolbar .btn-group {
+  padding-top: 4px;
+}
+.component-header .btn-toolbar .date-group {
+  line-height: 32px;
+  padding-top: 2px;
+}
+.component-header .date {
+  line-height: 14px;
+  height: 28px;
+  float: left;
+  width: 46px;
+  margin-right: 14px;
+  padding: 4px 0;
+  font-size: 11px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  background-color: #fdfdfd;
+}
 .page-header {
   *zoom: 1;
   padding: 8px 16px;
@@ -3840,12 +3897,8 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.event-form form,
-.article-form form {
-  margin: 0;
-}
-.event-form form input[name="title"],
-.article-form form input[name="title"] {
+.event-form input[name="title"],
+.article-form input[name="title"] {
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3855,17 +3908,10 @@ body {
   height: 49.5px;
   line-height: 49.5px;
 }
-.event-form form .editor-container,
-.article-form form .editor-container {
+.event-form .editor-container,
+.article-form .editor-container {
   border: 1px solid #d7d7d7;
   border-bottom: 0 none;
-}
-.event-form .form-actions,
-.article-form .form-actions {
-  margin: 0;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
 }
 .comments {
   background-color: #ffffff;

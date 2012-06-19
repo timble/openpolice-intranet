@@ -16,13 +16,16 @@
     }));
 </script>
 
-<div id="calendar-event-form">
-	<div class="event event-form">
-		<form action="" method="post" class="-koowa-form" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="save" />
-            
-            <div style="padding: 20px;">
-
+<form action="" method="post" id="calendar-event-form" class="-koowa-form" enctype="multipart/form-data">
+	<input type="hidden" name="action" value="save" />
+	
+	<div class="component-header">
+		<?= @template('form_scopebar') ?>
+	</div>
+	
+	<div style="padding: 20px;">
+		<div class="row-fluid">
+			<div class="event-form span9">	
 			   	<input type="text" name="title" class="required" value="<?= @escape($event->title) ?>" placeholder="<?= @text('Title') ?>" />
 			   	
 			   	<div class="controls">
@@ -49,23 +52,16 @@
 			   		</div>
 			   	</div>
 			
-	            <?
-	                $controller = @service('com://admin/editors.controller.editor');
-	                $controller->getView()->setEditorSettings($editor_settings);
-	                echo $controller->name('description')->data($event->description)->toggle(false)->codemirror(false)->display();
-	            ?>
-	            
-			    <div class="clearfix attachments">
-                    <?= @template('com://admin/attachments.view.attachments.upload') ?>
-			    </div>
+		        <?
+		            $controller = @service('com://admin/editors.controller.editor');
+		            $controller->getView()->setEditorSettings($editor_settings);
+		            echo $controller->name('description')->data($event->description)->toggle(false)->codemirror(false)->display();
+		        ?>
+	        </div>
+	        
+		    <div class="clearfix attachments span3">
+	            <?= @template('com://admin/attachments.view.attachments.upload') ?>
 		    </div>
-		    <div class="form-actions">
-			    <span class="btn-group">
-			    	<input class="btn btn-primary" type="submit" value="<?= @text('Save') ?>" />
-			    	<a class="btn btn-danger" href="#"><?= @text('Delete') ?></a>
-			    </span>
-			    <span style="line-height: 28px;"><?= @text('or') ?> <a href="#" class="cancel">Cancel</a></span>
-		    </div>
-		</form>
+	    </div>
 	</div>
-</div>
+</form>

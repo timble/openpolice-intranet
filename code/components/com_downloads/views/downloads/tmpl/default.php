@@ -1,8 +1,9 @@
-<module title="" position="scopebar">
+<div class="component-header">
 	<?= @template('default_scopebar') ?>
-</module>
+</div>
 
 <? if(count($files)): ?>
+	<div style="padding: 20px;">
 	<table width="100%" cellspacing="0" class="table">
 		<thead>
 			<tr>
@@ -47,4 +48,5 @@
 			<? endforeach; ?>
 		</tbody>
 	</table>
+	</div>
 <? endif; ?>

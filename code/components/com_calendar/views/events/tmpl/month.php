@@ -1,3 +1,7 @@
+<div class="component-header">
+	<?= @template('default_scopebar') ?>
+</div>
+
 <? $firstdate = date('Ym', strtotime($today)).'01' ?> 
 <? $lastdate = date('Ymt', strtotime($today)) ?>
 
@@ -28,7 +32,7 @@ function getDaysInWeek ($weekNumber, $year) {
 }
 
  ?>
-<div class="calendar-month"> 
+<div class="calendar-month" style="padding: 20px;"> 
 	<table class="table">
 		<thead>
 		<tr>

@@ -93,30 +93,20 @@
 }
 
 .event-form,
-.article-form {	
-	form {
-		margin: 0;
-		
-		input[name="title"] {
-			width: 100%;
-			.box-sizing(border-box);
-			font-size: @baseFontSize * 2;
-			height: @baseLineHeight * 2.75;
-			line-height: @baseLineHeight * 2.75;
-		}
-		
-		.editor-container {
-			border: 1px solid @borderColor;
-			border-bottom: 0 none;
-		}
+.article-form {		
+	input[name="title"] {
+		width: 100%;
+		.box-sizing(border-box);
+		font-size: @baseFontSize * 2;
+		height: @baseLineHeight * 2.75;
+		line-height: @baseLineHeight * 2.75;
 	}
 	
-	.form-actions {
-		margin: 0;
-		.border-radius(0 0 5px 5px);
+	.editor-container {
+		border: 1px solid @borderColor;
+		border-bottom: 0 none;
 	}
 }
-
 
 .comments {
 	background-color: @white;
@@ -313,3 +303,4 @@
 		border-bottom: 1px solid #DDDDDD;
 	}
 }
+
