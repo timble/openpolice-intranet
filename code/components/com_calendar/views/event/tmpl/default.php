@@ -1,17 +1,4 @@
-<p>
-<?= $event->description ?>
-</p>
-
-<? if(count($attachments)): ?>
-<div class="attachments">
-	<h3><?= @text('Attachments') ?></h3>
-
-	<?= @template('com://site/calendar.view.attachments.list') ?>
-</div>
-<? endif; ?>
-
-<module title="" position="scopebar">
-	<? if(JFactory::getUser()->id): ?>
+<div class="component-header">
 	<div class="btn-toolbar" id="event-toolbar">
 		<div class="date">
 			<?= @helper('date.format', array('date' => $event->start_date, 'format' => '%H:%M')) ?><br />
@@ -30,5 +17,18 @@
 		    <? endif; ?>
 		</div>
 	</div>
-	<? endif ?>
-</module>
+</div>
+
+<div style="padding: 20px;">
+	<p>
+		<?= $event->description ?>
+	</p>
+	
+	<? if(count($attachments)): ?>
+	<div class="attachments">
+		<h3><?= @text('Attachments') ?></h3>
+	
+		<?= @template('com://site/calendar.view.attachments.list') ?>
+	</div>
+	<? endif; ?>
+</div>

@@ -1,6 +1,15 @@
 <?php
 class ComDownloadsViewDownloadsHtml extends ComDefaultViewHtml
 {
+	protected function _initialize(KConfig $config)
+    {
+        $config->append(array(
+            'template_filters' => array('module'),
+        ));
+
+        parent::_initialize($config);
+    }
+	
 	public function display()
 	{
 		$cwd = base64_decode(KRequest::get('get.folder', 'base64', null));
