@@ -1,7 +1,7 @@
 <form action="" method="post" class="-koowa-form">
 	<fieldset>
 	    <div class="control-group">
-	    	<label class="control-label"><?= @text('Commentable') ?></label>
+	    	<h3><?= @text('Commentable') ?></h3>
 	    	<div class="controls"><?= @helper('listbox.booleanlist', array('name' => 'commentable', 'selected' => $article->commentable)) ?></div>
 	    </div>
     	<div class="actions">

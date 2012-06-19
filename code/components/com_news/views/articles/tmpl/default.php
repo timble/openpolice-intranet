@@ -27,6 +27,7 @@
 			</div>
 			<? endif ?>
 			
+			<h3><?= @text('Calendar') ?></h3>
 			<?= @service('mod://site/calendar.html')->display(); ?>
 		</div>
 	</div>
