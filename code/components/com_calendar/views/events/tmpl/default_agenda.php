@@ -9,8 +9,7 @@
 	
 		<? $count = '0' ?>
 		<? $current_day = null; ?>
-		<? $day = cal_days_in_month(CAL_GREGORIAN, date('m', strtotime($today)), date('Y', strtotime($today))); ?>
-		<? while($count < $day) : ?>
+		<? while($count != cal_days_in_month(CAL_GREGORIAN, date('d', $today), date('Y', $today))) : ?>
 			<? $count++ ?>
 			
 			<? $list = $days->find(array('day' => $count)) ?>
