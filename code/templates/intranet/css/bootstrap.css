@@ -592,6 +592,7 @@ body{background:url(../img/body-bg.png) repeat 0 0;margin-left:20px;margin-botto
 .component-header .btn-toolbar .btn-group{padding-top:4px;}
 .component-header .btn-toolbar .date-group{line-height:32px;padding-top:2px;}
 .component-header .date{line-height:14px;height:28px;float:left;width:46px;margin-right:14px;padding:4px 0;font-size:11px;text-align:center;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid #e4e4e4;background-color:#fdfdfd;}
+.component-sidebar h3{margin-top:12px;margin-bottom:6px;}
 .page-header{*zoom:1;padding:8px 16px;margin:0 0 24px 0;background-color:#444a54;background-image:-moz-linear-gradient(top, #4a515b, #3c4049);background-image:-ms-linear-gradient(top, #4a515b, #3c4049);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#4a515b), to(#3c4049));background-image:-webkit-linear-gradient(top, #4a515b, #3c4049);background-image:-o-linear-gradient(top, #4a515b, #3c4049);background-image:linear-gradient(top, #4a515b, #3c4049);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a515b', endColorstr='#3c4049', GradientType=0);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid #49505B;}.page-header:before,.page-header:after{display:table;content:"";}
 .page-header:after{clear:both;}
 .page-header>h1{float:left;font-size:18px;color:#ffffff;line-height:28px;}.page-header>h1 .icon{vertical-align:baseline;margin-right:8px;}
@@ -608,6 +609,7 @@ body{background:url(../img/body-bg.png) repeat 0 0;margin-left:20px;margin-botto
 .event{background-color:#ffffff;border:1px solid #d7d7d7;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 .event-form input[name="title"],.article-form input[name="title"]{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;font-size:26px;height:49.5px;line-height:49.5px;}
 .event-form .editor-container,.article-form .editor-container{border:1px solid #d7d7d7;border-bottom:0 none;}
+.event-default ul li{list-style:none;}.event-default ul li .description{width:50px;text-align:right;margin-right:6px;font-weight:bold;}
 .comments{background-color:#ffffff;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;}.comments>.title{padding:4px 20px;border:1px solid #d7d7d7;background-color:#F8F8F8;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 .comments .comment-default{*zoom:1;margin:0 20px;padding:16px 64px 16px 0;border-bottom:1px dotted #d7d7d7;}.comments .comment-default:before,.comments .comment-default:after{display:table;content:"";}
 .comments .comment-default:after{clear:both;}
@@ -630,7 +632,7 @@ body{background:url(../img/body-bg.png) repeat 0 0;margin-left:20px;margin-botto
 .nav-apps a:hover.item4,.nav-apps a.active.item4{background:url("../img/icons/32/clock.png") no-repeat top center;}
 .nav-apps a:hover.item5,.nav-apps a.active.item5{background:url("../img/icons/32/id_card.png") no-repeat top center;}
 .nav-apps a:hover.item6,.nav-apps a.active.item6{background:url("../img/icons/32/download.png") no-repeat top center;}
-.module-events{list-style:none;margin:0;}.module-events li{padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid #f1f1f1;}.module-events li small{color:#999999;}
+.module-events{list-style:none;margin:0;}.module-events li{padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid #f1f1f1;}.module-events li small{color:#999999;font-size:12px;}
 .search-results-default .result{border-bottom:1px solid #d7d7d7;padding-bottom:20px;margin-bottom:20px;}.search-results-default .result .highlight{font-size:10.998px;font-weight:bold;line-height:14px;color:#ffffff;vertical-align:baseline;white-space:nowrap;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);background-color:#999999;padding:1px 4px 2px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}.search-results-default .result .highlight-important{background-color:#b94a48;}
 .search-results-default .result .highlight-important[href]{background-color:#953b39;}
 .search-results-default .result .highlight-warning{background-color:#de791c;}
