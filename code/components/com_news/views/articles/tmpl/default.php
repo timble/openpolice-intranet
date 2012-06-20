@@ -18,7 +18,7 @@
 				<?= @helper('paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 			</div>
 		</div>
-		<div class="span3">
+		<div class="span3 component-sidebar">
 			<? if($agent) : ?>
 			<div class="articles-toolbar">
 			    <a style="width: 90%;" class="btn btn-primary btn-small" href="<?= @route('view=article&layout=form&category='.$state->category) ?>">

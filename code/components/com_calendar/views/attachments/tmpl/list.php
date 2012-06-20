@@ -19,7 +19,7 @@
     <ul class="attachments-list">
     <? foreach($list as $item) : ?>        
     	<? if(!$item->file->isImage()) : ?>
-    	<li><a href="<?= @route('option=com_attachments&view=attachment&format=file&id='.$item->id) ?>"><?= @escape($item->name) ?></a> </li>
+    	<li><i class="icon-file"></i> <a href="<?= @route('option=com_attachments&view=attachment&format=file&id='.$item->id) ?>"><?= @escape($item->name) ?></a></li>
     	<? endif ?>
     <? endforeach ?>
     </ul>
