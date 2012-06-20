@@ -9,9 +9,6 @@
 				<? foreach($articles as $article) : ?>
 					<div class="article">
 						<?= @template('default_article', array('article' => $article)) ?>
-						<div class="article-toolbar">
-							<a class="btn btn-small" href="<?= @route('view=article&id='.$article->id.'&slug='.$article->slug) ?>"><?= @text('Read more') ?> <i class="icon-arrow-right"></i></a>
-						</div>
 					</div>
 				<? endforeach ?>
 				
