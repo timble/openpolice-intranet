@@ -89,9 +89,6 @@ class ComNewsTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 	    $options = array();
 	    
 	    $options[] = $this->option(array('text' => JText::_( 'None' ), 'value' => ''));
-	    $options[] = $this->option(array('text' => JText::_( 'Endeavour (Police)' ), 'value' => 'endeavour'));
-	    $options[] = $this->option(array('text' => JText::_( 'Zest (Federal)' ), 'value' => 'zest'));
-	    $options[] = $this->option(array('text' => JText::_( 'Shadow Green (Local)' ), 'value' => 'shadow-green'));
 	    $options[] = $this->option(array('text' => JText::_( 'Earls Green' ), 'value' => 'earls-green'));
 	    $options[] = $this->option(array('text' => JText::_( 'Bright Sun' ), 'value' => 'bright-sun'));
 	    $options[] = $this->option(array('text' => JText::_( 'Sea Buckthorn' ), 'value' => 'sea-buckthorn'));
