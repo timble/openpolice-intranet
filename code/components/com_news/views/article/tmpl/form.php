@@ -40,21 +40,29 @@
 	                    $controller->getView()->setEditorSettings($editor_settings);
 	                    echo $controller->name('text')->data($article->text)->toggle(false)->codemirror(false)->display();
 	                ?>
+	                
+	                <hr />
+	                
+	                <div class="clearfix attachments">
+	                    <? if ($article->id) : ?>
+	                        <?= @template('com://site/news.view.attachments.default') ?>
+	                    <? endif ?>
+	                    <?= @template('com://admin/attachments.view.attachments.upload') ?>
+	                </div>
 			    </div>
 			    
 			    <div class="span3">
 			        <div class="control-group">
-			        	<label class="control-label" for="slug"><?= @text( 'Category' ); ?>:</label>
+			        	<label class="control-label" for="news_category_id"><?= @text( 'Category' ); ?>:</label>
 			        </div>
 			    	<div class="controls">
-			    		<?= @helper('listbox.categories', array('name' => 'news_category_id', 'selected' => $article->news_category_id, 'attribs' => array('style' => 'width:180px'))) ?>
-			    	</div>
-			    	
-			    	<div class="clearfix attachments">
-			    	    <? if ($article->id) : ?>
-			    	        <?= @template('com://site/news.view.attachments.default') ?>
-			    	    <? endif ?>
-			    	    <?= @template('com://admin/attachments.view.attachments.upload') ?>
+			    		<?= @helper('listbox.radiolist', array(
+			    				'list'     => @service('com://site/news.model.categories')->sort('title')->getList(),
+			    				'selected' => $article->news_category_id,
+			    				'name'     => 'news_category_id',
+			    		        'text'     => 'title',
+			    			));
+			    		?>
 			    	</div>
 			    </div>
 		    </div>
