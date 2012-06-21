@@ -3,27 +3,29 @@ window.addEvent('domready', function()
 { 
     $$("label.cb-enable").each(function(el)
     {
-    	el.addEvent('click',  function()
+    	el.addEvent('click', function()
     	{
-            var parent = $(this).getParent('p.switch');
-            parent.getElement('label.cb-disable').removeClass('selected');
+            var parent = this.getParent('p.switch');
+            var name = parent.getElement('input.radiobutton').name;
             
-            $(this).addClass('selected');
+            parent.getElement('label.cb-disable').removeClass('selected');
+            this.addClass('selected');
 
-            parent.getElement('input.radiobutton').value = 1;
+            document.id(name+'1').checked = "checked";
     	});
     });
     
     $$("label.cb-disable").each(function(el)
     {
-    	el.addEvent('click',  function()
+    	el.addEvent('click', function()
     	{
-            var parent = $(this).getParent('p.switch');
+            var parent = this.getParent('p.switch');
+            var name = parent.getElement('input.radiobutton').name;
+            
             parent.getElement('label.cb-enable').removeClass('selected');
-            
-            $(this).addClass('selected');
-            
-            parent.getElement('input.radiobutton').value = 0;
+            this.addClass('selected');
+         
+            document.id(name+'0').checked = "checked";
     	});
     });
 });
