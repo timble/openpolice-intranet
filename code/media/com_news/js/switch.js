@@ -1,3 +1,4 @@
+// From http://devgrow.com/iphone-style-switches/
 window.addEvent('domready', function()
 { 
     $$("label.cb-enable").each(function(el)
@@ -5,20 +6,24 @@ window.addEvent('domready', function()
     	el.addEvent('click',  function()
     	{
             var parent = $(this).getParent('p.switch');
-            parent.getElement('label.cb_disabled').removeClass('selected');
+            parent.getElement('label.cb-disable').removeClass('selected');
             
             $(this).addClass('selected');
-            
-            
-            parent.getElement('input.checkbox').checked = true;
+
+            parent.getElement('input.radiobutton').value = 1;
     	});
     });
     
-    $$("label.cb-disable").click(function()
+    $$("label.cb-disable").each(function(el)
     {
-        var parent = $(this).parents('.switch');
-        $('.cb-enable',parent).removeClass('selected');
-        $(this).addClass('selected');
-        $('.checkbox',parent).attr('checked', false);
+    	el.addEvent('click',  function()
+    	{
+            var parent = $(this).getParent('p.switch');
+            parent.getElement('label.cb-enable').removeClass('selected');
+            
+            $(this).addClass('selected');
+            
+            parent.getElement('input.radiobutton').value = 0;
+    	});
     });
 });

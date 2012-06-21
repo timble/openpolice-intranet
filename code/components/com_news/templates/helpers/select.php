@@ -28,8 +28,8 @@ class ComNewsTemplateHelperSelect extends KTemplateHelperSelect
 		
 		$html[] = '<p class="field switch">';
 		
-		$html[] = '<input type="radio" name="'.$name.'" id="'.$name.'1" value="1" '.($config->selected ? 'checked="checked"' : '').' />';
-		$html[] = '<input type="radio" name="'.$name.'" id="'.$name.'0" value="0" '.(!$config->selected ? 'checked="checked"' : '').' />';
+		$html[] = '<input type="radio" class="radiobutton" name="'.$name.'" id="'.$name.'1" value="1" '.($config->selected ? 'checked="checked"' : '').' />';
+		$html[] = '<input type="radio" class="radiobutton" name="'.$name.'" id="'.$name.'0" value="0" '.(!$config->selected ? 'checked="checked"' : '').' />';
 		
 		$false  = $config->translate ? JText::_( $config->false ) : $config->false;
 		$true  = $config->translate ? JText::_( $config->true ) : $config->true;
