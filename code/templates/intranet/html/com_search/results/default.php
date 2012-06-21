@@ -11,7 +11,7 @@
 
 defined('KOOWA') or die('Restricted access'); ?>
 
-<div class="search-results-default">
+<div class="search-results-default" style="padding: 20px;">
 <?= @template('com://site/search.view.results.default_form');?>
 
 <?if (count($results)) :?>
