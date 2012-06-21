@@ -2,7 +2,7 @@
 	<?= @template('default_scopebar') ?>
 </div>
 
-<? if(count($files)): ?>
+<? if(count($files && $folers)): ?>
 	<div style="padding: 20px;">
 	<table width="100%" cellspacing="0" class="table">
 		<thead>
@@ -16,7 +16,7 @@
 			<? if(isset($toplevel)): ?>
 				<tr>
 					<td colspan="3">
-						<a href="<?= @route('folder='.$toplevel) ?>"><i class="icon-folder-open"></i> ..</a>
+						<a href="<?= @route('folder='.$toplevel) ?>"><i class="icon-chevron-left"></i> ..</a>
 					</td>
 				</tr>
 			<? endif; ?>
@@ -36,7 +36,7 @@
 			<? foreach($files as $file): ?>
 				<tr>
 					<td>
-						<a href="<?= @route('view=file&format=raw&path='.base64_encode($cwd.'/'.$file->name)) ?>"><?= $file->name ?></a>
+						<a href="<?= @route('view=file&format=raw&path='.base64_encode($cwd.'/'.$file->name)) ?>"><i class="icon-file"></i> <?= $file->name ?></a>
 					</td>
 					<td align="center">
 						<?= @helper('com://admin/files.template.helper.filesize.humanize', array('size' => $file->metadata['size']))?>

@@ -1,5 +1,5 @@
 <div class="article-text">
-	<?= @helper('com://site/news.template.helper.article.text', array('row' => $article)); ?>
+	<?= $article->text ?>
 </div>
 
 <? if(isset($attachments)): ?>
