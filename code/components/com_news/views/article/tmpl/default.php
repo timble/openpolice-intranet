@@ -39,7 +39,7 @@ window.addEvent('domready', function()
 		</div>
 		<h1><?= $article->title ?> <small><?= @text('by') ?> <a href="mailto:<?= $article->created_by_email ?>"><?= @escape($article->created_by_name) ?></a> in <span class="label label-<?= json_decode($article->category_params)->color ?>"><?= $article->category_title ?></span></small></h1>
 		<div class="btn-group pull-right" style="margin-left: 8px;">
-			<a class="btn btn-small btn-warning subscribe<?= $subscribed ? ' active' : '' ?>"><i class="icon-white icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i></a>
+			<a class="btn btn-small btn-warning subscribe <?= $subscribed ? ' active' : '' ?>"><i class="icon-white icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i></a>
 		</div>
 		<div class="btn-group pull-right">
 			<? if($agent): ?>	
