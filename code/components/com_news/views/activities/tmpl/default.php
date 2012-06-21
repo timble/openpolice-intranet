@@ -64,3 +64,7 @@
 	
 	<?= @helper('paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 </div>
+
+<module title="" position="syndicate">
+	<a class="btn btn-mini btn-warning" target="_blank" href="<?= @route('&format=rss') ?>"><i class="icon-envelope icon-white"></i> RSS</a>
+</module>

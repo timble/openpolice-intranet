@@ -89,9 +89,6 @@ class ComNewsTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 	    $options = array();
 	    
 	    $options[] = $this->option(array('text' => JText::_( 'None' ), 'value' => ''));
-	    $options[] = $this->option(array('text' => JText::_( 'Endeavour (Police)' ), 'value' => 'endeavour'));
-	    $options[] = $this->option(array('text' => JText::_( 'Zest (Federal)' ), 'value' => 'zest'));
-	    $options[] = $this->option(array('text' => JText::_( 'Shadow Green (Local)' ), 'value' => 'shadow-green'));
 	    $options[] = $this->option(array('text' => JText::_( 'Earls Green' ), 'value' => 'earls-green'));
 	    $options[] = $this->option(array('text' => JText::_( 'Bright Sun' ), 'value' => 'bright-sun'));
 	    $options[] = $this->option(array('text' => JText::_( 'Sea Buckthorn' ), 'value' => 'sea-buckthorn'));
@@ -113,4 +110,51 @@ class ComNewsTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 	    
 	    return $this->optionlist($config);
 	}
+	
+	public function radiolist( $config = array())
+    {
+		$config = new KConfig($config);
+		$config->append(array(
+			'list' 		=> null,
+			'name'   	=> 'id',
+			'attribs'	=> array(),
+			'key'		=> 'id',
+			'text'		=> 'title',
+			'selected'	=> null,
+			'translate'	=> false
+		));
+		
+		$name    = $config->name;
+		$attribs = KHelperArray::toString($config->attribs);
+
+		$html = array();
+		foreach($config->list as $row)
+		{
+			$key  = $row->{$config->key};
+			$text = $config->translate ? JText::_( $row->{$config->text} ) : $row->{$config->text};
+			$id	  = isset($row->id) ? $row->id : null;
+
+			$extra = '';
+			
+			if ($config->selected instanceof KConfig)
+			{
+				foreach ($config->selected as $value)
+				{
+					$sel = is_object( $value ) ? $value->{$config->key} : $value;
+					if ($key == $sel)
+					{
+						$extra .= 'selected="selected"';
+						break;
+					}
+				}
+			} 
+			else $extra .= ($key == $config->selected ? 'checked="checked"' : '');
+				
+			$html[] = '<label class="radio" for="'.$name.$id.'">'.$text;
+			$html[] = '<input type="radio" name="'.$name.'" id="'.$name.$id.'" value="'.$key.'" '.$extra.' '.$attribs.' />';
+			$html[] = '</label>';
+		}
+
+		return implode(PHP_EOL, $html);
+    }
 }
