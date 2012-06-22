@@ -40,6 +40,7 @@ namespace :deploy do
     
     # Do nothing in these tasks.
     task :cold do; end
+    task :restart do; end
     task :start do; end
     task :stop do; end
 end
