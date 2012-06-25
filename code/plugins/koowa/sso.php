@@ -8,7 +8,7 @@ class PlgKoowaSSO extends PlgKoowaDefault
     	if($application->getName() != 'site') {
     		return;
     	}
-var_dump($_SERVER); exit();
+//var_dump($_SERVER); exit();
     	// check if SSO header is set
     	$personnumber = KRequest::get('server.HTTP_P_SSO_IDENTIFIER', 'alnum');
     	if(empty($personnumber) || !preg_match('/P\\d+/is', $personnumber))
