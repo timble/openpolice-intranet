@@ -593,10 +593,6 @@ body{background:url(../img/body-bg.png) repeat 0 0;margin-left:20px;margin-botto
 .component-header .btn-toolbar .date-group{line-height:32px;padding-top:2px;}
 .component-header .date{line-height:14px;height:28px;float:left;width:46px;margin-right:14px;padding:4px 0;font-size:11px;text-align:center;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid #e4e4e4;background-color:#fdfdfd;}
 .component-sidebar h3{margin-top:12px;margin-bottom:6px;}
-.page-header{*zoom:1;padding:8px 16px;margin:0 0 24px 0;background-color:#444a54;background-image:-moz-linear-gradient(top, #4a515b, #3c4049);background-image:-ms-linear-gradient(top, #4a515b, #3c4049);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#4a515b), to(#3c4049));background-image:-webkit-linear-gradient(top, #4a515b, #3c4049);background-image:-o-linear-gradient(top, #4a515b, #3c4049);background-image:linear-gradient(top, #4a515b, #3c4049);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a515b', endColorstr='#3c4049', GradientType=0);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid #49505B;}.page-header:before,.page-header:after{display:table;content:"";}
-.page-header:after{clear:both;}
-.page-header>h1{float:left;font-size:18px;color:#ffffff;line-height:28px;}.page-header>h1 .icon{vertical-align:baseline;margin-right:8px;}
-.page-header .moduletable>.toolbar{float:right;}
 .articles>.article{margin-bottom:24px;}
 .articles .article-toolbar{padding:0 80px 20px 80px;}
 .articles .article{background-color:#ffffff;border:1px solid #d7d7d7;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}.articles .article .article-header{*zoom:1;padding:16px 20px 10px 16px;color:#999;font-size:12px;border-bottom:1px solid #d7d7d7;background-color:#F8F8F8;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;}.articles .article .article-header:before,.articles .article .article-header:after{display:table;content:"";}
