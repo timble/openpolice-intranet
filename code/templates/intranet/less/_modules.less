@@ -210,8 +210,20 @@
 .nav-apps {
 	margin-top: 10px;
 	
+	[class^="nav-icon"],
+	[class*=" nav-icon"] {
+	  display: inline-block;
+	  width: 32px;
+	  height: 32px;
+	  .ie7-restore-right-whitespace();
+	  line-height: 32px;
+	  vertical-align: text-top;
+	  background-image: url("../img/navigation.png");
+	  background-position: 32px 32px;
+	  background-repeat: no-repeat;
+	}
+	
 	a {		
-		padding-top: 36px;
 		margin-bottom: 20px;
 		
 		color: @grayLight;
@@ -219,24 +231,24 @@
 		font-size: 11px;
 		text-align: center;
 		
-		&.item1 { background: url("../img/icons/32/home-gray.png") no-repeat top center; }
-		&.item2 { background: url("../img/icons/32/id_card-gray.png") no-repeat top center; }
-		&.item3 { background: url("../img/icons/32/calendar_empty-gray.png") no-repeat top center; }
-		&.item4 { background: url("../img/icons/32/clock-gray.png") no-repeat top center; }
-		&.item5 { background: url("../img/icons/32/id_card-gray.png") no-repeat top center; }
-		&.item6 { background: url("../img/icons/32/download-gray.png") no-repeat top center; }
+		&.item1 .nav-icon { background-position: 0 -32px; }
+		&.item2 .nav-icon {  }
+		&.item3 .nav-icon { background-position: -32px -32px; }
+		&.item4 .nav-icon { background-position: -64px -32px; }
+		&.item5 .nav-icon { background-position: -128px -32px; }
+		&.item6 .nav-icon { background-position: -96px -32px; }
 	}
 	
 	a:hover,
 	a.active {		
 		color: @gray;
 		
-		&.item1 { background: url("../img/icons/32/home.png") no-repeat top center; }
-		&.item2 { background: url("../img/icons/32/id_card.png") no-repeat top center; }
-		&.item3 { background: url("../img/icons/32/calendar_empty.png") no-repeat top center; }
-		&.item4 { background: url("../img/icons/32/clock.png") no-repeat top center; }
-		&.item5 { background: url("../img/icons/32/id_card.png") no-repeat top center; }
-		&.item6 { background: url("../img/icons/32/download.png") no-repeat top center; }
+		&.item1 .nav-icon { background-position: 0 0; }
+		&.item2 .nav-icon {  }
+		&.item3 .nav-icon { background-position: -32px 0; }
+		&.item4 .nav-icon { background-position: -64px 0; }
+		&.item5 .nav-icon { background-position: -128px 0; }
+		&.item6 .nav-icon { background-position: -96px 0; }
 	}
 }
 
