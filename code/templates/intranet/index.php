@@ -29,7 +29,16 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		
 		<div class="row">
 			<div class="frame-sidebar span1">
-				<jdoc:include type="modules" name="apps" style="xhtmls" />
+				<div class="module clearfix mod_mainmenu ">
+									
+				<ul class="menu nav nav-apps nav-stacked">
+					<li id="current" class=" first active item1"><a href="http://intranet.police/" class=" first active item1 top-level"><i class="nav-icon"></i><br />Home</a></li>
+					<li class="item3"><a href="/index.php?option=com_calendar&amp;view=events&amp;Itemid=3" class="item3 top-level"><i class="nav-icon"></i><br />Calendar</a></li>
+					<li class="item4"><a href="/index.php?option=com_news&amp;view=activities&amp;Itemid=4" class="item4 top-level"><i class="nav-icon"></i><br />Activities</a></li>
+					<li class="item6"><a href="/index.php?option=com_downloads&amp;view=downloads&amp;Itemid=6" class="item6 top-level"><i class="nav-icon"></i><br />Downloads</a></li>
+					<li class=" last item5"><a href="/index.php?option=com_users&amp;view=user&amp;layout=form&amp;Itemid=5" class=" last item5 top-level"><i class="nav-icon"></i><br />Profile</a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="main span11">
 				<jdoc:include type="component" />
