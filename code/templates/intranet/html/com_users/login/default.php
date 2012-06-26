@@ -12,7 +12,7 @@ defined('KOOWA') or die( 'Restricted access' ); ?>
 
 <form action="" method="post" id="com-form-login" class="form-horizontal">
     <? if($parameters->get('show_page_title', 1)) : ?>
-    <h1><?= @escape($parameters->get('page_title')) ?></h1>
+    <div class="page-header" style="padding-left: 20px;"><h1><?= @escape($parameters->get('page_title')) ?></h1></div>
     <? endif ?>
     
     <input type="hidden" name="action" value="login" />
