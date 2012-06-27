@@ -1,4 +1,3 @@
-<?= date('F', strtotime($today)) ?>
 <table class="table table-striped">
 	<thead>
 		<th width="15%">Date</th>
