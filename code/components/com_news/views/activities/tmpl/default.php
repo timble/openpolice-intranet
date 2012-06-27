@@ -35,7 +35,7 @@
 				    </div>
 		        </td>
 		        <td>
-		        	<?= @helper('activity.message', array('row' => $activity)) ?> 
+		        	<?= @helper('activity.message', array('row' => $activity)) ?> <? if($activity->news_category_id): ?><span class="label label-<?= json_decode($activity->category_params)->color ?> pull-right"><?= $activity->category_title ?></span><? endif; ?>	
 		        	
 		        	<? if($activity->text && $activity->action == 'add' && in_array($activity->name, array('topic', 'comment'))): ?> 
 		        		<div class="well">
@@ -43,11 +43,7 @@
 		        		</div>
 		        	<? endif; ?>
 		        	
-		        	<? if($activity->news_category_id): ?>
-		        		<div class="route">
-		    				<a href="<?= @route('view=category&id='.$activity->news_category_id.'&slug='.$activity->category_slug) ?>"><?= $activity->category_title ?></a>
-		    			</div>
-		        	<? endif; ?>			       		
+		        			       		
 		        </td>
 			</tr>
 		<? endforeach; ?>

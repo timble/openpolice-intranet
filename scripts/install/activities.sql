@@ -31,6 +31,7 @@ SELECT
 	`article`.`text` AS `article_text`,
 	`article`.`news_category_id`,
 	`article`.`category_title`,
+	`article`.`category_params`,
 	`article`.`slug` AS `article_slug`,
 	`article`.`category_slug`,
 	`article`.`total_comments`,
