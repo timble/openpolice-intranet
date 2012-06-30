@@ -21,8 +21,7 @@ CREATE ALGORITHM = MERGE VIEW `jos_calendar_view_days` AS
         `day`.*,
 		`event`.`title`,
 		`event`.`start_date`,
-		`event`.`end_date`,
-		`event`.`level`
+		`event`.`end_date`
     FROM
         `jos_calendar_days` AS `day`
     LEFT JOIN
