@@ -16,15 +16,13 @@ CREATE ALGORITHM = MERGE VIEW `jos_calendar_view_events` AS
         `jos_users` AS `modifier` ON `event`.`modified_by` = `modifier`.`id`;
 
 
-DROP VIEW IF EXISTS
-    `jos_calendar_view_days`;
-
 CREATE ALGORITHM = MERGE VIEW `jos_calendar_view_days` AS
     SELECT
         `day`.*,
 		`event`.`title`,
 		`event`.`start_date`,
-		`event`.`end_date`
+		`event`.`end_date`,
+		`event`.`level`
     FROM
         `jos_calendar_days` AS `day`
     LEFT JOIN

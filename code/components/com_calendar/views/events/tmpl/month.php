@@ -34,10 +34,12 @@ function getDaysInWeek ($weekNumber, $year) {
 }
 
  ?>
-<div class="calendar-month" style="padding: 20px;"> 
-	<table class="table">
+ 
+ <div class="calendar-month" style="padding: 20px;"> 
+	<table class="table first">
 		<thead>
 		<tr>
+			<th style="width: 20px;">#</th>
 			<th style="width: 14.28%;"><?= @text('Mon') ?></th>
 			<th style="width: 14.28%;"><?= @text('Tue') ?></th>
 			<th style="width: 14.28%;"><?= @text('Wed') ?></th>
@@ -49,53 +51,52 @@ function getDaysInWeek ($weekNumber, $year) {
 		</thead>
 	</table>
 	 
-	<? $week = $firstweek ?>
-	<? while($week <= $lastweek) : ?>
-	<? $y = '1' ?>
-	
+	<? $week_count = $firstweek ?>
+	<? while($week_count <= $lastweek) : ?>
+	<? $dayTimes = getDaysInWeek($week_count, 2012); ?>
+	<? $lastDayOfWeek = strftime('%d', end($dayTimes)); ?>
+	<? $firstDayOfWeek = strftime('%d', $dayTimes[0]); ?>
 	<div class="row-fluid">
 		<table class="table">
-			<tr>
-				<? $dayTimes = getDaysInWeek($week, 2012); ?>
-				<? $lastDayOfWeek = strftime('%d', end($dayTimes)); ?>
-				<? $firstDayOfWeek = strftime('%d', $dayTimes[0]); ?>
+			<tr class="days">
+				<td class="weeknumber" style="width: 20px;"><span class="label"><?= $week_count ?></label></td>
 				<? foreach ($dayTimes as $dayTime) : ?>
-					<? $y++ ?>
-					<td style="width: 14.28%;" <?= strftime('%Y%m%d', $dayTime) == $today ? 'class="today"' : ''; ?>>
-					
-						<div class="calendar-day"><?= strftime('%d', $dayTime); ?></div>
-						
-						<? foreach($days->find(array('day' => strftime('%d', $dayTime))) as $event) : ?>
-							<? $class = date('d', strtotime($event->end_date)) == strftime('%d', $dayTime) ? ' last' : '' ?>
-							<? $class .= date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) ? ' first' : '' ?>
-							
-							<? if(date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) OR strftime('%d', $dayTime) == $firstDayOfWeek) : ?>
-							<div class="calendar-event<?= $class ?>">
-								<a href="<?= @route('view=event&id='.$event->calendar_event_id) ?>"><?= $event->title ?></a>
-							</div>
-							<? else : ?>
-							<div class="calendar-event<?= $class ?>"></div>
-							<? endif; ?>
-						<? endforeach; ?>
-					</td>
+				<td style="width: 14.28%;" <?= strftime('%Y%m%d', $dayTime) == $today ? 'class="today"' : ''; ?>>
+					<div class="calendar-day"><?= strftime('%d', $dayTime); ?></div>
+				</td>
 				<? endforeach; ?>
 			</tr>
+			<? $level_count = '1' ?>
+			<? $level = '2' ?>
+			<? while($level_count <= $level) : ?>
+			<tr>
+				<td style="width: 20px;"></td>
+				<? foreach ($dayTimes as $dayTime) : ?>
+				<td style="width: 14.28%;" <?= strftime('%Y%m%d', $dayTime) == $today ? 'class="today"' : ''; ?>>
+									
+					<? foreach($days->find(array('day' => strftime('%d', $dayTime), 'level' => $level_count)) as $event) : ?>
+						<? $class = date('d', strtotime($event->end_date)) == strftime('%d', $dayTime) ? ' last' : '' ?>
+						<? $class .= date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) ? ' first' : '' ?>
+						
+						<? if(date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) OR strftime('%d', $dayTime) == $firstDayOfWeek) : ?>
+						<div class="calendar-event<?= $class ?>">
+							<a href="<?= @route('view=event&id='.$event->calendar_event_id) ?>"><?= $event->title ?></a>
+						</div>
+						<? else : ?>
+						<div class="calendar-event<?= $class ?>"></div>
+						<? endif; ?>
+					<? endforeach; ?>
+				</td>
+				<? endforeach; ?>
+			</tr>
+			<? $level_count++ ?>
+			<? endwhile; ?>
 		</table>
 	</div>
-	<? $week++ ?>
+	<? $week_count++ ?>
 	<? endwhile; ?>
 </div>
 
 <module title="" position="scopebar">
 	<?= @template('default_scopebar') ?>
 </module>
-
-<? if($agent) : ?>
-<module title="<?= @text('') ?>" position="sidebar">
-	<div class="articles-toolbar">
-	    <a style="width: 90%;" class="btn btn-primary btn-small" href="<?= @route('view=event&layout=form') ?>">
-	        <i class="icon-plus icon-white"></i> <?= @text('New') ?>
-	    </a>
-	</div>
-</module>
-<? endif ?>

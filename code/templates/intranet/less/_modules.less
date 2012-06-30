@@ -243,8 +243,8 @@
 
 .calendar-month {
 	table {
-		border-left: 1px solid #DDDDDD;
 		
+		height: 80px;
 		margin-bottom: 0;
 		
 		thead {
@@ -256,15 +256,24 @@
 			}
 		}
 		
+		tr.days td {
+			height: 20px;
+			border-top: 1px solid #DDDDDD;
+		}
+		
 		tr {
 			td {
 				border-right: 1px solid #DDDDDD;
+				border-top: 0 none;
 				
 				padding: 0;
-				height: 80px;
 				
 				&.today {
 					background-color: lighten(@zest, 30%);
+				}
+				
+				&.weeknumber {
+					border-top: 0 none;
 				}
 				
 				.calendar-event {
@@ -289,10 +298,18 @@
 				}
 			}
 		}
+		
+		tr:hover td {
+			background: none;
+			
+			&.today {
+				background-color: lighten(@zest, 30%);
+			}
+		}
 	}
 	
-	&:last-child {
-		border-bottom: 1px solid #DDDDDD;
+	table.first {
+		height: 20px;
 	}
 }
 
