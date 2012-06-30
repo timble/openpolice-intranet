@@ -13,14 +13,26 @@ class ComCalendarViewEventsHtml extends ComCalendarViewHtml
     public function display()
     {
         $model = $this->getModel();
+        $date = $model->getState()->date;
         
-        $days = $this->getService('com://admin/calendar.model.days')
-            ->year(date('Y', strtotime($model->getState()->date)))
-            ->month(date('m', strtotime($model->getState()->date)))
-            ->getList();
-         
-         $this->assign('days', $days);
-         $this->assign('today', date("Ymd"));
+        switch($this->getLayout()) {
+            case 'month':
+                $navigation = 'month';
+                $days = $this->getService('com://admin/calendar.model.days')
+                    ->year(date('Y', strtotime($date)))
+                    ->month(date('m', strtotime($date)))
+                    ->getList();
+                break;
+            default:
+                $navigation = 'day';
+                $days = $this->getService('com://admin/calendar.model.days')
+                    ->year(date('Y', strtotime($date)))
+                    ->getList();
+        }
+        
+        $this->assign('days', $days);
+        $this->assign('navigation', $navigation);
+        $this->assign('today', date("Ymd"));
                 
         return parent::display();
     }

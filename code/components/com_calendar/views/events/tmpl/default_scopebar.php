@@ -7,10 +7,10 @@
 		    </a>
 		</div>
 		<div class="btn-group">
-			<a class="btn" href="<?= @route('date='.date("Ymd", strtotime($state->date . " -1 month"))) ?>">
+			<a class="btn" href="<?= @route('date='.date("Ymd", strtotime($state->date . " -1 ".$navigation))) ?>">
 				<i class="icon-arrow-left"></i>
 			</a>
-			<a class="btn" href="<?= @route('date='.date("Ymd", strtotime($state->date . " +1 month"))) ?>">
+			<a class="btn" href="<?= @route('date='.date("Ymd", strtotime($state->date . " +1 ".$navigation))) ?>">
 				<i class="icon-arrow-right"></i>
 			</a>
 		</div>
