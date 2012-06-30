@@ -61,7 +61,8 @@ function getDaysInWeek ($weekNumber, $year) {
 				<? $firstDayOfWeek = strftime('%d', $dayTimes[0]); ?>
 				<? foreach ($dayTimes as $dayTime) : ?>
 					<? $y++ ?>
-					<td style="width: 14.28%;">
+					<td style="width: 14.28%;" <?= strftime('%Y%m%d', $dayTime) == $today ? 'class="today"' : ''; ?>>
+					
 						<div class="calendar-day"><?= strftime('%d', $dayTime); ?></div>
 						
 						<? foreach($days->find(array('day' => strftime('%d', $dayTime))) as $event) : ?>
@@ -70,7 +71,7 @@ function getDaysInWeek ($weekNumber, $year) {
 							
 							<? if(date('d', strtotime($event->start_date)) == strftime('%d', $dayTime) OR strftime('%d', $dayTime) == $firstDayOfWeek) : ?>
 							<div class="calendar-event<?= $class ?>">
-								<?= $event->title ?>
+								<a href="<?= @route('view=event&id='.$event->calendar_event_id) ?>"><?= $event->title ?></a>
 							</div>
 							<? else : ?>
 							<div class="calendar-event<?= $class ?>"></div>

@@ -2,7 +2,7 @@
 <form action="" method="get" class="-koowa-form form-inline">		
 	<div class="btn-toolbar">
 		<div class="btn-group">
-		    <a class="btn" href="<?= @route('date='.$today) ?>">
+		    <a class="btn <?= $state->date == $today ? 'disabled' : '' ?>" href="<?= @route('date='.$today) ?>">
 		    	<?= @text('Today') ?>
 		    </a>
 		</div>
