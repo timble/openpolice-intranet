@@ -6,7 +6,8 @@ class ComCalendarModelEvents extends ComDefaultModelDefault
 		parent::__construct($config);
 	
 		$this->_state
-			->insert('search', 'string');
+			->insert('search', 'string')
+			->insert('date', 'string', date("Ymd"));
 	}
 	
 	protected function _buildQueryWhere(KDatabaseQuery $query)

@@ -586,7 +586,7 @@ body{background:url(../img/body-bg.png) repeat 0 0;margin-left:20px;margin-botto
 .main-sidebar .module{margin-bottom:20px;}
 .component-header{*zoom:1;border-bottom:1px solid #d7d7d7;padding:0 20px;line-height:55px;height:55px;}.component-header:before,.component-header:after{display:table;content:"";}
 .component-header:after{clear:both;}
-.component-header h1{font-size:21px;font-weight:normal;color:#222;float:left;}.component-header h1 small{font-size:14px;}
+.component-header h1{font-size:21px;font-weight:normal;color:#222;}.component-header h1 small{font-size:14px;}
 .component-header .btn-toolbar{*zoom:1;}.component-header .btn-toolbar:before,.component-header .btn-toolbar:after{display:table;content:"";}
 .component-header .btn-toolbar:after{clear:both;}
 .component-header .btn-toolbar .btn-group{padding-top:4px;}

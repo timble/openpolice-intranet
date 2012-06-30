@@ -1,9 +1,9 @@
 <div class="component-header">
-	<?= @template('default_scopebar') ?>
+	<?= @template('default_scopebar', array('date' => $state->date)) ?>
 </div>
 
-<? $firstdate = date('Ym', strtotime($today)).'01' ?> 
-<? $lastdate = date('Ymt', strtotime($today)) ?>
+<? $firstdate = date('Ym', strtotime($state->date)).'01' ?> 
+<? $lastdate = date('Ymt', strtotime($state->date)) ?>
 
 <? $firstweek = date('W', strtotime($firstdate)) ?> 
 <? $lastweek = date('W', strtotime($lastdate)) ?>
@@ -12,6 +12,8 @@
 <? $lastday = date('N', strtotime($lastdate)) ?>
 
 <? $weeks = $lastweek - $firstweek ?>
+
+<? //@service('lib.koowa.date', array('date' => $state->date))->getDaysInMonth() ?>
 
 <? 
 function getDaysInWeek ($weekNumber, $year) {

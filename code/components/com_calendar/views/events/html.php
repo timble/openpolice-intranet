@@ -15,12 +15,12 @@ class ComCalendarViewEventsHtml extends ComCalendarViewHtml
         $model = $this->getModel();
         
         $days = $this->getService('com://admin/calendar.model.days')
-            ->year('2012')
-            ->month('7')
+            ->year(date('Y', strtotime($model->getState()->date)))
+            ->month(date('m', strtotime($model->getState()->date)))
             ->getList();
          
          $this->assign('days', $days);
-         $this->assign('today', '27.07.12');
+         $this->assign('today', date("Ymd"));
                 
         return parent::display();
     }
