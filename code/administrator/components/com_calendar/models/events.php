@@ -22,5 +22,7 @@ class ComCalendarModelEvents extends ComDefaultModelDefault
 				$query->where('description', 'LIKE', '%'.$state->search.'%', 'OR');
 			}
 		}
+		
+		parent::_buildQueryWhere($query);
 	}
 }
