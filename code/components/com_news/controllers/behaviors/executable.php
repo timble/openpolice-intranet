@@ -203,7 +203,7 @@ class ComNewsControllerBehaviorExecutable extends ComDefaultControllerBehaviorEx
         
         // Not allowed for quests.
         if($user->guest) {
-            return false;
+            //return false;
         }
         
         // Allowed for agents.
