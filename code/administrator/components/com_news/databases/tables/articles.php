@@ -8,7 +8,8 @@ class ComNewsDatabaseTableArticles extends KDatabaseTableDefault
             	'creatable', 'lockable', 'modifiable', 'sluggable', 'attachable', 'identifiable'
             ),
             'filters' => array(
-            	'text' => 'html', 'tidy'
+            	'introtext' => 'html', 'tidy',
+            	'fulltext' => 'html', 'tidy'
             ),
             'name' => 'news_view_articles',
             'base' => 'news_articles'
