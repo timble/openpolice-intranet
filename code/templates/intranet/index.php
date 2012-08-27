@@ -17,7 +17,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	<div id="frame">
 		<div id="header" class="row">
 			<div class="span3">
-				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo-en.png" alt="" border="0" style="float: left;margin: 0 40px 0 15px;">
+				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo.png" alt="" border="0" style="float: left;margin: 0 40px 0 15px;">
 			</div>
 			<div class="span6 header-search">
 				<jdoc:include type="modules" name="search" style="raw" />

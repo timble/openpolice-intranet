@@ -28,7 +28,7 @@ SELECT
 	`activity`.*,
 	`user`.`name` AS `created_by_name`,
 	`article`.`news_article_id` AS `news_article_id`,
-	`article`.`text` AS `article_text`,
+	`article`.`introtext` AS `article_text`,
 	`article`.`news_category_id`,
 	`article`.`category_title`,
 	`article`.`category_params`,
@@ -36,7 +36,7 @@ SELECT
 	`article`.`category_slug`,
 	`article`.`total_comments`,
 	`article`.`last_commented_on`,
-	IF(`activity`.`name` = 'comment', `comment`.`text`, `article`.`text`) AS `text`
+	IF(`activity`.`name` = 'comment', `comment`.`text`, `article`.`introtext`) AS `text`
 	FROM
 		`jos_activities_activities` AS `activity`
 	RIGHT JOIN  

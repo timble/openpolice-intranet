@@ -38,15 +38,17 @@ window.addEvent('domready', function()
 			<?= @helper('date.format', array('date' => $article->created_on, 'format' => '%d %b')) ?>
 		</div>
 		<h1><?= $article->title ?> <small><?= @text('by') ?> <a href="mailto:<?= $article->created_by_email ?>"><?= @escape($article->created_by_name) ?></a> in <span class="label label-<?= json_decode($article->category_params)->color ?>"><?= $article->category_title ?></span></small></h1>
+		<? if($user): ?>
 		<div class="btn-group pull-right" style="margin-left: 8px;">
 			<a class="btn btn-small btn-warning subscribe <?= $subscribed ? ' active' : '' ?>"><i class="icon-white icon-<?= $subscribed ? 'star' : 'star-empty' ?>"></i></a>
 		</div>
-		<div class="btn-group pull-right">
-			<? if($agent): ?>	
-		    	<a class="btn btn-small edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i></a>
-		    	<a class="btn btn-small delete" href="#"><i class="icon-trash"></i></a>
-		    <? endif; ?>
+		<? endif; ?>
+		<? if($agent): ?>
+		<div class="btn-group pull-right">	
+		    <a class="btn btn-small edit" href="<?= @route('layout=form&id='.$article->id) ?>"><i class="icon-pencil"></i></a>
+		    <a class="btn btn-small delete" href="#"><i class="icon-trash"></i></a>
 		</div>
+		<? endif; ?>
 	</div>
 </div>
 
@@ -58,7 +60,6 @@ window.addEvent('domready', function()
 				
 				<div class="comments">
 					<h3 class="title"><?= $article->total_comments ?> <?= @text('Comments') ?> <small><?= $article->last_commented_on ? @text('latest about').' '.@helper('date.humanize', array('date' => $article->last_commented_on)) : '' ?></small></h3>
-					
 					<?= @service('com://site/news.controller.comment')
 					    ->view('comments')
 					    ->table('news_articles')
@@ -66,7 +67,7 @@ window.addEvent('domready', function()
 					    ->display();
 					?>
 					
-					<? if($article->commentable) : ?>
+					<? if($article->commentable && $user) : ?>
 					<?= @service('com://site/news.controller.comment')
 					    ->view('comment')
 					    ->layout('form')
@@ -74,7 +75,7 @@ window.addEvent('domready', function()
 					    ->row($article->id)
 					    ->display();
 					?>
-					<? else : ?>
+					<? elseif($user) : ?>
 					<div class="alert alert-info" style="margin: 20px;">
 						<?= @text('Closed for comments') ?>
 					</div>
