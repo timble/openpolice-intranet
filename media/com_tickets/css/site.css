@@ -1,0 +1,176 @@
+input[type="text"],
+textarea {
+    border: 1px solid #C3C3C3;
+    width: 96%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px;
+}
+
+
+/* @group Tickets */
+.frame {
+    padding: 10px;
+}
+
+.frame {
+    background-color: #F4F4F4 !important;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.frame .content {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #E9E9E9;
+    background: #FFF;
+}
+
+.frame .content div {
+    border-bottom: 1px solid #EEE;
+}
+
+.frame .content div:last-child { border-bottom: 0 none; }
+
+
+
+.tickets h2 {
+    float: left;
+}
+
+.tickets ul.status {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.tickets ul.status li {
+    float: left;
+}
+
+.tickets ul.status li a {
+    border-bottom: 0 none;
+    font-weight: normal;
+}
+
+.tickets ul.status li a {
+    border-bottom: 0 none;
+}
+
+.tickets ul.status li a {
+    min-width: 50px;
+    line-height: 18px;
+    display: block;
+    float: left;
+    text-align: center;
+    color: #666;
+    white-space: nowrap;
+    padding: 2px 12px;
+    margin-right: 1px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+    border-top: 1px solid #BBB;
+    border-bottom: 1px solid #BBB;
+    background-color: #F9F9F9;
+    background-image: -webkit-gradient(linear, 0% 30%, 0% 55%, from(#F9F9F9), to(#E3E3E3));
+    background-image: -moz-linear-gradient(0% 35% 270deg,#F9F9F9, #E3E3E3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#E3E3E3');
+ }
+
+.tickets ul.status li:first-child a {
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-left-radius: 4px;
+    border-top: 1px solid #BBB;
+    border-bottom: 1px solid #BBB;
+    border-left: 1px solid #BBB;
+}
+.tickets ul.status li:last-child a {
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 1px solid #BBB;
+    border-bottom: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+}
+
+.tickets ul.status li a:hover {
+    border-color: #999;
+    -webkit-box-shadow: hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+    -moz-box-shadow: hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+    box-shadow: hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+    text-decoration: none;
+    color: #333 !important;
+}
+
+.tickets ul.status li a:active,
+.tickets ul.status li a.active {
+    -webkit-box-shadow: inset hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+    -moz-box-shadow: inset hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+    box-shadow: inset hsla(0, 0%, 55%, 0.8) 0px 0px 2px;
+}
+
+/* @end */
+
+/* @group ticket-form */
+#ticket-form {
+
+}
+
+/* @end */
+
+
+/* @group Ticket */
+.ticket {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.ticket .header {
+
+}
+
+.ticket .date {
+    margin: 4px 0 0 8px;
+}
+/* @end */
+
+.comments h3 {
+    margin: 0 0 0 10px;
+}
+
+#comments-comments-list .comment { margin: 10px; border: 1px solid #DDD; -webkit-border-radius: 5px; }
+
+#comments-comments-list .comment .comment-header {
+    background-image: -webkit-gradient(linear, 0% 50%, 0% 100%, from(#f1f2f4), to(#e8eaec));
+    -webkit-border-radius: 5px 5px 0px 0px;
+    padding: 7px;
+    font-weight: bold;
+}
+
+#comments-comments-list .comment .comment-header time {
+    float: right;
+    color: #999;
+    font-weight: normal;
+}
+
+#comments-comments-list .comment { background: #fff; }
+#comments-comments-list .comment p { padding: 8px; margin: 0; }
+
+#comments-comment-form form {
+    padding: 0 20px 10px 10px;
+}
+
+#comments-comment-form input.button[disabled]   { background-color: silver; }

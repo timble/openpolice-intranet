@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="auth">
+	<name>Authentication - SSO</name>
+	<version>1.5</version>
+	<description>Handle Police SSO login</description>
+	<files>
+		<filename plugin="sso">sso.php</filename>
+	</files>
+	<params/>
+</install>

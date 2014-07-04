@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Articles">
+		<message>
+			<![CDATA[Category Listings Description]]>
+		</message>
+	</layout>
+	<state>
+		<name>Default layout</name>
+		<description>Articles</description>
+		<url addpath="/administrator/components/com_news/elements">
+			<param name="category" type="categories" default="" label="Select Category" description="The category to be listed." />
+		</url>
+		<params>
+	
+		</params>
+	</state>
+</metadata>

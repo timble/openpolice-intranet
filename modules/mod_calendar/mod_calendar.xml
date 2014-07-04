@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: mod_calendar.xml 3273 2011-12-12 00:41:32Z johanjanssens $ -->
+<install type="module" version="1.5.0">
+	<name>Calendar</name>
+	<author>Police Project</author>
+  	<creationDate>June 2012</creationDate>
+  	<copyright>Copyright (C) 2011 - 2012 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
+  	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL v3</license>
+  	<authorEmail>info@timble.net</authorEmail>
+  	<authorUrl>www.timble.net</authorUrl>
+  	<version>12.1</version>
+	<description>DESCBANNER</description>
+	<files>
+		<filename module="mod_calendar">mod_calendar.php</filename>
+	</files>
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+</install>

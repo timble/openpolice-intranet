@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <params>
+        <param name="timezone" type="timezones" default="" label="Time Zone" description="Time Zone for this User" />
+    </params>
+</form>
