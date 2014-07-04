@@ -1096,17 +1096,6 @@ CREATE TABLE `jos_session` (
   KEY `time` (`time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `jos_session` WRITE;
-/*!40000 ALTER TABLE `jos_session` DISABLE KEYS */;
-
-INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`)
-VALUES
-	('admin','1404474548','76383c71ca15341a27af97a1b5670ddd',0,71,'Super Administrator',25,0,'__default|a:5:{s:8:\"registry\";O:9:\"JRegistry\":3:{s:17:\"_defaultNameSpace\";s:7:\"session\";s:9:\"_registry\";a:1:{s:7:\"session\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:4:\"user\";O:5:\"JUser\":19:{s:2:\"id\";s:2:\"71\";s:4:\"name\";s:9:\"Steve Woz\";s:8:\"username\";s:5:\"admin\";s:5:\"email\";s:14:\"tom@timble.net\";s:8:\"password\";s:65:\"6d0069cf74f0284651022aaeaf579047:HC7ZG6dND56D3BTtau2chsGTcE3C3Bzg\";s:14:\"password_clear\";s:0:\"\";s:8:\"usertype\";s:19:\"Super Administrator\";s:5:\"block\";s:1:\"0\";s:9:\"sendEmail\";s:1:\"0\";s:3:\"gid\";s:2:\"25\";s:12:\"registerDate\";s:19:\"2009-12-05 17:28:41\";s:13:\"lastvisitDate\";s:19:\"2014-07-04 10:29:46\";s:10:\"activation\";s:0:\"\";s:6:\"params\";s:61:\"admin_language=en-GB\nlanguage=\neditor=codemirror\ntimezone=1\n\n\";s:3:\"aid\";i:2;s:5:\"guest\";i:0;s:7:\"_params\";O:10:\"JParameter\":7:{s:4:\"_raw\";s:0:\"\";s:4:\"_xml\";N;s:9:\"_elements\";a:0:{}s:12:\"_elementPath\";a:1:{i:0;s:97:\"/Users/Jannes/Sites/police/timble-belgian-police-intranet/libraries/joomla/html/parameter/element\";}s:17:\"_defaultNameSpace\";s:8:\"_default\";s:9:\"_registry\";a:1:{s:8:\"_default\";a:1:{s:4:\"data\";O:8:\"stdClass\":4:{s:14:\"admin_language\";s:5:\"en-GB\";s:8:\"language\";s:0:\"\";s:6:\"editor\";s:10:\"codemirror\";s:8:\"timezone\";s:1:\"1\";}}}s:7:\"_errors\";a:0:{}}s:9:\"_errorMsg\";N;s:7:\"_errors\";a:0:{}}s:13:\"session.token\";s:32:\"12505df3dffd817f923be45265b36565\";s:4:\"site\";s:7:\"default\";s:17:\"application.queue\";a:1:{i:0;a:2:{s:7:\"message\";s:21:\"You must log in first\";s:4:\"type\";s:7:\"message\";}}}'),
-	('','1404474631','hnavejr9eka927u27c49fd29r4',1,0,'',0,1,'__default|a:3:{s:8:\"registry\";O:9:\"JRegistry\":3:{s:17:\"_defaultNameSpace\";s:7:\"session\";s:9:\"_registry\";a:1:{s:7:\"session\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:4:\"user\";O:5:\"JUser\":19:{s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:8:\"usertype\";N;s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:3:\"gid\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:3:\"aid\";i:0;s:5:\"guest\";i:1;s:7:\"_params\";O:10:\"JParameter\":7:{s:4:\"_raw\";s:0:\"\";s:4:\"_xml\";N;s:9:\"_elements\";a:0:{}s:12:\"_elementPath\";a:1:{i:0;s:97:\"/Users/Jannes/Sites/police/timble-belgian-police-intranet/libraries/joomla/html/parameter/element\";}s:17:\"_defaultNameSpace\";s:8:\"_default\";s:9:\"_registry\";a:1:{s:8:\"_default\";a:1:{s:4:\"data\";O:8:\"stdClass\":0:{}}}s:7:\"_errors\";a:0:{}}s:9:\"_errorMsg\";N;s:7:\"_errors\";a:0:{}}s:13:\"session.token\";s:32:\"cf3c0b348802d58d650b901db7edf855\";}');
-
-/*!40000 ALTER TABLE `jos_session` ENABLE KEYS */;
-UNLOCK TABLES;
-
 
 # Dump of table jos_templates_menu
 # ------------------------------------------------------------
