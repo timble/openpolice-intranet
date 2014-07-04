@@ -3,6 +3,11 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
 
+<?php
+$user =& JFactory::getUser();
+$user_id = $user->get('id');
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD xhtmls 1.0 Transitional//EN" "http://www.w3.org/TR/xhtmls1/DTD/xhtmls1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtmls" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>	
@@ -19,12 +24,17 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			<div class="span3">
 				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo.png" alt="" border="0" style="float: left;margin: 0 40px 0 15px;">
 			</div>
-			<div class="span6 header-search">
+			<div class="span5 header-search">
 				<jdoc:include type="modules" name="search" style="raw" />
 			</div>
 			<div class="span3 header-access">
 				<jdoc:include type="modules" name="access" style="raw" />
 			</div>
+            <div class="span1 header-access">
+                <?php if($user_id) : ?>
+                    <a class="btn btn-small" href="/logout">Logout</a>
+                <?php endif ?>
+            </div>
 		</div>
 		
 		<div class="row">
