@@ -15,7 +15,7 @@ class Installer
     );
 
     public $task;
-    public $database = 'manager';
+    public $database = 'intranet';
     public $www = '/var/www/intranet.openpolice.be';
 
     public function __construct($task)
