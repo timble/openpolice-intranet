@@ -1,0 +1,81 @@
+<html>
+<head>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script>
+	function update()
+	{
+		chrome.extension.sendRequest({
+				task: 'update', 
+				person: getPersonValue()
+			}, 
+			function(response) {}
+		);
+	};
+	
+	function getPersonValue()
+	{
+		for (var i=0;i<document.headerman.user.length;i++)
+		{
+			if(document.headerman.user[i].checked) {
+				return document.headerman.user[i].value;
+			}
+		}
+		
+		return null;
+	};
+	
+	function setPersonValue(val)
+	{
+		for (var i=0;i<document.headerman.user.length;i++)
+		{
+			if(document.headerman.user[i].value == val) {
+				document.headerman.user[i].checked = 1;
+			}
+		}
+	};
+	
+	function init()
+	{
+		chrome.extension.sendRequest({task: "init"}, function(response) {
+			setPersonValue(response.person);
+		});
+	};
+	</script>
+</head>
+
+<body style="min-width: 300px" onload="init();">
+
+<form name="headerman">
+
+<div id="options-wrapper" class="rounded">
+
+<div id="options" class="rounded">
+	
+	<div class="header">
+		<h3>Select a User</h3>
+	</div>
+	
+	<div class="content">
+	<ul>
+		<li>
+			<input type="radio" name="user" value="P0000000001" id="admin" class="radio" onclick="return update();" />
+			<label for="admin" onclick="return update();">Eddy Naessens</label>
+		</li>
+		<li>
+			<input type="radio" name="user" value="P0000000002" id="demo"class="radio" onclick="return update();" />
+			<label for="demo" onclick="return update();">Wilfried Pasmans</label>
+		</li>
+		<li>
+			<input type="radio" name="user" value="R0000000015" id="external" class="radio" onclick="return update();" />
+			<label for="external" onclick="return update();">Hannah Maes</label>			
+		</li>
+	</ul>
+	</div>
+</div>
+
+</div>
+
+</form>
+
+</body>
+</html>

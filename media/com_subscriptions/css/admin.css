@@ -1,0 +1,79 @@
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span { background: url(../images/switch_green.png) repeat-x; display: block; float: left; }
+.cb-enable span, .cb-disable span { line-height: 24px; display: block; background-repeat: no-repeat; font-weight: normal;}
+.cb-enable span { background-position: left -72px; padding: 0 10px; }
+.cb-disable span { background-position: right -144px;padding: 0 10px; }
+.cb-disable.selected { background-position: 0 -24px; }
+.cb-disable.selected span { background-position: right -168px; color: #fff; }
+.cb-enable.selected { background-position: 0 -48px; }
+.cb-enable.selected span { background-position: left -120px; color: #fff; }
+.switch label { cursor: pointer; }
+
+.cb-enable.red, .cb-disable.red, .cb-enable.red span, .cb-disable.red span { background: url(../images/switch_red.png) repeat-x; display: block; float: left; }
+.cb-enable.red span, .cb-disable.red span { line-height: 24px; display: block; background-repeat: no-repeat; font-weight: normal;}
+.cb-enable.red span { background-position: left -72px; padding: 0 10px; }
+.cb-disable.red span { background-position: right -144px;padding: 0 10px; }
+.cb-disable.selected.red { background-position: 0 -24px; }
+.cb-disable.selected.red span { background-position: right -168px; color: #fff; }
+.cb-enable.selected.red { background-position: 0 -48px; }
+.cb-enable.selected.red span { background-position: left -120px; color: #fff; }
+.switch label { cursor: pointer; }
+
+.cb-enable.blue, .cb-disable.blue, .cb-enable.blue span, .cb-disable.blue span { background: url(../images/switch_blue.png) repeat-x; display: block; float: left; }
+.cb-enable.blue span, .cb-disable.blue span { line-height: 24px; display: block; background-repeat: no-repeat; font-weight: normal;}
+.cb-enable.blue span { background-position: left -72px; padding: 0 10px; }
+.cb-disable.blue span { background-position: right -144px;padding: 0 10px; }
+.cb-disable.selected.blue { background-position: 0 -24px; }
+.cb-disable.selected.blue span { background-position: right -168px; color: #fff; }
+.cb-enable.selected.blue { background-position: 0 -48px; }
+.cb-enable.selected.blue span { background-position: left -120px; color: #fff; }
+.switch label { cursor: pointer; }
+
+#mainform input.hide { display: none;
+  visibility: hidden;
+	margin-right: 10px;
+}
+
+form.adminform dl#subscriber {
+	width: 300px;
+	font-size: 14px;
+	color: #333;
+}
+
+form.adminform dl#subscriber dt {
+	width: 120px;
+	float: left;
+    padding:4px;
+    margin:1px;
+    background-color: #f6f6f6;
+    text-align: right;
+    border-bottom: 1px solid #e9e9e9;
+    border-right: 1px solid #e9e9e9;
+    margin-bottom: 5px;
+    line-height: 20px;
+    font-weight: normal;
+	clear: left;
+
+}
+
+form.adminform dl#subscriber dd {
+	width: 120px;    
+	float: left;padding:4px;
+    margin: 1px 1px 5px 10px;
+    text-align: left;
+    line-height: 20px;
+    font-weight: normal;
+	clear: right;
+}
+
+div#email_fields {
+	width: 60%;
+	float: left;
+}
+
+div#email_variables {
+	width: 39%;
+	float: left;
+}
+
+
+

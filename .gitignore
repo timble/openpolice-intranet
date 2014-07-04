@@ -1,0 +1,7 @@
+.externalToolBuilders
+.buildpath
+.project
+.settings
+.DS_Store
+
+/configuration.php
