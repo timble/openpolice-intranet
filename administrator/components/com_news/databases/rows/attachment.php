@@ -3,7 +3,7 @@ class ComNewsDatabaseRowAttachment extends ComAttachmentsDatabaseRowAttachment
 {
 	public function __get($name)
 	{
-	    if($name == 'file' && is_null($this->file))
+	    if($name == 'file')
 	    {
 	    	$this->file = $this->getService('com://admin/files.model.files')
 	    					->container($this->container)
@@ -11,11 +11,11 @@ class ComNewsDatabaseRowAttachment extends ComAttachmentsDatabaseRowAttachment
 	    					->name($this->name)
 	    					->getItem();
 	    }
-	    
-	    if($name == 'thumbnail' && is_null($this->thumbnail))
+
+	    if($name == 'thumbnail')
 	    {
 	    	$file = $this->file;
-	    	
+
 	    	if($file && $file->isImage())
 	    	{
 	    		$this->thumbnail = $this->getService('com://admin/files.controller.thumbnail')
@@ -24,7 +24,7 @@ class ComNewsDatabaseRowAttachment extends ComAttachmentsDatabaseRowAttachment
 	    				->read();
 	    	}
 	    }
-	    
+
 	    return parent::__get($name);
 	}
 }
