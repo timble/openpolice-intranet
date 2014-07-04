@@ -88,7 +88,7 @@ class Installer
             throw new \Exception(sprintf('Cannot create database %s. Error: %s', $this->database, $result));
         }
 
-        $dir = $this->www.'/install/custom/mysql';
+        $dir = $this->www.'/install/custom';
 
         foreach (self::$files as $file)
         {
