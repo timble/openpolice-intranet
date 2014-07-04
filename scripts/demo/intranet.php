@@ -54,6 +54,7 @@ class Installer
 
         $this->createDatabase();
         $this->modifyConfiguration();
+        $this->setupPermissions();
     }
 
     public function uninstall()
@@ -97,6 +98,12 @@ class Installer
                 throw new \Exception(sprintf('Cannot import file %s. Error: %s', $file, $result));
             }
         }
+    }
+
+    public function setupPermissions()
+    {
+        `chmod -R 0777 $this->www/sites/default/attachments`;
+        `chmod -R 0777 $this->www/sites/default/downloads`;
     }
 
     public function deleteDatabase()
