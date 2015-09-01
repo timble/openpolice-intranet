@@ -35,17 +35,17 @@ defined('KOOWA') or die('Restricted access') ?>
 			</tr>
 		</tfoot>
 		<tbody>
-		<? $date = $old_date = '';   ?>
-		<? foreach ($activities as $activity) : ?>	
-	        <? $date = @date(array('date' => $activity->created_on, 'format' => '%d %b %Y'))?>
-	        <? if ($date != $old_date): ?>
-	        <? $old_date = $date; ?>
+		<?php $date = $old_date = '';   ?>
+		<?php foreach ($activities as $activity) : ?>
+	        <?php $date = @date(array('date' => $activity->created_on, 'format' => '%d %b %Y'))?>
+	        <?php if ($date != $old_date): ?>
+	        <?php $old_date = $date; ?>
 	        <tr>
 				<td class="activities-timeago" colspan="3">
 			        <?= $date; ?>
 				</td>
 			</tr>
-	        <? endif; ?>
+	        <?php endif; ?>
 			<tr>
 				<td>
 			        <?= @helper('grid.checkbox',array('row' => $activity)); ?>
@@ -59,7 +59,7 @@ defined('KOOWA') or die('Restricted access') ?>
 					<?= @helper('activity.message', array('row' => $activity))?>
 				</td>
 			</tr>
-        <? endforeach; ?>
+        <?php endforeach; ?>
 		</tbody>
 	</table>
 </form>

@@ -65,7 +65,7 @@ defined('KOOWA') or die('Restricted access'); ?>
         </tfoot>
         
         <tbody>
-            <? foreach ($banners as $banner) : ?>
+            <?php foreach ($banners as $banner) : ?>
             <tr>
                 <td align="center">
                     <?= @helper('grid.checkbox', array('row' => $banner))?>
@@ -91,7 +91,7 @@ defined('KOOWA') or die('Restricted access'); ?>
                     <?=$banner->tags?>
                 </td>
             </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </form>
