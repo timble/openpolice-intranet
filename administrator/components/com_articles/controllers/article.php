@@ -18,7 +18,10 @@
  * @subpackage  Articles
  */
 class ComArticlesControllerArticle extends ComDefaultControllerDefault
-{ 
+{
+	/**
+	 * @param KConfig $config
+     */
 	public function __construct(KConfig $config)
 	{
 		parent::__construct($config);

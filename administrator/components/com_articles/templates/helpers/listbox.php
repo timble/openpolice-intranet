@@ -20,6 +20,10 @@
 
 class ComArticlesTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 {
+    /**
+     * @param array $config
+     * @return string
+     */
     public function authors($config = array())
     {
         $config = new KConfig($config);
@@ -32,7 +36,12 @@ class ComArticlesTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 
 		return parent::_listbox($config);
     }
-    
+
+    /**
+     * @param array $config
+     * @return string
+     * @throws KObjectException
+     */
     public function sections($config = array())
     {
         $config = new KConfig($config);
@@ -65,6 +74,11 @@ class ComArticlesTemplateHelperListbox extends ComDefaultTemplateHelperListbox
         return $this->optionlist($config);
     }
 
+    /**
+     * @param array $config
+     * @return string
+     * @throws KObjectException
+     */
     public function categories($config = array())
     {
         $config = new KConfig($config);
@@ -99,6 +113,10 @@ class ComArticlesTemplateHelperListbox extends ComDefaultTemplateHelperListbox
         return $this->optionlist($config);
     }
 
+    /**
+     * @param array $config
+     * @return string
+     */
     public function states($config = array())
     {
         $config = new KConfig($config);

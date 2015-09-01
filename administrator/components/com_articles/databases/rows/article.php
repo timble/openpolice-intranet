@@ -20,6 +20,10 @@
 
 class ComArticlesDatabaseRowArticle extends KDatabaseRowDefault
 {
+    /**
+     * @param $column
+     * @return string
+     */
     public function __get($column)
     {
         if($column == 'params' && !($this->_data['params']) instanceof JParameter)

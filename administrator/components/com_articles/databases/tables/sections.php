@@ -19,7 +19,10 @@
  */
 class ComArticlesDatabaseTableSections extends KDatabaseTableDefault
 {
-	public function  _initialize(KConfig $config) 
+	/**
+	 * @param KConfig $config
+     */
+	public function  _initialize(KConfig $config)
   	{
 		$config->identity_column = 'id';
 			        

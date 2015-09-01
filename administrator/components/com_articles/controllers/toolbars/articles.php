@@ -41,7 +41,10 @@ class ComArticlesControllerToolbarArticles extends ComDefaultControllerToolbarDe
         
         return parent::getCommands();
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     */
     protected function _commandRestore(KControllerToolbarCommand $command)
     {
         $command->append(array(
@@ -50,7 +53,10 @@ class ComArticlesControllerToolbarArticles extends ComDefaultControllerToolbarDe
             )
         ));
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     */
     protected function _commandPublish(KControllerToolbarCommand $command)
     {
         $command->append(array(
@@ -60,7 +66,10 @@ class ComArticlesControllerToolbarArticles extends ComDefaultControllerToolbarDe
             )
         )); 
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     */
     protected function _commandUnpublish(KControllerToolbarCommand $command)
     {
         $command->append(array(
@@ -70,7 +79,10 @@ class ComArticlesControllerToolbarArticles extends ComDefaultControllerToolbarDe
             )
         )); 
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     */
     protected function _commandArchive(KControllerToolbarCommand $command)
     {
         $command->append(array(
@@ -80,7 +92,10 @@ class ComArticlesControllerToolbarArticles extends ComDefaultControllerToolbarDe
             )
         )); 
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     */
     protected function _commandUnarchive(KControllerToolbarCommand $command)
     {
         $command->append(array(

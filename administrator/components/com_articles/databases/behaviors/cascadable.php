@@ -25,29 +25,30 @@ class ComArticlesDatabaseBehaviorCascadable extends KDatabaseBehaviorAbstract
      * @var array
      */
     protected $_dependents;
-    
-	/**
-	 * Constructor.
-	 *
-	 * $config->dependents array An array of identifiers of the dependent tables 
-	 * in the format: com://app/package.model.name.column where column contains the 'foreign key'
-	 *
-	 * @param 	object 	An optional KConfig object with configuration options
-	 */
+
+    /**
+     * Constructor.
+     *
+     * $config->dependents array An array of identifiers of the dependent tables
+     * in the format: com://app/package.model.name.column where column contains the 'foreign key'
+     *
+     * @param KConfig $config
+     * @internal param An $object optional KConfig object with configuration options
+     */
 	public function __construct( KConfig $config = null) 
 	{ 
 	    parent::__construct($config);
 	    
 	    $this->_dependents = $config->dependents;
-	} 
+	}
 
-	/**
+    /**
      * Initializes the options for the object
      *
      * Called from {@link __construct()} as a first step of object instantiation.
      *
-     * @param 	object 	An optional KConfig object with configuration options
-     * @return void
+     * @param KConfig $config
+     * @internal param An $object optional KConfig object with configuration options
      */
 	protected function _initialize(KConfig $config)
     {
@@ -57,12 +58,13 @@ class ComArticlesDatabaseBehaviorCascadable extends KDatabaseBehaviorAbstract
 
     	parent::_initialize($config);
    	}
-    
+
     /**
      * Deletes dependent rows.
      *
-     * This performs an intelligent delete 
+     * This performs an intelligent delete
      *
+     * @param KCommandContext $context
      * @return KDatabaseRowAbstract
      */
     protected function _beforeTableDelete(KCommandContext $context)
