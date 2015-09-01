@@ -16,11 +16,11 @@ defined('KOOWA') or die( 'Restricted access' ); ?>
 			<?= @text('All sections') ?>
 		</a>
 	</li>
-	<? foreach ($sections as $section) : ?>
+	<?php foreach ($sections as $section) : ?>
 	<li class="<?= $state->parent == $section->id ? 'active' : ''; ?>">
 		<a href="<?= @route('parent='.$section->id ) ?>">
 			<?= @escape($section->title) ?>
 		</a>
 	</li>
-	<? endforeach ?>
+	<?php endforeach ?>
 </ul>
