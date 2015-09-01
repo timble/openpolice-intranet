@@ -42,6 +42,9 @@ class ComActivitiesControllerBehaviorLoggable extends KControllerBehaviorAbstrac
         $this->_title_column = KConfig::unbox($config->title_column);
     }
 
+    /**
+     * @param KConfig $config
+     */
     protected function _initialize(KConfig $config)
     {
         $config->append(array(
@@ -53,6 +56,11 @@ class ComActivitiesControllerBehaviorLoggable extends KControllerBehaviorAbstrac
         parent::_initialize($config);
     }
 
+    /**
+     * @param $name
+     * @param KCommandContext $context
+     * @return bool|void
+     */
     public function execute($name, KCommandContext $context)
     {
         if(in_array($name, $this->_actions))
