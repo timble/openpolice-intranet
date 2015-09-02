@@ -41,7 +41,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Lists (
+    public function CS_REST_Lists (
     $list_id,
     $api_key,
     $protocol = 'https',
@@ -60,7 +60,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @param $list_id
      * @access public
      */
-    function set_list_id($list_id) {
+    public function set_list_id($list_id) {
         $this->_lists_base_route = $this->_base_route.'lists/'.$list_id.'/';
     }
 
@@ -80,7 +80,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created list
      */
-    function create($client_id, $list_details) {
+    public function create($client_id, $list_details) {
         return $this->post_request($this->_base_route.'lists/'.$client_id.'.json', $list_details);
     }
 
@@ -100,7 +100,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function update($list_details) {
+    public function update($list_details) {
         return $this->put_request(trim($this->_lists_base_route, '/').'.json', $list_details);
     }
 
@@ -125,7 +125,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @return CS_REST_Wrapper_Result A successful response will be the 
      * personalisation tag of the newly created custom field
      */
-    function create_custom_field($custom_field_details) {
+    public function create_custom_field($custom_field_details) {
         return $this->post_request($this->_lists_base_route.'customfields.json', $custom_field_details);
     }
 
@@ -137,7 +137,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function update_field_options($key, $new_options, $keep_existing) {
+    public function update_field_options($key, $new_options, $keep_existing) {
         $options = array(
             'KeepExistingOptions' => $keep_existing,
             'Options' => $new_options
@@ -152,7 +152,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete() {
+    public function delete() {
         return $this->delete_request(trim($this->_lists_base_route, '/').'.json');
     }
 
@@ -161,7 +161,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete_custom_field($key) {
+    public function delete_custom_field($key) {
         return $this->delete_request($this->_lists_base_route.'customfields/'.rawurlencode($key).'.json');
     }
 
@@ -178,7 +178,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_custom_fields() {
+    public function get_custom_fields() {
         return $this->get_request($this->_lists_base_route.'customfields.json');
     }
 
@@ -194,7 +194,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_segments() {
+    public function get_segments() {
         return $this->get_request($this->_lists_base_route.'segments.json');
     }
 
@@ -231,7 +231,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_active_subscribers($added_since, $page_number = NULL, 
+    public function get_active_subscribers($added_since, $page_number = NULL,
         $page_size = NULL, $order_field = NULL, $order_direction = NULL) {
             
         return $this->get_request_paged($this->_lists_base_route.'active.json?date='.urlencode($added_since), 
@@ -271,7 +271,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_bounced_subscribers($bounced_since, $page_number = NULL, 
+    public function get_bounced_subscribers($bounced_since, $page_number = NULL,
         $page_size = NULL, $order_field = NULL, $order_direction = NULL) {
             
         return $this->get_request_paged($this->_lists_base_route.'bounced.json?date='.urlencode($bounced_since), 
@@ -311,7 +311,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_unsubscribed_subscribers($unsubscribed_since, $page_number = NULL, 
+    public function get_unsubscribed_subscribers($unsubscribed_since, $page_number = NULL,
         $page_size = NULL, $order_field = NULL, $order_direction = NULL) {
             
         return $this->get_request_paged($this->_lists_base_route.'unsubscribed.json?date='.urlencode($unsubscribed_since), 
@@ -331,7 +331,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *         redirected to upon confirming their subscription
      * }
      */
-    function get() {
+    public function get() {
         return $this->get_request(trim($this->_lists_base_route, '/').'.json');
     }
 
@@ -366,7 +366,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     'BouncesThisYear'
      * }
      */
-    function get_stats() {
+    public function get_stats() {
         return $this->get_request($this->_lists_base_route.'stats.json');
     }
     
@@ -384,7 +384,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_webhooks() {
+    public function get_webhooks() {
         return $this->get_request($this->_lists_base_route.'webhooks.json');
     }
    
@@ -406,7 +406,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created webhook
      */
-    function create_webhook($webhook) {
+    public function create_webhook($webhook) {
         return $this->post_request($this->_lists_base_route.'webhooks.json', $webhook);    
     }
     
@@ -416,7 +416,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty. 
      */
-    function test_webhook($webhook_id) {
+    public function test_webhook($webhook_id) {
         return $this->get_request($this->_lists_base_route.'webhooks/'.$webhook_id.'/test.json');
     }    
 
@@ -426,7 +426,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete_webhook($webhook_id) {
+    public function delete_webhook($webhook_id) {
         return $this->delete_request($this->_lists_base_route.'webhooks/'.$webhook_id.'.json');
     }
     
@@ -436,7 +436,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function activate_webhook($webhook_id) {
+    public function activate_webhook($webhook_id) {
         return $this->put_request($this->_lists_base_route.'webhooks/'.$webhook_id.'/activate.json', '');
     }
     
@@ -446,7 +446,7 @@ class CS_REST_Lists extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function deactivate_webhook($webhook_id) {
+    public function deactivate_webhook($webhook_id) {
         return $this->put_request($this->_lists_base_route.'webhooks/'.$webhook_id.'/deactivate.json', '');
     }
 }

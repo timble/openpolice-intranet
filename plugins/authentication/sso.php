@@ -5,7 +5,7 @@ jimport( 'joomla.plugin.plugin' );
 
 class plgAuthenticationSSO extends JPlugin
 {
-	function onAuthenticate( $credentials, $options, &$response )
+	function onAuthenticate( $credentials, &$response )
 	{
 		jimport('joomla.user.helper');
 

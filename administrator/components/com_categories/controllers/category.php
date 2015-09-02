@@ -18,8 +18,14 @@
  * @subpackage  Articles
  */
 abstract class ComCategoriesControllerCategory extends ComDefaultControllerDefault
-{ 
-    protected function _actionGet(KCommandContext $context)
+{
+	/**
+	 * @param KCommandContext $context
+	 * @return KDatabaseRow
+	 * @throws KControllerException
+	 * @throws KObjectException
+     */
+	protected function _actionGet(KCommandContext $context)
     {
         $view = $this->getView();
         
@@ -43,8 +49,13 @@ abstract class ComCategoriesControllerCategory extends ComDefaultControllerDefau
 	    
         return parent::_actionGet($context);
     }
-    
-    public function setModel($model)
+
+	/**
+	 * @param $model
+	 * @return object
+	 * @throws KControllerException
+     */
+	public function setModel($model)
     {
         $model = parent::setModel($model);
         $model->package = 'categories';

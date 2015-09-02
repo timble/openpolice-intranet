@@ -21,6 +21,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
 {
     protected $child_id;
 
+    /**
+     * @param KConfig $config
+     */
     public function __construct(KConfig $config)
 	{
         parent::__construct($config);
@@ -34,6 +37,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
 
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryColumns(KDatabaseQuery $query)
     {
         parent::_buildQueryColumns($query);
@@ -50,6 +56,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
     }
 
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryJoins(KDatabaseQuery $query)
     {
         //Exclude joins if counting records
@@ -70,6 +79,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
     }
 
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryWhere(KDatabaseQuery $query)
     {
         $state = $this->_state;
@@ -100,6 +112,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
         parent::_buildQueryWhere($query);
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryGroup(KDatabaseQuery $query)
     {
         $state = $this->_state;
@@ -111,6 +126,9 @@ class ComCategoriesModelCategories extends ComDefaultModelDefault
         else $query->group('tbl.id');
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryOrder(KDatabaseQuery $query)
     {
         $sort = $this->_state->sort;

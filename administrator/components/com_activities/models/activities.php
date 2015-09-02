@@ -20,6 +20,9 @@
 
 class ComActivitiesModelActivities extends ComDefaultModelDefault
 {
+	/**
+	 * @param KConfig $config
+     */
 	public function __construct(KConfig $config)
 	{
 		parent::__construct($config);
@@ -42,6 +45,9 @@ class ComActivitiesModelActivities extends ComDefaultModelDefault
 		$this->_state->sort = 'created_on';
 	}
 
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryColumns(KDatabaseQuery $query)
 	{
 		if($this->_state->distinct && !empty($this->_state->column))
@@ -57,11 +63,18 @@ class ComActivitiesModelActivities extends ComDefaultModelDefault
 		}
 	}
 
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryJoins(KDatabaseQuery $query)
 	{
 		$query->join('LEFT', 'users AS users', 'users.id = tbl.created_by');
 	}
 
+	/**
+	 * @param KDatabaseQuery $query
+	 * @throws KObjectException
+     */
 	protected function _buildQueryWhere(KDatabaseQuery $query)
 	{
 		parent::_buildQueryWhere($query);
@@ -101,6 +114,9 @@ class ComActivitiesModelActivities extends ComDefaultModelDefault
 		}
 	}
 
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryOrder(KDatabaseQuery $query)
 	{
 		if($this->_state->distinct && !empty($this->_state->column)) {

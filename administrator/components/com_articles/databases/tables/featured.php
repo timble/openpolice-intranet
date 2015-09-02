@@ -19,6 +19,9 @@
  */
 class ComArticlesDatabaseTableFeatured extends KDatabaseTableDefault
 {
+    /**
+     * @param KConfig $config
+     */
     public function  _initialize(KConfig $config)
     {
         $config->identity_column = 'content_id';

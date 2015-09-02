@@ -37,7 +37,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Clients(
+    public function CS_REST_Clients(
     $client_id,
     $api_key,
     $protocol = 'https',
@@ -56,7 +56,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @param $client_id
      * @access public
      */
-    function set_client_id($client_id) {
+    public function set_client_id($client_id) {
         $this->_clients_base_route = $this->_base_route.'clients/'.$client_id.'/';
     }
 
@@ -75,7 +75,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_campaigns() {
+    public function get_campaigns() {
         return $this->get_request($this->_clients_base_route.'campaigns.json');
     }
 
@@ -95,7 +95,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_scheduled() {
+    public function get_scheduled() {
         return $this->get_request($this->_clients_base_route.'scheduled.json');
     }
 
@@ -113,7 +113,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_drafts() {
+    public function get_drafts() {
         return $this->get_request($this->_clients_base_route.'drafts.json');
     }
 
@@ -128,7 +128,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_lists() {
+    public function get_lists() {
         return $this->get_request($this->_clients_base_route.'lists.json');
     }
 
@@ -144,7 +144,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_segments() {
+    public function get_segments() {
         return $this->get_request($this->_clients_base_route.'segments.json');
     }
 
@@ -173,7 +173,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_suppressionlist($page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_suppressionlist($page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {
             
         return $this->get_request_paged($this->_clients_base_route.'suppressionlist.json', 
@@ -193,7 +193,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_templates() {
+    public function get_templates() {
         return $this->get_request($this->_clients_base_route.'templates.json');
     }
 
@@ -251,7 +251,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      *     }     
      * }
      */
-    function get() {
+    public function get() {
         return $this->get_request(trim($this->_clients_base_route, '/').'.json');
     }
 
@@ -260,7 +260,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete() {
+    public function delete() {
         return $this->delete_request(trim($this->_clients_base_route, '/').'.json');
     }
 
@@ -278,7 +278,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created client
      */
-    function create($client) {
+    public function create($client) {
         return $this->post_request($this->_base_route.'clients.json', $client);
     }
 
@@ -296,7 +296,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function set_basics($client_basics) {
+    public function set_basics($client_basics) {
         return $this->put_request($this->_clients_base_route.'setbasics.json', $client_basics);
     }
 
@@ -323,7 +323,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function set_access($client_access) {
+    public function set_access($client_access) {
         return $this->put_request($this->_clients_base_route.'setaccess.json', $client_access);
     }
 
@@ -362,7 +362,7 @@ class CS_REST_Clients extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function set_monthly_billing($client_billing) {
+    public function set_monthly_billing($client_billing) {
         return $this->put_request($this->_clients_base_route.'setmonthlybilling.json', $client_billing);
     }
 }

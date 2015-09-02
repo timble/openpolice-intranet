@@ -18,7 +18,10 @@
  * @subpackage  Articles    
  */
 class ComArticlesModelSections extends ComDefaultModelDefault
-{	
+{
+	/**
+	 * @param KConfig $config
+     */
 	public function __construct(KConfig $config)
 	{
 		parent::__construct($config);
@@ -29,7 +32,10 @@ class ComArticlesModelSections extends ComDefaultModelDefault
 			->insert('published' ,'int');
 
 	}
-	
+
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryColumns(KDatabaseQuery $query)
 	{
 		parent::_buildQueryColumns($query);
@@ -37,6 +43,9 @@ class ComArticlesModelSections extends ComDefaultModelDefault
 			->select('SUM( IF(active.state <> -2,1,0)) activecount');
 	}
 
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryJoins(KDatabaseQuery $query)
 	{
 		//Exclude joins if counting records
@@ -53,7 +62,10 @@ class ComArticlesModelSections extends ComDefaultModelDefault
 		
 		parent::_buildQueryJoins($query);
 	}
-	
+
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryWhere(KDatabaseQuery $query)
 	{
 		$state = $this->_state;
@@ -72,7 +84,10 @@ class ComArticlesModelSections extends ComDefaultModelDefault
 	      
 		parent::_buildQueryWhere($query);
 	}
-	
+
+	/**
+	 * @param KDatabaseQuery $query
+     */
 	protected function _buildQueryGroup(KDatabaseQuery $query)
 	{
 		$query->group('tbl.id');

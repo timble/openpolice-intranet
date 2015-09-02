@@ -21,12 +21,14 @@
 class ComActivitiesTemplateHelperActivity extends KTemplateHelperDefault implements KServiceInstantiatable
 {
 	/**
-     * Check for overrides of the helper
-     *
-     * @param 	object 	An optional KConfig object with configuration options
-     * @param 	object	A KServiceInterface object
-     * @return ComActivitiesTemplateHelperActivity
-     */
+	 * Check for overrides of the helper
+	 *
+	 * @param KConfigInterface $config
+	 * @param KServiceInterface $container
+	 * @return ComActivitiesTemplateHelperActivity
+	 * @internal param An $object optional KConfig object with configuration options
+	 * @internal param A $object KServiceInterface object
+	 */
     public static function getInstance(KConfigInterface $config, KServiceInterface $container)
     {
         $identifier = clone $config->service_identifier;
@@ -43,8 +45,12 @@ class ComActivitiesTemplateHelperActivity extends KTemplateHelperDefault impleme
         $instance  = new $classname($config);               
         return $instance;
     }
-    
-    public function message($config = array())
+
+	/**
+	 * @param array $config
+	 * @return string
+     */
+	public function message($config = array())
 	{
 	    $config = new KConfig($config);
 		$config->append(array(

@@ -29,7 +29,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Segments (
+    public function CS_REST_Segments (
     $segment_id,
     $api_key,
     $protocol = 'https',
@@ -48,7 +48,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      * @param $segment_id
      * @access public
      */
-    function set_segment_id($segment_id) {
+    public function set_segment_id($segment_id) {
         $this->_segments_base_route = $this->_base_route.'segments/'.$segment_id;
     }
     
@@ -68,7 +68,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      *         )
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created segment
      */
-    function create($list_id, $segment_details) {
+    public function create($list_id, $segment_details) {
         return $this->post_request($this->_base_route.'segments/'.$list_id.'.json', $segment_details);
     }    
     
@@ -87,7 +87,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      *         )
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function update($segment_details) {
+    public function update($segment_details) {
         return $this->put_request($this->_segments_base_route.'.json', $segment_details);
     }    
     
@@ -101,7 +101,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      *         )
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function add_rule($rule) {
+    public function add_rule($rule) {
         return $this->post_request($this->_segments_base_route.'/rules.json', $rule);
     }
     
@@ -122,7 +122,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      *     'Title' => The title of this segment
      * }
      */
-    function get() {
+    public function get() {
         return $this->get_request($this->_segments_base_route.'.json');
     }
 
@@ -131,7 +131,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete() {
+    public function delete() {
         return $this->delete_request($this->_segments_base_route.'.json');
     }
 
@@ -140,7 +140,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function clear_rules() {
+    public function clear_rules() {
         return $this->delete_request($this->_segments_base_route.'/rules.json');
     }
     
@@ -177,7 +177,7 @@ class CS_REST_Segments extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_subscribers($subscribed_since, $page_number = NULL, 
+    public function get_subscribers($subscribed_since, $page_number = NULL,
         $page_size = NULL, $order_field = NULL, $order_direction = NULL) {
             
         return $this->get_request_paged($this->_segments_base_route.'/active.json?date='.urlencode($subscribed_since), 

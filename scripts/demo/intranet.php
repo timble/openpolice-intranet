@@ -18,6 +18,9 @@ class Installer
     public $database = 'intranet';
     public $www = '/var/www/intranet.openpolice.be';
 
+    /**
+     * @param $task
+     */
     public function __construct($task)
     {
         if (!in_array($task, array('install', 'reinstall'))) {
@@ -27,6 +30,9 @@ class Installer
         $this->task = $task;
     }
 
+    /**
+     * @param $argv
+     */
     public static function fromInput($argv)
     {
         $task = isset($argv[1]) ? $argv[1] : '';
@@ -151,6 +157,11 @@ class Installer
         chmod($output, 0644);
     }
 
+    /**
+     * @param string $text
+     * @param bool|true $nl
+     * @return $this
+     */
     public function out($text = '', $nl = true)
     {
         fwrite(STDOUT, $text . ($nl ? "\n" : null));
@@ -158,6 +169,11 @@ class Installer
         return $this;
     }
 
+    /**
+     * @param string $text
+     * @param bool|true $nl
+     * @return $this
+     */
     public function error($text = '', $nl = true)
     {
         fwrite(STDERR, $text . ($nl ? "\n" : null));

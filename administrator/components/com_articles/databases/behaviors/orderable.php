@@ -20,6 +20,9 @@
 
 class ComArticlesDatabaseBehaviorOrderable extends KDatabaseBehaviorOrderable
 {
+    /**
+     * @param KCommandContext $context
+     */
     protected function _beforeTableUpdate(KCommandContext $context)
     {
         if($this->featured_order) 
@@ -31,7 +34,10 @@ class ComArticlesDatabaseBehaviorOrderable extends KDatabaseBehaviorOrderable
         } 
         else parent::_beforeTableUpdate($context);
     }
-     
+
+    /**
+     * @param KDatabaseQuery $query
+     */
     public function _buildQueryWhere(KDatabaseQuery $query)
     {
         if($this->getMixer()->getIdentifier()->name == 'article' && !isset($this->featured_order))

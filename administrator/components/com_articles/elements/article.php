@@ -28,6 +28,13 @@ class JElementArticle extends JElement
      */
     var $_name = 'Article';
 
+    /**
+     * @param $name
+     * @param $value
+     * @param $node
+     * @param $control_name
+     * @return string
+     */
     function fetchElement($name, $value, &$node, $control_name)
     {
         global $mainframe;

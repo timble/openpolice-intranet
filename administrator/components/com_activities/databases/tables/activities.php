@@ -20,6 +20,9 @@
 
 class ComActivitiesDatabaseTableActivities extends KDatabaseTableDefault
 {
+    /**
+     * @param KConfig $config
+     */
     protected function _initialize(KConfig $config)
     {
         $config->append(array(

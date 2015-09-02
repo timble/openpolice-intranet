@@ -19,6 +19,9 @@
  */
 class ComArticlesModelArticles extends ComDefaultModelDefault
 {
+    /**
+     * @param KConfig $config
+     */
     public function __construct(KConfig $config)
     {
         parent::__construct($config);
@@ -36,6 +39,9 @@ class ComArticlesModelArticles extends ComDefaultModelDefault
         $this->_state->remove('sort')->insert('sort', 'cmd', 'section_title');
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryColumns(KDatabaseQuery $query)
     {
         parent::_buildQueryColumns($query);
@@ -49,6 +55,9 @@ class ComArticlesModelArticles extends ComDefaultModelDefault
             ->select('group.name AS group_name');
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryJoins(KDatabaseQuery $query)
     {
          parent::_buildQueryJoins($query);
@@ -67,6 +76,9 @@ class ComArticlesModelArticles extends ComDefaultModelDefault
         }
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryWhere(KDatabaseQuery $query)
     {
         parent::_buildQueryWhere($query);
@@ -104,6 +116,9 @@ class ComArticlesModelArticles extends ComDefaultModelDefault
         }
     }
 
+    /**
+     * @param KDatabaseQuery $query
+     */
     protected function _buildQueryOrder(KDatabaseQuery $query)
     {
         $state = $this->_state;

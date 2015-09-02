@@ -10,8 +10,11 @@
 class ComEditorsViewEditorHtml extends ComDefaultViewHtml
 {
     protected $_editor_settings;
-    
-    public function __construct(KConfig $config)
+
+	/**
+	 * @param KConfig $config
+     */
+	public function __construct(KConfig $config)
     {
         parent::__construct($config);
         
@@ -27,13 +30,14 @@ class ComEditorsViewEditorHtml extends ComDefaultViewHtml
         }
     }
 
-    /**
-     * Initializes the configuration for the object
-     * 
-     * Called from {@link __construct()} as a first step of object instantiation.
-     *
-     * @param   array   Configuration settings
-     */
+	/**
+	 * Initializes the configuration for the object
+	 *
+	 * Called from {@link __construct()} as a first step of object instantiation.
+	 *
+	 * @param KConfig $config
+	 * @internal param Configuration $array settings
+	 */
     protected function _initialize(KConfig $config)
     {
         $language = JFactory::getLanguage();

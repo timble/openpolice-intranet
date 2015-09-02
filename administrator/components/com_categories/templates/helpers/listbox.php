@@ -20,7 +20,12 @@
 
 class ComCategoriesTemplateHelperListbox extends ComDefaultTemplateHelperListbox
 {
-     public function order($config = array())
+    /**
+     * @param array $config
+     * @return string
+     * @throws KObjectException
+     */
+    public function order($config = array())
      {
          $config = new KConfig($config);
          $config->append(array(

@@ -22,6 +22,13 @@ class JElementAuthor extends JElement
 {
     var $_name = 'Author';
 
+    /**
+     * @param $name
+     * @param $value
+     * @param $node
+     * @param $control_name
+     * @return bool|mixed
+     */
     function fetchElement($name, $value, &$node, $control_name)
     {
         return JHTML::_('list.users', $control_name.'['.$name.']', $value);

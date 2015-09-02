@@ -33,15 +33,15 @@ class ComArticlesDatabaseRowNode extends KDatabaseRowAbstract
      * @var string|object
      */
  	protected $_parent   = null;
- 	
+
 	/**
-     * Initializes the options for the object
-     *
-     * Called from {@link __construct()} as a first step of object instantiation.
-     *
-     * @param   object  An optional KConfig object with configuration options.
-     * @return void
-     */
+	 * Initializes the options for the object
+	 *
+	 * Called from {@link __construct()} as a first step of object instantiation.
+	 *
+	 * @param KConfig $config
+	 * @internal param An $object optional KConfig object with configuration options.
+	 */
     protected function _initialize(KConfig $config)
     {
         $config->append(array(
@@ -51,16 +51,17 @@ class ComArticlesDatabaseRowNode extends KDatabaseRowAbstract
 
         parent::_initialize($config);
     }
-    
-    /**
-     * Insert a row into the rowset
-     * 
-     * The row will be stored by it's identity_column if set or otherwise by
-     * it's object handle.
-     *
-     * @param  object   A KDatabaseRow object to be inserted
-     * @return KDatabaseRowsetAbstract
-     */
+
+	/**
+	 * Insert a row into the rowset
+	 *
+	 * The row will be stored by it's identity_column if set or otherwise by
+	 * it's object handle.
+	 *
+	 * @param KDatabaseRowInterface $node
+	 * @return KDatabaseRowsetAbstract
+	 * @internal param A $object KDatabaseRow object to be inserted
+	 */
 	public function insertChild(KDatabaseRowInterface $node)
  	{
  		//Track the parent
@@ -112,10 +113,11 @@ class ComArticlesDatabaseRowNode extends KDatabaseRowAbstract
 	}
 
 	/**
-     * Set the parent node
-     *
-     * @return ComArticlesDatabaseRowNode
-     */
+	 * Set the parent node
+	 *
+	 * @param $node
+	 * @return ComArticlesDatabaseRowNode
+	 */
 	public function setParent( $node )
 	{
 		$this->_parent = $node;

@@ -20,6 +20,9 @@
 
 class ComArticlesDatabaseRowsetFolders extends ComArticlesDatabaseRowsetNodes
 {
+    /**
+     * @param KConfig $config
+     */
     protected function _initialize(KConfig $config)
     {
         $config->append(array(

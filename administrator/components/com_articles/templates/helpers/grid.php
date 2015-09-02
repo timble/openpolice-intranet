@@ -20,6 +20,10 @@
 
 class ComArticlesTemplateHelperGrid extends KTemplateHelperGrid
 {
+    /**
+     * @param array $config
+     * @return string
+     */
     public function order($config = array())
 	{
 		$config = new KConfig($config);
@@ -33,6 +37,10 @@ class ComArticlesTemplateHelperGrid extends KTemplateHelperGrid
 	    return parent::order($config);
 	}
 
+    /**
+     * @param array $config
+     * @return string
+     */
     public function state($config = array())
     {
         $config = new KConfig($config);
@@ -95,6 +103,10 @@ class ComArticlesTemplateHelperGrid extends KTemplateHelperGrid
         return $html;
     }
 
+    /**
+     * @param array $config
+     * @return string
+     */
     public function featured($config = array())
     {
         $config = new KConfig($config);

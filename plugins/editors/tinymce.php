@@ -402,7 +402,8 @@ class plgEditorTinymce extends JPlugin
 	/**
 	 * TinyMCE WYSIWYG Editor - get the editor content
 	 *
-	 * @param string 	The name of the editor
+	 * @param string    The name of the editor
+	 * @return string
 	 */
 	function onGetContent( $editor ) {
 		return 'tinyMCE.get(\''.$editor.'\').getContent();';
@@ -411,7 +412,8 @@ class plgEditorTinymce extends JPlugin
 	/**
 	 * TinyMCE WYSIWYG Editor - set the editor content
 	 *
-	 * @param string 	The name of the editor
+	 * @param string    The name of the editor
+	 * @return string
 	 */
 	function onSetContent($editor, $html) {
 		return 'tinyMCE.get(\''.$editor.'\').setContent('.$html.');';
@@ -420,7 +422,8 @@ class plgEditorTinymce extends JPlugin
 	/**
 	 * TinyMCE WYSIWYG Editor - copy editor content to form field
 	 *
-	 * @param string 	The name of the editor
+	 * @param string    The name of the editor
+	 * @return string
 	 */
 	function onSave($editor) {
  		return 'if (tinyMCE.get("'.$editor.'").isHidden()) {tinyMCE.get("'.$editor.'").show()}; tinyMCE.get("'.$editor.'").save();';
@@ -436,6 +439,7 @@ class plgEditorTinymce extends JPlugin
 	 * @param int The number of columns for the editor area
 	 * @param int The number of rows for the editor area
 	 * @param mixed Can be boolean or array.
+	 * @return string
 	 */
 	function onDisplay($name, $content, $width, $height, $col, $row, $buttons = true)
 	{
@@ -532,6 +536,11 @@ class plgEditorTinymce extends JPlugin
 		return true;
 	}
 
+	/**
+	 * @param $name
+	 * @param $buttons
+	 * @return string
+     */
 	function _displayButtons($name, $buttons)
 	{
 		// Load modal popup behavior
