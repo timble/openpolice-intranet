@@ -19,6 +19,10 @@
  */
 class ComCategoriesDatabaseTableCategories extends KDatabaseTableDefault
 {
+    /**
+     * @param KConfig $config
+     * @throws KDatabaseTableException
+     */
     public function  _initialize(KConfig $config)
     {
         $config->identity_column = 'id';

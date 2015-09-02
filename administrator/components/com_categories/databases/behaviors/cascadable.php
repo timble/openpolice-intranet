@@ -22,8 +22,9 @@ class ComCategoriesDatabaseBehaviorCascadable extends KDatabaseBehaviorAbstract
     /**
      * Deletes dependent rows.
      *
-     * This performs an intelligent delete 
+     * This performs an intelligent delete
      *
+     * @param KCommandContext $context
      * @return KDatabaseRowAbstract
      */
     protected function _beforeTableDelete(KCommandContext $context)

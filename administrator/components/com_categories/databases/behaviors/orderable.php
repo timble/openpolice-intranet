@@ -29,7 +29,10 @@ class ComCategoriesDatabaseBehaviorOrderable extends KDatabaseBehaviorOrderable
     protected $_parent_column;
 
     protected $_table;
-    
+
+    /**
+     * @param KConfig|null $config
+     */
     public function __construct( KConfig $config = null)
     {
         $config->append(array('parent_column' => null));
@@ -92,12 +95,13 @@ class ComCategoriesDatabaseBehaviorOrderable extends KDatabaseBehaviorOrderable
             $this->reorder();
         }
     }
-    
+
 
     /**
      * Modify the select query
      *
      * If the $this->_parent_column is set, this will modify the query to add the column needed by the behavior
+     * @param KCommandContext $context
      */
     protected function _beforeTableSelect(KCommandContext $context)
     {

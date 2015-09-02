@@ -27,7 +27,11 @@ class ComCategoriesControllerToolbarCategories extends ComDefaultControllerToolb
 	    
         return parent::getCommands();
     }
-    
+
+    /**
+     * @param KControllerToolbarCommand $command
+     * @throws KObjectException
+     */
     protected function _commandNew(KControllerToolbarCommand $command)
     {
         $option  = $this->getIdentifier()->package;
