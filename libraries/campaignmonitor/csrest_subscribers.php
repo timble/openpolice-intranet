@@ -29,7 +29,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Subscribers (
+    public function CS_REST_Subscribers (
     $list_id,
     $api_key,
     $protocol = 'https',
@@ -49,7 +49,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * @param $list_id
      * @access public
      */
-    function set_list_id($list_id) {
+    public function set_list_id($list_id) {
         $this->_subscribers_base_route = $this->_base_route.'subscribers/'.$list_id;
     }
 
@@ -71,7 +71,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function add($subscriber) {
+    public function add($subscriber) {
         return $this->post_request($this->_subscribers_base_route.'.json', $subscriber);
     }
 
@@ -96,7 +96,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function update($email, $subscriber) {
+    public function update($email, $subscriber) {
         return $this->put_request($this->_subscribers_base_route.'.json?email='.urlencode($email), $subscriber);
     }
 
@@ -134,7 +134,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * }
      *
      */
-    function import($subscribers, $resubscribe) {
+    public function import($subscribers, $resubscribe) {
         $subscribers = array(
 		    'Resubscribe' => $resubscribe,
 		    'Subscribers' => $subscribers
@@ -160,7 +160,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get($email) {
+    public function get($email) {
         return $this->get_request($this->_subscribers_base_route.'.json?email='.urlencode($email));
     }
 
@@ -184,7 +184,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_history($email) {
+    public function get_history($email) {
         return $this->get_request($this->_subscribers_base_route.'/history.json?email='.urlencode($email));
     }
 
@@ -194,7 +194,7 @@ class CS_REST_Subscribers extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function unsubscribe($email) {
+    public function unsubscribe($email) {
         // We need to build the subscriber data structure.
         $email = array(
 		    'EmailAddress' => $email 

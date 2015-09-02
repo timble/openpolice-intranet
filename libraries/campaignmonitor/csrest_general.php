@@ -20,7 +20,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Wrapper_Base(
+    public function CS_REST_Wrapper_Base(
         $api_key,
         $protocol = 'https',
         $debug_level = CS_REST_LOG_NONE,
@@ -37,7 +37,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      * @return CS_REST_Wrapper_Result A successful response will be an object of the form
      * array<string>(timezones)
      */
-    function get_timezones() {
+    public function get_timezones() {
         return $this->get_request($this->_base_route.'timezones.json');
     }
 
@@ -49,7 +49,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      *     'SystemDate' => string The current system date in your accounts timezone
      * }
      */
-    function get_systemdate() {
+    public function get_systemdate() {
         return $this->get_request($this->_base_route.'systemdate.json');
     }
 
@@ -59,7 +59,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      * @return CS_REST_Wrapper_Result A successful response will be an object of the form
      * array<string>(countries)
      */
-    function get_countries() {
+     public function get_countries() {
         return $this->get_request($this->_base_route.'countries.json');
     }
 
@@ -74,7 +74,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      *     'ApiKey' => string Your api key
      * }
      */
-    function get_apikey($username, $password, $site_url) {
+    public function get_apikey($username, $password, $site_url) {
         return $this->get_request($this->_base_route.'apikey.json?siteurl='.$site_url, 
             array('credentials' => $username.':'.$password));
     }
@@ -90,7 +90,7 @@ class CS_REST_General extends CS_REST_Wrapper_Base {
      *     }
      * )
      */
-    function get_clients() {
+    public function get_clients() {
         return $this->get_request($this->_base_route.'clients.json');
     }
 }

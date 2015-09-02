@@ -29,7 +29,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Campaigns (
+    public function CS_REST_Campaigns (
     $campaign_id,
     $api_key,
     $protocol = 'https',
@@ -48,7 +48,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @param $campaign_id
      * @access public
      */
-    function set_campaign_id($campaign_id) {
+    public function set_campaign_id($campaign_id) {
         $this->_campaigns_base_route = $this->_base_route.'campaigns/'.$campaign_id.'/';
     }
 
@@ -72,7 +72,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created campaign
      */
-    function create($client_id, $campaign_info) {
+    public function create($client_id, $campaign_info) {
         return $this->post_request($this->_base_route.'campaigns/'.$client_id.'.json', $campaign_info);
     }
     
@@ -85,7 +85,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function send_preview($recipients, $personalize = 'Random') { 
+    public function send_preview($recipients, $personalize = 'Random') {
         $preview_data = array(
             'PreviewRecipients' => $recipients,
             'Personalize' => $personalize
@@ -106,7 +106,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function send($schedule) {
+    public function send($schedule) {
         return $this->post_request($this->_campaigns_base_route.'send.json', $schedule);
     }
 
@@ -115,7 +115,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete() {
+    public function delete() {
         return $this->delete_request(trim($this->_campaigns_base_route, '/').'.json');
     }
 
@@ -143,7 +143,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_recipients($page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_recipients($page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {            
         return $this->get_request_paged($this->_campaigns_base_route.'recipients.json', $page_number, 
             $page_size, $order_field, $order_direction, '?');
@@ -178,7 +178,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      * }
      * )
      */
-    function get_bounces($since, $page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_bounces($since, $page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {
         return $this->get_request_paged($this->_campaigns_base_route.'bounces.json?date='.urlencode($since),
             $page_number, $page_size, $order_field, $order_direction);
@@ -204,7 +204,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_lists_and_segments() {
+    public function get_lists_and_segments() {
         return $this->get_request($this->_campaigns_base_route.'listsandsegments.json');
     }
 
@@ -222,7 +222,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     'WebVersionURL' => The url of the webversion of the campaign
      * }
      */
-    function get_summary() {
+    public function get_summary() {
         return $this->get_request($this->_campaigns_base_route.'summary.json');
     }
 
@@ -253,7 +253,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_opens($since, $page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_opens($since, $page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {
         return $this->get_request_paged($this->_campaigns_base_route.'opens.json?date='.urlencode($since), 
             $page_number, $page_size, $order_field, $order_direction);
@@ -287,7 +287,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_clicks($since, $page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_clicks($since, $page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {
         return $this->get_request_paged($this->_campaigns_base_route.'clicks.json?date='.urlencode($since), 
             $page_number, $page_size, $order_field, $order_direction);
@@ -320,7 +320,7 @@ class CS_REST_Campaigns extends CS_REST_Wrapper_Base {
      *     )
      * }
      */
-    function get_unsubscribes($since, $page_number = NULL, $page_size = NULL, $order_field = NULL, 
+    public function get_unsubscribes($since, $page_number = NULL, $page_size = NULL, $order_field = NULL,
         $order_direction = NULL) {
         return $this->get_request_paged($this->_campaigns_base_route.'unsubscribes.json?date='.urlencode($since), 
             $page_number, $page_size, $order_field, $order_direction);

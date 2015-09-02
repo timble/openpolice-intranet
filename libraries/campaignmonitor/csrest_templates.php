@@ -28,7 +28,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      * @param $transport The transport to use. Used for dependency injection
      * @access public
      */
-    function CS_REST_Templates (
+    public function CS_REST_Templates (
     $template_id,
     $api_key,
     $protocol = 'https',
@@ -47,7 +47,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      * @param $template_id
      * @access public
      */
-    function set_template_id($template_id) {
+    public function set_template_id($template_id) {
         $this->_templates_base_route = $this->_base_route.'templates/'.$template_id.'.json';            
     }
 
@@ -65,7 +65,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be the ID of the newly created template
      */
-    function create($client_id, $template_details) {
+    public function create($client_id, $template_details) {
         return $this->post_request($this->_base_route.'templates/'.$client_id.'.json', $template_details);
     }
 
@@ -82,7 +82,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function update($template_details) {
+    public function update($template_details) {
         return $this->put_request($this->_templates_base_route, $template_details);
     }
 
@@ -91,7 +91,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      * @access public
      * @return CS_REST_Wrapper_Result A successful response will be empty
      */
-    function delete() {
+    public function delete() {
         return $this->delete_request($this->_templates_base_route);
     }
 
@@ -106,7 +106,7 @@ class CS_REST_Templates extends CS_REST_Wrapper_Base {
      *     'ScreenshotURL' => The url of the template screenshot if one was provided
      * }
      */
-    function get() {
+    public function get() {
         return $this->get_request($this->_templates_base_route);
     }
 }
