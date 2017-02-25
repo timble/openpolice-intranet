@@ -193,7 +193,7 @@ CREATE TABLE `jos_news_view_articles_comments_total` (
 
 DROP TABLE `jos_news_view_articles`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles`
+CREATE ALGORITHM=UNDEFINED DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles`
 AS SELECT
    `article`.`news_article_id` AS `news_article_id`,
    `article`.`news_category_id` AS `news_category_id`,
@@ -226,7 +226,7 @@ FROM (((((`jos_news_articles` `article` left join `jos_users` `creator` on((`art
 
 DROP TABLE `jos_calendar_view_days`;
 
-CREATE ALGORITHM=MERGE DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_calendar_view_days`
+CREATE ALGORITHM=MERGE DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_calendar_view_days`
 AS SELECT
    `day`.`calendar_day_id` AS `calendar_day_id`,
    `day`.`calendar_event_id` AS `calendar_event_id`,
@@ -250,7 +250,7 @@ FROM (`jos_calendar_days` `day` left join `jos_calendar_events` `event` on((`day
 
 DROP TABLE `jos_news_view_activities`;
 
-CREATE ALGORITHM=MERGE DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_activities`
+CREATE ALGORITHM=MERGE DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_activities`
 AS SELECT
    `activity`.`activities_activity_id` AS `activities_activity_id`,
    `activity`.`uuid` AS `uuid`,
@@ -283,7 +283,7 @@ FROM ((((`jos_news_activities` `news_activity` left join `jos_activities_activit
 
 DROP TABLE `jos_calendar_view_events`;
 
-CREATE ALGORITHM=MERGE DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_calendar_view_events`
+CREATE ALGORITHM=MERGE DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_calendar_view_events`
 AS SELECT
    `event`.`calendar_event_id` AS `calendar_event_id`,
    `event`.`title` AS `title`,
@@ -310,7 +310,7 @@ FROM ((`jos_calendar_events` `event` left join `jos_users` `creator` on((`event`
 
 DROP TABLE `jos_news_view_articles_comments_latest`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles_comments_latest`
+CREATE ALGORITHM=UNDEFINED DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles_comments_latest`
 AS SELECT
    `comment`.`row` AS `news_article_id`,
    `comment`.`created_on` AS `created_on`,
@@ -324,7 +324,7 @@ FROM (`jos_comments_view_comments` `comment` left join `jos_comments_comments` `
 
 DROP TABLE `jos_comments_view_comments`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_comments_view_comments`
+CREATE ALGORITHM=UNDEFINED DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_comments_view_comments`
 AS SELECT
    `comment`.`comments_comment_id` AS `comments_comment_id`,
    `comment`.`table` AS `table`,
@@ -346,7 +346,7 @@ FROM (`jos_comments_comments` `comment` left join `jos_users` `creator` on((`cre
 
 DROP TABLE `jos_news_view_articles_comments_total`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`demo`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles_comments_total`
+CREATE ALGORITHM=UNDEFINED DEFINER=`police`@`localhost` SQL SECURITY DEFINER VIEW `jos_news_view_articles_comments_total`
 AS SELECT
    `jos_comments_view_comments`.`row` AS `news_article_id`,count(`jos_comments_view_comments`.`comments_comment_id`) AS `total`
 FROM `jos_comments_view_comments` where (`jos_comments_view_comments`.`table` = 'news_articles') group by `jos_comments_view_comments`.`row`;
